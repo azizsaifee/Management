@@ -10,7 +10,7 @@ import UIKit
 class AssistHomeViewController: UIViewController {
     
     // MARK: - Variables
-    var arrayOfAnswers: [String]  = ["a : Bit","b: Central Processing Unit","c : Central Processing Unit", "a : Optional","a : let, var"]
+    //var arrayOfAnswers: [String]  = ["a : Bit","b: Central Processing Unit","c : Central Processing Unit", "a : Optional","a : let, var"]
     var timer: Timer?
     var remainingTime: TimeInterval = 0.0
     var counter = 0 {
@@ -41,6 +41,7 @@ class AssistHomeViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         loadData()
         fetchData()
+        AssistHomeViewController.objRepositorys.delete(byIdentifier: 1)
     }
     
     // MARK: - Required Methods
@@ -158,21 +159,13 @@ class AssistHomeViewController: UIViewController {
         }
     }
     static var countCorrectAnswers = 0
-    func checkForAnswer(of questionNumber: Int) {
+    func checkForAnswer(of questionNumber: Int16) {
+        let answer = AssistHomeViewController.objRepositorys.get(byIdentifier: questionNumber)?.answer
         for option in options {
             if option.tintColor == .green {
                 option.tintColor = .systemBlue
-                for check in arrayOfAnswers {
-                    //                    if "\(questionNumber)" == this {
-                    //                        print("checking")
-                    if option.currentTitle == check {
-                        print("this is correct")
-                        AssistHomeViewController.countCorrectAnswers += 1
-                    } else {
-                        print("this is incorrect")
-                        // QuestionViewController.countCorrectAnswers += 1
-                        //}
-                    }
+                if option.currentTitle == answer {
+                    AssistHomeViewController.countCorrectAnswers += 1
                 }
             }
         }

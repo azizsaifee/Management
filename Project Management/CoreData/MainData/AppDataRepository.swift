@@ -13,10 +13,13 @@ protocol DataRepository {
     func get(byIdentifier id: String) -> DataDictionary?
     func getAll() -> [DataDictionary]?
     func delete(byIdentifier id: String) -> Bool
+    //func deleteAll()
 }
 
 
 struct AppDataRepository: DataRepository {
+    
+    
     func create(data: DataDictionary) {
         let entity = AppCoreData(context: PersistentStorage.shared.context)
         entity.id = data.id
