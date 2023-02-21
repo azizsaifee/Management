@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181F127229A4D52F00ACAA9D /* iOSViewModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F127129A4D52F00ACAA9D /* iOSViewModelClass.swift */; };
 		1844535729937F7600600603 /* AndroidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1844535629937F7600600603 /* AndroidVC.swift */; };
 		1844535B2993807100600603 /* AndroidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184453592993807100600603 /* AndroidTableViewCell.swift */; };
 		1844535C2993807100600603 /* AndroidTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1844535A2993807100600603 /* AndroidTableViewCell.xib */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181F127129A4D52F00ACAA9D /* iOSViewModelClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewModelClass.swift; sourceTree = "<group>"; };
 		1844535629937F7600600603 /* AndroidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidVC.swift; sourceTree = "<group>"; };
 		184453592993807100600603 /* AndroidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidTableViewCell.swift; sourceTree = "<group>"; };
 		1844535A2993807100600603 /* AndroidTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AndroidTableViewCell.xib; sourceTree = "<group>"; };
@@ -141,6 +143,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181F126E29A4C8CD00ACAA9D /* MainData */ = {
+			isa = PBXGroup;
+			children = (
+				ED89BC0829A39AED00761289 /* AppCoreData+CoreDataProperties.swift */,
+				ED89BC0729A39AED00761289 /* AppCoreData+CoreDataClass.swift */,
+				18720CF42999FA0C00517C68 /* AppDataRepository.swift */,
+			);
+			path = MainData;
+			sourceTree = "<group>";
+		};
+		181F126F29A4CA9900ACAA9D /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				18A8E41A299CB0E500D70967 /* DemoVC.swift */,
+				ED61E4C9299B6DDB00C965DF /* FaltuCode.swift */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		181F127029A4D4F100ACAA9D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				181F127329A4D68000ACAA9D /* iOS */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		181F127329A4D68000ACAA9D /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				181F127129A4D52F00ACAA9D /* iOSViewModelClass.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		1844535529937F2C00600603 /* Android */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,8 +294,9 @@
 				18720CF12999F9EB00517C68 /* CoreData */,
 				184D1395298CF0AA000FF810 /* Model */,
 				184D1396298CF0B0000FF810 /* View */,
+				181F127029A4D4F100ACAA9D /* ViewModel */,
 				184D1399298CF113000FF810 /* Storyboard */,
-				ED61E4C9299B6DDB00C965DF /* FaltuCode.swift */,
+				181F126F29A4CA9900ACAA9D /* Testing */,
 			);
 			path = "Project Management";
 			sourceTree = "<group>";
@@ -293,7 +331,7 @@
 		184D1396298CF0B0000FF810 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ED89BBE829A37D9500761289 /* AssistView */,
+				ED89BBE829A37D9500761289 /* Quiz */,
 				184D1398298CF107000FF810 /* Home */,
 				1844536A2993A66700600603 /* DetailsView */,
 				18C293F029927C7500C7861D /* iOS */,
@@ -302,7 +340,6 @@
 				1844536029938AA000600603 /* Flutter */,
 				1844536529938C2C00600603 /* Website */,
 				1844536429938C2500600603 /* Webapp */,
-				18A8E41A299CB0E500D70967 /* DemoVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,10 +365,8 @@
 			isa = PBXGroup;
 			children = (
 				18720CF22999FA0000517C68 /* PersistentStorage.swift */,
-				18720CF42999FA0C00517C68 /* AppDataRepository.swift */,
-				ED89BC0729A39AED00761289 /* AppCoreData+CoreDataClass.swift */,
-				ED89BC0829A39AED00761289 /* AppCoreData+CoreDataProperties.swift */,
-				ED89BBFE29A395CA00761289 /* Quiz */,
+				181F126E29A4C8CD00ACAA9D /* MainData */,
+				ED89BBFE29A395CA00761289 /* QuizData */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -345,7 +380,7 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
-		ED89BBE829A37D9500761289 /* AssistView */ = {
+		ED89BBE829A37D9500761289 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
 				ED89BBF729A38DE600761289 /* StartAssistViewController.swift */,
@@ -353,7 +388,7 @@
 				ED89BBEB29A3814700761289 /* AssistResultViewController.swift */,
 				ED89BBED29A383E900761289 /* Timer.swift */,
 			);
-			path = AssistView;
+			path = Quiz;
 			sourceTree = "<group>";
 		};
 		ED89BBF929A393E200761289 /* QuestionModel */ = {
@@ -365,14 +400,14 @@
 			path = QuestionModel;
 			sourceTree = "<group>";
 		};
-		ED89BBFE29A395CA00761289 /* Quiz */ = {
+		ED89BBFE29A395CA00761289 /* QuizData */ = {
 			isa = PBXGroup;
 			children = (
 				ED89BC0D29A39C4100761289 /* Questions+CoreDataClass.swift */,
 				ED89BC0E29A39C4100761289 /* Questions+CoreDataProperties.swift */,
 				ED89BC0329A3983D00761289 /* QuestionDataRepository.swift */,
 			);
-			path = Quiz;
+			path = QuizData;
 			sourceTree = "<group>";
 		};
 		EDF20511299B659200A932CB /* Content */ = {
@@ -539,6 +574,7 @@
 				ED89BBEC29A3814700761289 /* AssistResultViewController.swift in Sources */,
 				ED89BBEE29A383E900761289 /* Timer.swift in Sources */,
 				184D139B298CF253000FF810 /* HomeVC.swift in Sources */,
+				181F127229A4D52F00ACAA9D /* iOSViewModelClass.swift in Sources */,
 				ED89BC0429A3983D00761289 /* QuestionDataRepository.swift in Sources */,
 				1844536729938C4B00600603 /* WebappVC.swift in Sources */,
 				699CAEDD2994DD1D0050AEC2 /* dataFile.swift in Sources */,

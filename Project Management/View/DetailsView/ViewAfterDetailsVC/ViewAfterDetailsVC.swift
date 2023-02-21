@@ -124,7 +124,6 @@ class ViewAfterDetailsVC: UIViewController, UICollectionViewDelegate {
     @IBAction func backButtonAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
 }
 
 // MARK: - Extensions

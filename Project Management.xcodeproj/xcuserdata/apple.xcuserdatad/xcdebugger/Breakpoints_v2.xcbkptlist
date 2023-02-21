@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "272C72AB-FEB2-43BF-8787-5070CC2C1882"
+            uuid = "744CDC1C-7813-4EDF-8F0A-EF9D7E6439DA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Project Management/View/iOS/iOSVC.swift"
+            filePath = "Project Management/View/Quiz/AssistHomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "configureCollectionView()"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "fetchData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

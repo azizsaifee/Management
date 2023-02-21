@@ -8,9 +8,8 @@
 import UIKit
 
 class AssistHomeViewController: UIViewController {
-
+    
     // MARK: - Variables
-//    var arrayOfAnswers: [String : String]  = ["1" : "a. Bit", "2" : "c. Central Processing Unit", "3" : "c. Central Processing Unit", "4" : "a. Optional", "5" : "a. let, var"]
     var arrayOfAnswers: [String]  = ["a : Bit","b: Central Processing Unit","c : Central Processing Unit", "a : Optional","a : let, var"]
     var timer: Timer?
     var remainingTime: TimeInterval = 0.0
@@ -22,56 +21,73 @@ class AssistHomeViewController: UIViewController {
             }
         }
     }
-    
-   static var objRepositorys = AppDataRepositorys()
+    static var objRepositorys = AppDataRepositorys()
     var count = 1
     
+    // MARK: - IBOutlets
     @IBOutlet weak var timerLabel: UILabel!
-    
     @IBOutlet weak var option1Btn: UIButton!
-    
     @IBOutlet weak var question: UILabel!
-    
     @IBOutlet weak var questionNumber: UILabel!
-    
     @IBOutlet weak var option2Btn: UIButton!
-    
     @IBOutlet weak var option3Btn: UIButton!
-    
     @IBOutlet weak var option4Btn: UIButton!
-    
     @IBOutlet weak var nextBtn: UIButton!
-    
-    
     @IBOutlet var options: [UIButton]!
     
-    
+    // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-//        AssistHomeViewController.objRepositorys.create(data: question1)
-//        AssistHomeViewController.objRepositorys.create(data: question2)
-//        AssistHomeViewController.objRepositorys.create(data: question3)
-//        AssistHomeViewController.objRepositorys.create(data: question4)
-//        AssistHomeViewController.objRepositorys.create(data: question5)
-        
+        loadData()
         fetchData()
     }
     
+    // MARK: - Required Methods
     func loadData() {
-        if DetailsVC.objRepository.get(byIdentifier: "EcoBank") == nil {
-            DetailsVC.objRepository.create(data: dataOfEcoBank)
+        if AssistHomeViewController.objRepositorys.get(byIdentifier: 1) == nil {
+            AssistHomeViewController.objRepositorys.create(data: question1)
         } else {
-            if DetailsVC.objRepository.get(byIdentifier: "EcoBank")! != dataOfEcoBank {
-                let deleteSuccessOrNot = DetailsVC.objRepository.delete(byIdentifier: "EcoBank")
-                print(deleteSuccessOrNot)
-                DetailsVC.objRepository.create(data: dataOfEcoBank)
+            if AssistHomeViewController.objRepositorys.get(byIdentifier: 1)! != question1 {
+                _ = AssistHomeViewController.objRepositorys.delete(byIdentifier: 1)
+                AssistHomeViewController.objRepositorys.create(data: question1)
+            }
+        }
+        if AssistHomeViewController.objRepositorys.get(byIdentifier: 2) == nil {
+            AssistHomeViewController.objRepositorys.create(data: question2)
+        } else {
+            if AssistHomeViewController.objRepositorys.get(byIdentifier: 2)! != question2 {
+                _ = AssistHomeViewController.objRepositorys.delete(byIdentifier: 2)
+                AssistHomeViewController.objRepositorys.create(data: question2)
+            }
+        }
+        if AssistHomeViewController.objRepositorys.get(byIdentifier: 3) == nil {
+            AssistHomeViewController.objRepositorys.create(data: question3)
+        } else {
+            if AssistHomeViewController.objRepositorys.get(byIdentifier: 3)! != question3 {
+                _ = AssistHomeViewController.objRepositorys.delete(byIdentifier: 3)
+                AssistHomeViewController.objRepositorys.create(data: question3)
+            }
+        }
+        if AssistHomeViewController.objRepositorys.get(byIdentifier: 4) == nil {
+            AssistHomeViewController.objRepositorys.create(data: question4)
+        } else {
+            if AssistHomeViewController.objRepositorys.get(byIdentifier: 4)! != question4 {
+                _ = AssistHomeViewController.objRepositorys.delete(byIdentifier: 4)
+                AssistHomeViewController.objRepositorys.create(data: question4)
+            }
+        }
+        if AssistHomeViewController.objRepositorys.get(byIdentifier: 5) == nil {
+            AssistHomeViewController.objRepositorys.create(data: question5)
+        } else {
+            if AssistHomeViewController.objRepositorys.get(byIdentifier: 5)! != question5 {
+                _ = AssistHomeViewController.objRepositorys.delete(byIdentifier: 5)
+                AssistHomeViewController.objRepositorys.create(data: question5)
             }
         }
     }
     
     func fetchData(){
-        
         switch count {
         case 0 :
             checkForAnswer(of: 5)
@@ -100,7 +116,7 @@ class AssistHomeViewController: UIViewController {
             option2Btn.setTitle(two!.option2, for: .normal)
             option3Btn.setTitle(two!.option3, for: .normal)
             option4Btn.setTitle(two!.option4, for: .normal)
-           
+            
         case 3:
             checkForAnswer(of: 2)
             count += 1
@@ -112,7 +128,7 @@ class AssistHomeViewController: UIViewController {
             option2Btn.setTitle(three!.option2, for: .normal)
             option3Btn.setTitle(three!.option3, for: .normal)
             option4Btn.setTitle(three!.option4, for: .normal)
-           
+            
         case 4:
             checkForAnswer(of: 3)
             count += 1
@@ -124,7 +140,7 @@ class AssistHomeViewController: UIViewController {
             option2Btn.setTitle(four!.option2, for: .normal)
             option3Btn.setTitle(four!.option3, for: .normal)
             option4Btn.setTitle(four!.option4, for: .normal)
-           
+            
         case 5:
             checkForAnswer(of: 4)
             count = 0
@@ -136,24 +152,24 @@ class AssistHomeViewController: UIViewController {
             option2Btn.setTitle(five!.option2, for: .normal)
             option3Btn.setTitle(five!.option3, for: .normal)
             option4Btn.setTitle(five!.option4, for: .normal)
-           default:
+        default:
             print("none")
         }
     }
-     static var countCorrectAnswers = 0
+    static var countCorrectAnswers = 0
     func checkForAnswer(of questionNumber: Int) {
         for option in options {
             if option.tintColor == .green {
                 option.tintColor = .systemBlue
                 for check in arrayOfAnswers {
-//                    if "\(questionNumber)" == this {
-//                        print("checking")
+                    //                    if "\(questionNumber)" == this {
+                    //                        print("checking")
                     if option.currentTitle == check {
-                            print("this is correct")
+                        print("this is correct")
                         AssistHomeViewController.countCorrectAnswers += 1
-                        } else {
-                            print("this is incorrect")
-                           // QuestionViewController.countCorrectAnswers += 1
+                    } else {
+                        print("this is incorrect")
+                        // QuestionViewController.countCorrectAnswers += 1
                         //}
                     }
                 }
@@ -234,5 +250,5 @@ class AssistHomeViewController: UIViewController {
         option4Btn.isEnabled = true
     }
     
-
+    
 }

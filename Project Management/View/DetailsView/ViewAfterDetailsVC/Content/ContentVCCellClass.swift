@@ -24,7 +24,6 @@ class ContentVCCellClass: UICollectionViewCell {
     }
     
     func configure(with index: Int) {
-        print("Hurray!!")
         addPlayerToView(viewForCollectionView)
     }
     

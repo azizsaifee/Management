@@ -12,7 +12,7 @@ protocol DataRepositorys {
     func create(data: Document)
     func get(byIdentifier questionNo: Int16) -> Document?
 //    func getAll() -> [Document]?
-//    func delete(byIdentifier id: String) -> Bool
+    func delete(byIdentifier questionNo: Int16) -> Bool
 }
 
 struct AppDataRepositorys: DataRepositorys {
@@ -67,16 +67,16 @@ struct AppDataRepositorys: DataRepositorys {
 //
 //    }
 //
-//    func delete(byIdentifier id: String) -> Bool {
-//        let data = getData(byIdentifier: id)
-//
-//        guard data != nil else {return false}
-//
-//        PersistentStorage.shared.context.delete(data!)
-//        PersistentStorage.shared.saveContext()
-//
-//        return true
-//    }
+    func delete(byIdentifier questionNo: Int16) -> Bool {
+        let data = getData(byIdentifier: "\(questionNo)")
+
+        guard data != nil else {return false}
+
+        PersistentStorage.shared.context.delete(data!)
+        PersistentStorage.shared.saveContext()
+
+        return true
+    }
 }
 
 
