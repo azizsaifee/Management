@@ -7,15 +7,15 @@
 
 import Foundation
 
-var question1 = Document(questionNo: 1, question: "Which of the following is the smallest unit of data in a computer?", option1: "a : Bit", option2: "b: KB", option3: "c : Nibble", option4: "d : Byte")
+var question1 = Document(questionNo: 1, question: "Which of the following is the smallest unit of data in a computer?", option1: "Bit", option2: "KB", option3: "Nibble", option4: "Byte", answer: "a")
 
-var question2 = Document(questionNo: 2, question: "What is the full form of CPU?", option1: "a : Computer Processing Unit", option2: "b: Central Processing Unit", option3: "c : computing Processing Unit", option4: "d : Control Processing Uni")
+var question2 = Document(questionNo: 2, question: "What is the full form of CPU?", option1: "Computer Processing Unit", option2: "Central Processing Unit", option3: "computing Processing Unit", option4: "Control Processing Uni", answer: "b")
 
-var question3 = Document(questionNo: 3, question: "Which of the following is the brain of the computer?", option1: "a : Arithmetic and Logic unit", option2: "b: Memory", option3: "c : Central Processing Unit", option4: "d : Control unit")
+var question3 = Document(questionNo: 3, question: "Which of the following is the brain of the computer?", option1: "Arithmetic and Logic unit", option2: "Memory", option3: "Central Processing Unit", option4: "Control unit", answer: "c")
 
-var question4 = Document(questionNo: 4, question: "What does the question mark (?) indicate A particular property is", option1: "a : Optional", option2: "b: Missing", option3: "c : Changed", option4: "d : Necessary")
+var question4 = Document(questionNo: 4, question: "What does the question mark (?) indicate A particular property is", option1: "Optional", option2: "Missing", option3: "Changed", option4: "Necessary", answer: "a")
 
-var question5 = Document(questionNo: 5, question: "Constants are declared by using _____ keyword and variables by _______ keyword.", option1: "a : let, var", option2: "b: let, let", option3: "c : let, let", option4: "d : var, var")
+var question5 = Document(questionNo: 5, question: "Constants are declared by using _____ keyword and variables by _______ keyword.", option1: "let, var", option2: "let, let", option3: "let, let", option4: "var, var", answer: "a")
 
 
 

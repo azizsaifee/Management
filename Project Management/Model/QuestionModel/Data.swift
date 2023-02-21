@@ -18,8 +18,9 @@ public class Document: NSObject, NSCoding {
     var option2: String
     var option3: String
     var option4: String
+    var answer: String
     
-    init( questionNo: Int16,question:String,option1:String,option2:String,option3:String,option4:String) {
+    init( questionNo: Int16,question:String,option1:String,option2:String,option3:String,option4:String, answer: String) {
         
         self.questionNo = questionNo
         self.question = question
@@ -27,6 +28,7 @@ public class Document: NSObject, NSCoding {
         self.option2 = option2
         self.option3 = option3
         self.option4 = option4
+        self.answer = answer
     }
     
     public func encode(with coder: NSCoder) {
@@ -38,10 +40,11 @@ public class Document: NSObject, NSCoding {
         coder.encode(option2, forKey: "option2")
         coder.encode(option3, forKey: "option3")
         coder.encode(option4, forKey: "option4")
+        coder.encode(answer, forKey: "answer")
     }
     
     override public var description: String {
-        return "Documentation:id =  \(questionNo), question: question, option1: option1, option2: option2, option3: option3, option4: option4)"
+        return "Documentation:id =  \(questionNo), question: question, option1: option1, option2: option2, option3: option3, option4: option4, answer: answer)"
     }
     
     public required init?(coder: NSCoder) {
@@ -53,6 +56,7 @@ public class Document: NSObject, NSCoding {
         option2 = coder.decodeObject(forKey: "option2") as! String
         option3 = coder.decodeObject(forKey: "option3") as! String
         option4 = coder.decodeObject(forKey: "option4") as! String
+        answer = coder.decodeObject(forKey: "answer") as! String
     }
 }
 

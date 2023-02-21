@@ -47,8 +47,8 @@
 		ED89BC0429A3983D00761289 /* QuestionDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BC0329A3983D00761289 /* QuestionDataRepository.swift */; };
 		ED89BC0B29A39AED00761289 /* AppCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BC0729A39AED00761289 /* AppCoreData+CoreDataClass.swift */; };
 		ED89BC0C29A39AED00761289 /* AppCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BC0829A39AED00761289 /* AppCoreData+CoreDataProperties.swift */; };
-		ED89BC0F29A39C4100761289 /* Questions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BC0D29A39C4100761289 /* Questions+CoreDataClass.swift */; };
-		ED89BC1029A39C4100761289 /* Questions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BC0E29A39C4100761289 /* Questions+CoreDataProperties.swift */; };
+		ED9D366429A4E5FB00E898BF /* Questions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D366229A4E5FB00E898BF /* Questions+CoreDataClass.swift */; };
+		ED9D366529A4E5FB00E898BF /* Questions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D366329A4E5FB00E898BF /* Questions+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,8 +114,8 @@
 		ED89BC0329A3983D00761289 /* QuestionDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataRepository.swift; sourceTree = "<group>"; };
 		ED89BC0729A39AED00761289 /* AppCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ED89BC0829A39AED00761289 /* AppCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		ED89BC0D29A39C4100761289 /* Questions+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Questions+CoreDataClass.swift"; sourceTree = "<group>"; };
-		ED89BC0E29A39C4100761289 /* Questions+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Questions+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ED9D366229A4E5FB00E898BF /* Questions+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Questions+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		ED9D366329A4E5FB00E898BF /* Questions+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Questions+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,8 +403,8 @@
 		ED89BBFE29A395CA00761289 /* QuizData */ = {
 			isa = PBXGroup;
 			children = (
-				ED89BC0D29A39C4100761289 /* Questions+CoreDataClass.swift */,
-				ED89BC0E29A39C4100761289 /* Questions+CoreDataProperties.swift */,
+				ED9D366229A4E5FB00E898BF /* Questions+CoreDataClass.swift */,
+				ED9D366329A4E5FB00E898BF /* Questions+CoreDataProperties.swift */,
 				ED89BC0329A3983D00761289 /* QuestionDataRepository.swift */,
 			);
 			path = QuizData;
@@ -560,10 +560,9 @@
 				184D1363298CEF17000FF810 /* AppDelegate.swift in Sources */,
 				ED89BC0C29A39AED00761289 /* AppCoreData+CoreDataProperties.swift in Sources */,
 				ED89BBF829A38DE600761289 /* StartAssistViewController.swift in Sources */,
-				ED89BC1029A39C4100761289 /* Questions+CoreDataProperties.swift in Sources */,
-				ED89BC0F29A39C4100761289 /* Questions+CoreDataClass.swift in Sources */,
 				1844536929938C5F00600603 /* WebsiteVC.swift in Sources */,
 				189C154E299E6D01009EDD14 /* ContentVCCellClass.swift in Sources */,
+				ED9D366529A4E5FB00E898BF /* Questions+CoreDataProperties.swift in Sources */,
 				ED89BBF029A384D100761289 /* Data.swift in Sources */,
 				1844535B2993807100600603 /* AndroidTableViewCell.swift in Sources */,
 				1844536F2993BCFD00600603 /* ViewAfterDetailsVC.swift in Sources */,
@@ -579,6 +578,7 @@
 				1844536729938C4B00600603 /* WebappVC.swift in Sources */,
 				699CAEDD2994DD1D0050AEC2 /* dataFile.swift in Sources */,
 				1844536329938AC200600603 /* FlutterVC.swift in Sources */,
+				ED9D366429A4E5FB00E898BF /* Questions+CoreDataClass.swift in Sources */,
 				184453772993C64E00600603 /* DataForEcoBank.swift in Sources */,
 				184D1365298CEF17000FF810 /* SceneDelegate.swift in Sources */,
 				1844535729937F7600600603 /* AndroidVC.swift in Sources */,

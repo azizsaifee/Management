@@ -26,6 +26,7 @@ struct AppDataRepositorys: DataRepositorys {
         entity.option2 = data.option2
         entity.option3 = data.option3
         entity.option4 = data.option4
+        entity.answer = data.answer
         PersistentStorage.shared.saveContext()
     }
     
