@@ -100,6 +100,7 @@ class AssistHomeViewController: UIViewController {
             let one = AssistHomeViewController.objRepositorys.get(byIdentifier: 1)
             questionNumber.text = "\(one!.questionNo)"
             question.text = one!.question
+            print(one!.answer)
             btnenabled()
             option1Btn.setTitle(one!.option1, for: .normal)
             option2Btn.setTitle(one!.option2, for: .normal)
