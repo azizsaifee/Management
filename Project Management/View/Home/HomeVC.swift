@@ -9,6 +9,7 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    // Add comments here.
     // MARK: - Variables
     var count: Int = 0
     
