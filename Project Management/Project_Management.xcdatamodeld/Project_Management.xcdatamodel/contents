@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G419" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AppCoreData" representedClassName="AppCoreData" syncable="YES">
+        <attribute name="credentials" optional="YES" attributeType="Transformable" customClassName="Credentials"/>
+        <attribute name="documentation" optional="YES" attributeType="Transformable" customClassName="Documentation"/>
+        <attribute name="features" optional="YES" attributeType="Transformable" customClassName="Features"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="issues" optional="YES" attributeType="Transformable" customClassName="Issues"/>
+    </entity>
+    <entity name="Questions" representedClassName="Questions" syncable="YES">
+        <attribute name="option1" optional="YES" attributeType="String"/>
+        <attribute name="option2" optional="YES" attributeType="String"/>
+        <attribute name="option3" optional="YES" attributeType="String"/>
+        <attribute name="option4" optional="YES" attributeType="String"/>
+        <attribute name="question" optional="YES" attributeType="String"/>
+        <attribute name="questionNo" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+</model>
