@@ -34,14 +34,15 @@ extension AssistHomeViewController{
         // Timer Runs at an interval of 20 seconds.
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
             print(self?.counter ?? 0)
-            self?.counter += 1
-            if self!.counter == 60 {
+            self?.counter -= 1
+            if self!.counter == 0 {
                 self!.remainingTime = 0
-                self?.counter = 0
+                self?.counter = 60
                 //self?.timer?.invalidate()
                 // Do something when the timer reaches 20 seconds
                 print("Times Up!")
                 self!.fetchData()
+                self!.didtapChange()
             }
         }
         timer?.fireDate = Date().addingTimeInterval(remainingTime)

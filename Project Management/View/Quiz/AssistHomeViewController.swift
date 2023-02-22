@@ -10,19 +10,21 @@ import UIKit
 class AssistHomeViewController: UIViewController {
     
     // MARK: - Variables
-    //var arrayOfAnswers: [String]  = ["a : Bit","b: Central Processing Unit","c : Central Processing Unit", "a : Optional","a : let, var"]
+
     var timer: Timer?
     var remainingTime: TimeInterval = 0.0
-    var counter = 0 {
+    var counter = 60 {
         didSet {
             timerLabel.text = "\(counter)"
-            if counter == 60 {
-                timerLabel.text = "Times Up!"
+            if counter == 0 {
+//timerLabel.text = "Times Up!"
             }
         }
     }
     static var objRepositorys = AppDataRepositorys()
     var count = 1
+    
+    let shape = CAShapeLayer()
     
     // MARK: - IBOutlets
     @IBOutlet weak var timerLabel: UILabel!
@@ -35,14 +37,33 @@ class AssistHomeViewController: UIViewController {
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet var options: [UIButton]!
     
+        @IBOutlet weak var option2view: UIView!
+        @IBOutlet weak var option4view: UIView!
+        @IBOutlet weak var option3view: UIView!
+        @IBOutlet weak var option1View: UIView!
+        
+     //   @IBOutlet weak var questionlabel: UILabel!
+        
+        @IBOutlet weak var option1Image: UIImageView!
+        @IBOutlet weak var option2Image: UIImageView!
+        @IBOutlet weak var option3Image: UIImageView!
+        @IBOutlet weak var option4image: UIImageView!
+        var labelView = UILabel()
+      
+        
     // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
+        
+        cornerRadius()
+        didtapChange()
+        roundedprogress()
         loadData()
         fetchData()
         AssistHomeViewController.objRepositorys.delete(byIdentifier: 1)
     }
+    @IBOutlet weak var labelIs: UILabel!
     
     // MARK: - Required Methods
     func loadData() {
@@ -173,7 +194,7 @@ class AssistHomeViewController: UIViewController {
     
     @IBAction func nextBtnAction(_ sender: Any) {
         fetchData()
-        counter = 0
+        counter = 60
     }
     
     
@@ -244,5 +265,68 @@ class AssistHomeViewController: UIViewController {
         option4Btn.isEnabled = true
     }
     
+
+            @objc func didtapChange(){
+                let animation = CABasicAnimation(keyPath: "strokeEnd")
+                animation.toValue = 1
+                animation.duration = 73
+                
+                animation.fillMode = .forwards
+                animation.isRemovedOnCompletion = false
+                shape.add(animation, forKey: "animation")
+            }
+        
+        func roundedprogress(){
+            
+            let ciclePath = UIBezierPath(arcCenter:timerLabel.center,
+                                         radius: 30,
+                                         startAngle: -(.pi/2),
+                                         endAngle: .pi * 2,
+                                         clockwise: true)
+            
+            let trackShape = CAShapeLayer()
+            trackShape.path = ciclePath.cgPath
+            trackShape.fillColor = UIColor.clear.cgColor
+            trackShape.lineWidth = 5
+            trackShape.strokeColor = UIColor.lightGray.cgColor
+            view.layer.addSublayer(trackShape)
+            
+            shape.path = ciclePath.cgPath
+            shape.lineWidth = 5
+            //shape.strokeColor = UIColor.blue.cgColor
+            shape.strokeColor = UIColor.green.cgColor
+            shape.fillColor = UIColor.clear.cgColor
+            shape.strokeEnd = 0
+
+            view.layer.addSublayer(shape)
+            
+        }
+            
+        func cornerRadius(){
+//            questionNumber.layer.masksToBounds = true
+//            questionNumber.layer.cornerRadius = questionNumber.frame.size.width/2
+            
+            option4image.layer.masksToBounds = false
+            option4image.clipsToBounds = true
+            option4image.layer.cornerRadius = option4image.frame.size.width/2
+            
+            option3Image.layer.masksToBounds = false
+            option3Image.clipsToBounds = true
+            option3Image.layer.cornerRadius = option3Image.frame.size.width/2
+            
+            option2Image.layer.masksToBounds = false
+            option2Image.clipsToBounds = true
+            option2Image.layer.cornerRadius = option2Image.frame.size.width/2
+            
+            option1Image.layer.masksToBounds = false
+            option1Image.clipsToBounds = true
+            option1Image.layer.cornerRadius = option1Image.frame.size.width/2
+            
+            option4view.layer.cornerRadius = 10
+            option3view.layer.cornerRadius = 10
+            option2view.layer.cornerRadius = 10
+            option1View.layer.cornerRadius = 10
+        }
+        }
     
-}
+
