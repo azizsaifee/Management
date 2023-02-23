@@ -44,11 +44,24 @@ class AssistHomeViewController: UIViewController {
         
      //   @IBOutlet weak var questionlabel: UILabel!
         
-        @IBOutlet weak var option1Image: UIImageView!
-        @IBOutlet weak var option2Image: UIImageView!
-        @IBOutlet weak var option3Image: UIImageView!
-        @IBOutlet weak var option4image: UIImageView!
-        var labelView = UILabel()
+      
+    @IBOutlet weak var option1WrongImage: UIImageView!
+    
+    @IBOutlet weak var option1RightImage: UIImageView!
+    
+    @IBOutlet weak var option2WrongImage: UIImageView!
+    
+    @IBOutlet weak var option2RightImage: UIImageView!
+    
+    @IBOutlet weak var option3WrongImage: UIImageView!
+    
+    @IBOutlet weak var option3RightImage: UIImageView!
+    
+    @IBOutlet weak var option4WrongImage: UIImageView!
+    
+    @IBOutlet weak var option4RightImage: UIImageView!
+    
+    var labelView = UILabel()
       
         
     // MARK: - View Methods
@@ -57,10 +70,12 @@ class AssistHomeViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         
         cornerRadius()
+        imageviewIshidden()
         didtapChange()
         roundedprogress()
         loadData()
         fetchData()
+        
         AssistHomeViewController.objRepositorys.delete(byIdentifier: 1)
     }
     @IBOutlet weak var labelIs: UILabel!
@@ -184,8 +199,10 @@ class AssistHomeViewController: UIViewController {
         let answer = AssistHomeViewController.objRepositorys.get(byIdentifier: questionNumber)?.answer
         for option in options {
             if option.tintColor == .green {
-                option.tintColor = .systemBlue
+                option.tintColor = .white
                 if option.currentTitle == answer {
+                    print(answer)
+                    print(option)
                     AssistHomeViewController.countCorrectAnswers += 1
                 }
             }
@@ -195,15 +212,17 @@ class AssistHomeViewController: UIViewController {
     @IBAction func nextBtnAction(_ sender: Any) {
         fetchData()
         counter = 60
+        didtapChange()
     }
     
     
     @IBAction func option1(_ sender: Any) {
         if option1Btn.tintColor == .green {
-            option1Btn.tintColor = .systemBlue
+            option1Btn.tintColor = .white
             option2Btn.isEnabled = true
             option3Btn.isEnabled = true
             option4Btn.isEnabled = true
+            option1RightImage.isHidden = false
         } else {
             option1Btn.tintColor = .green
             option2Btn.isEnabled = false
@@ -217,7 +236,7 @@ class AssistHomeViewController: UIViewController {
     @IBAction func option2(_ sender: Any) {
         
         if option2Btn.tintColor == .green {
-            option2Btn.tintColor = .systemBlue
+            option2Btn.tintColor = .white
             option1Btn.isEnabled = true
             option3Btn.isEnabled = true
             option4Btn.isEnabled = true
@@ -231,7 +250,7 @@ class AssistHomeViewController: UIViewController {
     
     @IBAction func option3(_ sender: Any) {
         if option3Btn.tintColor ==  .green {
-            option3Btn.tintColor = .systemBlue
+            option3Btn.tintColor = .white
             option1Btn.isEnabled = true
             option2Btn.isEnabled = true
             option4Btn.isEnabled = true
@@ -246,7 +265,7 @@ class AssistHomeViewController: UIViewController {
     
     @IBAction func option4(_ sender: Any) {
         if option4Btn.tintColor == .green {
-            option4Btn.tintColor = .systemBlue
+            option4Btn.tintColor = .white
             option1Btn.isEnabled = true
             option3Btn.isEnabled = true
             option2Btn.isEnabled = true
@@ -306,27 +325,56 @@ class AssistHomeViewController: UIViewController {
 //            questionNumber.layer.masksToBounds = true
 //            questionNumber.layer.cornerRadius = questionNumber.frame.size.width/2
             
-            option4image.layer.masksToBounds = false
-            option4image.clipsToBounds = true
-            option4image.layer.cornerRadius = option4image.frame.size.width/2
+            option1RightImage.layer.masksToBounds = false
+            option1RightImage.clipsToBounds = true
+            option1RightImage.layer.cornerRadius = option1RightImage.frame.size.width/2
             
-            option3Image.layer.masksToBounds = false
-            option3Image.clipsToBounds = true
-            option3Image.layer.cornerRadius = option3Image.frame.size.width/2
+            option1WrongImage.layer.masksToBounds = false
+            option1WrongImage.clipsToBounds = true
+            option1WrongImage.layer.cornerRadius = option1WrongImage.frame.size.width/2
             
-            option2Image.layer.masksToBounds = false
-            option2Image.clipsToBounds = true
-            option2Image.layer.cornerRadius = option2Image.frame.size.width/2
+            option2RightImage.layer.masksToBounds = false
+            option2RightImage.clipsToBounds = true
+            option2RightImage.layer.cornerRadius = option2RightImage.frame.size.width/2
             
-            option1Image.layer.masksToBounds = false
-            option1Image.clipsToBounds = true
-            option1Image.layer.cornerRadius = option1Image.frame.size.width/2
+            option2WrongImage.layer.masksToBounds = false
+            option2WrongImage.clipsToBounds = true
+            option2WrongImage.layer.cornerRadius = option2WrongImage.frame.size.width/2
+            
+            option3RightImage.layer.masksToBounds = false
+            option3RightImage.clipsToBounds = true
+            option3RightImage.layer.cornerRadius = option3RightImage.frame.size.width/2
+            
+            option3WrongImage.layer.masksToBounds = false
+            option3WrongImage.clipsToBounds = true
+            option3WrongImage.layer.cornerRadius = option3WrongImage.frame.size.width/2
+            
+            option4RightImage.layer.masksToBounds = false
+            option4RightImage.clipsToBounds = true
+            option4RightImage.layer.cornerRadius = option4RightImage.frame.size.width/2
+            
+            option4WrongImage.layer.masksToBounds = false
+            option4WrongImage.clipsToBounds = true
+            option4WrongImage.layer.cornerRadius = option4WrongImage.frame.size.width/2
             
             option4view.layer.cornerRadius = 10
             option3view.layer.cornerRadius = 10
             option2view.layer.cornerRadius = 10
             option1View.layer.cornerRadius = 10
         }
+    func imageviewIshidden(){
+        option1WrongImage.isHidden = true
+        option1RightImage.isHidden = true
+        
+        option2WrongImage.isHidden = true
+        option2RightImage.isHidden = true
+        
+        option3WrongImage.isHidden = true
+        option3RightImage.isHidden = true
+        
+        option4WrongImage.isHidden = true
+        option4RightImage.isHidden = true
+    }
         }
     
 

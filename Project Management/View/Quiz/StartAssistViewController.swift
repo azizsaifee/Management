@@ -67,8 +67,17 @@ class StartAssistViewController: UIViewController {
     @objc func buttonTapped(sender: UITapGestureRecognizer) {
         switch sender.name {
         case "apple":
-            let iOSVC = self.storyboard?.instantiateViewController(withIdentifier: "AssistHomeViewController") as! AssistHomeViewController
-            self.navigationController?.pushViewController(iOSVC, animated: true)
+            let iOSVC = self.storyboard?.instantiateViewController(withIdentifier: "POpUpViewController") as! POpUpViewController
+//            let alert = UIAlertController(title: "IOS Quiz", message: "5 Question , 60 second each", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "Continue", style: .default,handler: {action in
+//                self.navigationController?.pushViewController(iOSVC, animated: true)
+//            }))
+//            alert.addAction(UIAlertAction(title: "Cancel", style: .destructive))
+//            present(alert,animated: true)
+            self.addChild(iOSVC)
+            self.view.addSubview(iOSVC.view)
+            iOSVC.didMove(toParent: self)
+         //   self.navigationController?.pushViewController(iOSVC, animated: true)
             //iOSVC.title = "IOS Apps"
         case "android":
             let androidVC = self.storyboard?.instantiateViewController(withIdentifier: "AndroidVC") as! AndroidVC

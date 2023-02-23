@@ -37,6 +37,7 @@
 		18A8E41B299CB0E500D70967 /* DemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8E41A299CB0E500D70967 /* DemoVC.swift */; };
 		18C293F229927C8F00C7861D /* iOSVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C293F129927C8F00C7861D /* iOSVC.swift */; };
 		699CAEDD2994DD1D0050AEC2 /* dataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699CAEDC2994DD1D0050AEC2 /* dataFile.swift */; };
+		ED4864C429A7809600E93188 /* POpUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4864C329A7809600E93188 /* POpUpViewController.swift */; };
 		ED61E4CA299B6DDB00C965DF /* FaltuCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED61E4C9299B6DDB00C965DF /* FaltuCode.swift */; };
 		ED89BBEA29A37DDD00761289 /* AssistHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBE929A37DDD00761289 /* AssistHomeViewController.swift */; };
 		ED89BBEC29A3814700761289 /* AssistResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBEB29A3814700761289 /* AssistResultViewController.swift */; };
@@ -104,6 +105,7 @@
 		18A8E41A299CB0E500D70967 /* DemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoVC.swift; sourceTree = "<group>"; };
 		18C293F129927C8F00C7861D /* iOSVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSVC.swift; sourceTree = "<group>"; };
 		699CAEDC2994DD1D0050AEC2 /* dataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataFile.swift; sourceTree = "<group>"; };
+		ED4864C329A7809600E93188 /* POpUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POpUpViewController.swift; sourceTree = "<group>"; };
 		ED61E4C9299B6DDB00C965DF /* FaltuCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaltuCode.swift; sourceTree = "<group>"; };
 		ED89BBE929A37DDD00761289 /* AssistHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistHomeViewController.swift; sourceTree = "<group>"; };
 		ED89BBEB29A3814700761289 /* AssistResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistResultViewController.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 			children = (
 				ED89BBF729A38DE600761289 /* StartAssistViewController.swift */,
 				ED89BBE929A37DDD00761289 /* AssistHomeViewController.swift */,
+				ED4864C329A7809600E93188 /* POpUpViewController.swift */,
 				ED89BBEB29A3814700761289 /* AssistResultViewController.swift */,
 				ED89BBED29A383E900761289 /* Timer.swift */,
 			);
@@ -556,6 +559,7 @@
 				1844535F299380AB00600603 /* SalesforceVC.swift in Sources */,
 				ED89BBEA29A37DDD00761289 /* AssistHomeViewController.swift in Sources */,
 				ED89BC0B29A39AED00761289 /* AppCoreData+CoreDataClass.swift in Sources */,
+				ED4864C429A7809600E93188 /* POpUpViewController.swift in Sources */,
 				ED61E4CA299B6DDB00C965DF /* FaltuCode.swift in Sources */,
 				184D1363298CEF17000FF810 /* AppDelegate.swift in Sources */,
 				ED89BC0C29A39AED00761289 /* AppCoreData+CoreDataProperties.swift in Sources */,
