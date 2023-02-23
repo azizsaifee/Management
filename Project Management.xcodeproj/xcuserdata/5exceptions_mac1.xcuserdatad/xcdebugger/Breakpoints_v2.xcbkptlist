@@ -23,33 +23,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "10218DFB-AAF1-4411-98CD-B92A27412B1D"
+            uuid = "F88022AF-71F4-42D3-9E19-9355987398E3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project Management/View/Quiz/AssistHomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
-            landmarkName = "option1(_:)"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "nextBtnAction(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2D2AF98E-08AB-4926-988A-AF3462FF13EA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Project Management/View/Quiz/AssistHomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
-            landmarkName = "option1(_:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F88022AF-71F4-42D3-9E19-9355987398E3 - 3a3139d1de02069b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project_Management.AssistHomeViewController.nextBtnAction(Any) -&gt; ()"
+                  moduleName = "Project Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/5exceptions_mac1/Documents/Management/Project%20Management/View/Quiz/AssistHomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "158">
+               </Location>
+               <Location
+                  uuid = "F88022AF-71F4-42D3-9E19-9355987398E3 - 3a3139d1de02069b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project_Management.AssistHomeViewController.nextBtnAction(Any) -&gt; ()"
+                  moduleName = "Project Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/5exceptions_mac1/Documents/Management/Project%20Management/View/Quiz/AssistHomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "236">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

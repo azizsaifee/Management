@@ -213,6 +213,10 @@ class AssistHomeViewController: UIViewController {
         fetchData()
         counter = 60
         didtapChange()
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "AssistResultViewController") as! AssistResultViewController
+//        
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     
