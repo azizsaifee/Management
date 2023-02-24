@@ -17,7 +17,7 @@ class POpUpViewController: UIViewController {
     @IBOutlet weak var titleLabl: UILabel!
     
     @IBOutlet weak var labelForTotalQuestions: UILabel!
-    var passData = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
