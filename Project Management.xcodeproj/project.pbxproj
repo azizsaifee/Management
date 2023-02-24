@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		181F127229A4D52F00ACAA9D /* iOSViewModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F127129A4D52F00ACAA9D /* iOSViewModelClass.swift */; };
+		1830F5FE29A8D3410053AF95 /* webViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830F5FD29A8D3410053AF95 /* webViewVC.swift */; };
 		1844535729937F7600600603 /* AndroidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1844535629937F7600600603 /* AndroidVC.swift */; };
 		1844535B2993807100600603 /* AndroidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184453592993807100600603 /* AndroidTableViewCell.swift */; };
 		1844535C2993807100600603 /* AndroidTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1844535A2993807100600603 /* AndroidTableViewCell.xib */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		181F127129A4D52F00ACAA9D /* iOSViewModelClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewModelClass.swift; sourceTree = "<group>"; };
+		1830F5FD29A8D3410053AF95 /* webViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = webViewVC.swift; path = "Project Management/Storyboard/webViewVC.swift"; sourceTree = SOURCE_ROOT; };
 		1844535629937F7600600603 /* AndroidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidVC.swift; sourceTree = "<group>"; };
 		184453592993807100600603 /* AndroidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidTableViewCell.swift; sourceTree = "<group>"; };
 		1844535A2993807100600603 /* AndroidTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AndroidTableViewCell.xib; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 		EDF20511299B659200A932CB /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				1830F5FD29A8D3410053AF95 /* webViewVC.swift */,
 				1844537A2993D7FF00600603 /* ContentVC.swift */,
 				189C154C299E6D01009EDD14 /* ContentVCCellClass.swift */,
 				189C154D299E6D01009EDD14 /* ContentVCCellClass.xib */,
@@ -568,6 +571,7 @@
 				189C154E299E6D01009EDD14 /* ContentVCCellClass.swift in Sources */,
 				ED9D366529A4E5FB00E898BF /* Questions+CoreDataProperties.swift in Sources */,
 				ED89BBF029A384D100761289 /* Data.swift in Sources */,
+				1830F5FE29A8D3410053AF95 /* webViewVC.swift in Sources */,
 				1844535B2993807100600603 /* AndroidTableViewCell.swift in Sources */,
 				1844536F2993BCFD00600603 /* ViewAfterDetailsVC.swift in Sources */,
 				18720CF52999FA0C00517C68 /* AppDataRepository.swift in Sources */,

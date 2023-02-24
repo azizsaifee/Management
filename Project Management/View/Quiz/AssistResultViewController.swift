@@ -13,7 +13,7 @@ class AssistResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        correctAnswerLabel.text = "\(AssistHomeViewController.countCorrectAnswers)"
+        correctAnswerLabel.text = "\(AssistHomeViewController.countCorrectAnswers) / \(questionArray.count)"
     }
     
 
@@ -21,6 +21,7 @@ class AssistResultViewController: UIViewController {
        // self.navigationController?.popToRootViewController(animated: true)
         let vc = storyboard?.instantiateViewController(withIdentifier: "StartAssistViewController")
         as! StartAssistViewController
+        vc.tabBarController?.tabBar.isHidden = false
         self.navigationController?.pushViewController(vc, animated: true)
         AssistHomeViewController.countCorrectAnswers = 0
     }

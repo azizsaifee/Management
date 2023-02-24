@@ -29,6 +29,7 @@ class StartAssistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
+        tabBarController?.tabBar.isHidden = false
         design()
         tapOnButton()
     }

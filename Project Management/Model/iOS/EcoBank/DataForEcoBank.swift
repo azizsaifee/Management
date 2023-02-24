@@ -47,7 +47,8 @@ var dataOfEcoBank = DataDictionary (
             ["Latest Rates" : "This the is about the use of dual currency and exchange rate."],
         
         "Reset Pin" :
-            [ "How to reset" : "This is all about resetting the pin."]
+            [ "How to reset" : "This is all about resetting the pin."],
+        "Language Template" : [:]
     ]),
     
     issues: Issues(topic: [
@@ -58,7 +59,7 @@ var dataOfEcoBank = DataDictionary (
     
     credentials: Credentials(topic: [
         "Login Details" :
-            ["Constants" : "1. SCR_TITLE_AIRTIME_OR_DATA : Airtime/Data \n 2. SCR_LBL_BUY_DATA : Buy Data \n 3. PICKER_TITLE_SELECT_PACKAGE_PLAN : Select Package/Plan \n 4. SCR_LBL_AMOUNT_TO_BE_DEDUCTED : Amount to be deducted"]
+            ["Constants" : "https://www.google.com" ]
     ])
 )
 

@@ -16,6 +16,8 @@ class POpUpViewController: UIViewController {
     @IBOutlet weak var main: UIView!
     @IBOutlet weak var titleLabl: UILabel!
     
+    @IBOutlet weak var labelForTotalQuestions: UILabel!
+    var passData = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,7 @@ class POpUpViewController: UIViewController {
         main.layer.shadowRadius = 6.0
         main.layer.masksToBounds = false
         self.titleLabl.text = passData
-        
+        self.labelForTotalQuestions.text = "\(questionArray.count) Questions."
     }
     
     //  MARK:- @IBAction

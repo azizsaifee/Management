@@ -32,17 +32,17 @@ class ContentVCCellClass: UICollectionViewCell {
         //addPlayerToView(viewForCollectionView)
     }
     
-    func addPlayerToView(_ view: UIView) {
-        let videoURL = URL(filePath: "/Users/apple/Desktop/Onboarding.mp4")
-        let playerItem = AVPlayerItem(url: videoURL)
-        player = AVPlayer(playerItem: playerItem)
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = CGRect(x: 40, y: 40, width: viewForCollectionView.bounds.width, height: viewForCollectionView.bounds.height)
-        viewForCollectionView.center = playerLayer.bounds.origin
-        playerLayer.bounds.origin = viewForCollectionView.center
-        playerLayer.videoGravity = .resizeAspect
-        viewForCollectionView.layer.addSublayer(playerLayer)
-        player?.appliesMediaSelectionCriteriaAutomatically = true
-        player?.play()
-    }
+//    func addPlayerToView(_ view: UIView) {
+//        let videoURL = URL(filePath: "/Users/apple/Desktop/Onboarding.mp4")
+//        let playerItem = AVPlayerItem(url: videoURL)
+//        player = AVPlayer(playerItem: playerItem)
+//        let playerLayer = AVPlayerLayer(player: player)
+//        playerLayer.frame = CGRect(x: 40, y: 40, width: viewForCollectionView.bounds.width, height: viewForCollectionView.bounds.height)
+//        viewForCollectionView.center = playerLayer.bounds.origin
+//        playerLayer.bounds.origin = viewForCollectionView.center
+//        playerLayer.videoGravity = .resizeAspect
+//        viewForCollectionView.layer.addSublayer(playerLayer)
+//        player?.appliesMediaSelectionCriteriaAutomatically = true
+//        player?.play()
+//    }
 }

@@ -52,15 +52,47 @@ class ContentVC: UIViewController,QLPreviewControllerDataSource {
     }
 
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-        let url = Bundle.main.url(forResource: "ayush", withExtension: "pdf")!
-        return url as QLPreviewItem
+        let urlString = "https://drive.google.com/file/d/1wzL6WYiw6Pwyt5xE27gw9SIgM1DG7UXD/view?usp=sharing"
+        guard let url = URL(string: urlString) else {
+            fatalError("Invalid URL")
+        }
+        
+        // Create a temporary file URL to download the file
+        let temporaryDirectoryURL = FileManager.default.temporaryDirectory
+        let fileURL = temporaryDirectoryURL.appendingPathComponent(url.lastPathComponent)
+        
+        // Download the file asynchronously
+        let session = URLSession.shared
+        let task = session.downloadTask(with: url) { (location, response, error) in
+            if let error = error {
+                print("Error downloading file: \(error)")
+                return
+            }
+            guard let location = location else {
+                print("Invalid file location")
+                return
+            }
+            do {
+                try FileManager.default.moveItem(at: location, to: fileURL)
+                DispatchQueue.main.async {
+                    controller.reloadData()
+                }
+            } catch {
+                print("Error moving file: \(error)")
+            }
+        }
+        task.resume()
+        
+        return fileURL as QLPreviewItem
     }
 
     // MARK: - IBActions
     @IBAction func showPdfBtn(_ sender: Any) {
-        let previewController = QLPreviewController()
-        previewController.dataSource = self
-        present(previewController, animated: true, completion: nil)
+//        let previewController = QLPreviewController()
+//        previewController.dataSource = self
+//        present(previewController, animated: true, completion: nil)
+        let webviewvc = (self.storyboard?.instantiateViewController(withIdentifier: "webViewVC") as? webViewVC)!
+        self.navigationController?.pushViewController(webviewvc, animated: true)
     }
 
     @IBAction func backButtonAction(_ sender: Any) {
@@ -69,7 +101,6 @@ class ContentVC: UIViewController,QLPreviewControllerDataSource {
 }
 
 extension ContentVC: UICollectionViewDelegate {
-    
 }
 
 extension ContentVC: UICollectionViewDataSource {
