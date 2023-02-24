@@ -8,7 +8,14 @@
 import UIKit
 
 class POpUpViewController: UIViewController {
+    
+    
     @IBOutlet weak var main: UIView!
+    
+    @IBOutlet weak var titleLabl: UILabel!
+    
+    var passData = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8 )
@@ -17,7 +24,7 @@ class POpUpViewController: UIViewController {
         main.layer.masksToBounds = true
         //option1RightImage.clipsToBounds = true
         main.layer.cornerRadius = 10
-        
+        self.titleLabl.text = passData
     }
     
 
@@ -27,10 +34,14 @@ class POpUpViewController: UIViewController {
        // self.navigationController?.present(vc, animated: true)
     }
     
+    
+    
 
     @IBAction func closePopupBtn(_ sender: Any) {
         removeAnimation()
     }
+    
+    
     
     func addAnimation(){
         self.main.transform = CGAffineTransform(translationX:0,y:250)

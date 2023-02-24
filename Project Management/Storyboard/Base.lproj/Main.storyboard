@@ -185,7 +185,7 @@
                     <navigationItem key="navigationItem" id="We0-dY-KBv"/>
                     <connections>
                         <outlet property="lblAndroid" destination="yJ1-WC-jaA" id="9Cg-jz-fwi"/>
-                        <outlet property="lblApple" destination="V54-ye-gRN" id="XrC-nA-EDb"/>
+                        <outlet property="lblApple" destination="V54-ye-gRN" id="orE-nI-Q1g"/>
                         <outlet property="lblFlutter" destination="pJ5-kR-3Sa" id="vF8-yJ-ZEW"/>
                         <outlet property="lblSalesforce" destination="lt4-3U-1yo" id="2Gg-8c-16z"/>
                         <outlet property="lblWebapp" destination="WnU-HD-5iO" id="51L-s4-qKh"/>
@@ -406,7 +406,7 @@
                     <navigationItem key="navigationItem" id="kwS-Jk-reh"/>
                     <connections>
                         <outlet property="lblAndroid" destination="oj4-c2-2F2" id="r0H-mL-l2A"/>
-                        <outlet property="lblApple" destination="NF0-sl-vlC" id="VlF-qx-3v5"/>
+                        <outlet property="lblApple" destination="NF0-sl-vlC" id="v4n-DF-ybk"/>
                         <outlet property="lblFlutter" destination="qVf-XM-8LI" id="j0n-Q6-43z"/>
                         <outlet property="lblSalesforce" destination="N9C-n5-pKl" id="uUq-Yu-gHv"/>
                         <outlet property="lblWebapp" destination="K3P-bO-awa" id="Iq8-J4-CIj"/>
@@ -1415,6 +1415,7 @@
                     </view>
                     <connections>
                         <outlet property="main" destination="wHT-Yp-6vZ" id="h8F-JY-WwR"/>
+                        <outlet property="titleLabl" destination="vaZ-Do-XsM" id="HST-iG-WLQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b89-mo-7MG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

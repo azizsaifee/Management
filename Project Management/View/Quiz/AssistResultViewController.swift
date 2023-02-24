@@ -22,6 +22,7 @@ class AssistResultViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "StartAssistViewController")
         as! StartAssistViewController
         self.navigationController?.pushViewController(vc, animated: true)
+        AssistHomeViewController.countCorrectAnswers = 0
     }
     
 
