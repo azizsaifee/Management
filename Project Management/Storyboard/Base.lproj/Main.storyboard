@@ -1376,7 +1376,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60 Seconds Each" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDd-41-2a1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 Seconds for each question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDd-41-2a1">
                                                 <rect key="frame" x="0.0" y="34" width="333" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -1408,6 +1408,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelForTotalQuestions" destination="9bJ-N2-r8T" id="dRM-Of-lCF"/>
                         <outlet property="main" destination="wHT-Yp-6vZ" id="h8F-JY-WwR"/>
                         <outlet property="titleLabl" destination="vaZ-Do-XsM" id="HST-iG-WLQ"/>
                     </connections>

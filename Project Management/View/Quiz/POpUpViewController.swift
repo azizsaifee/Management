@@ -14,6 +14,7 @@ class POpUpViewController: UIViewController {
     
     @IBOutlet weak var titleLabl: UILabel!
     
+    @IBOutlet weak var labelForTotalQuestions: UILabel!
     var passData = ""
     
     override func viewDidLoad() {
@@ -25,6 +26,7 @@ class POpUpViewController: UIViewController {
         //option1RightImage.clipsToBounds = true
         main.layer.cornerRadius = 10
         self.titleLabl.text = passData
+        self.labelForTotalQuestions.text = "\(questionArray.count) Questions."
     }
     
 
