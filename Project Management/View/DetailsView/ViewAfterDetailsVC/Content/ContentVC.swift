@@ -86,6 +86,6 @@ extension ContentVC: UICollectionViewDataSource {
 
 extension ContentVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: view.bounds.width, height: 300)
+        CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
     }
 }

@@ -9,6 +9,7 @@ import UIKit
 class AssistHomeViewController: UIViewController {
     
     // MARK: - Variables
+    var nextQuestionTimer: Timer?
     var timer: Timer?
     var remainingTime: TimeInterval = 0.0
     var counter = 60 {
@@ -22,11 +23,12 @@ class AssistHomeViewController: UIViewController {
     var count = 1
     let shape = CAShapeLayer()
     var labelView = UILabel()
+    static var countCorrectAnswers = 0
+    // Can be used later.
+    var selectedOption: Int? = nil
     
     // MARK: - IBOutlets
-    
     @IBOutlet weak var questionNumberView: UIView!
-    
     @IBOutlet var collectionForOptionLabels: [UILabel]!
     @IBOutlet weak var dataOption1: UILabel!
     @IBOutlet weak var dataOption2: UILabel!
@@ -38,17 +40,14 @@ class AssistHomeViewController: UIViewController {
     @IBOutlet weak var viewOfOption3: UIView!
     @IBOutlet weak var viewOfOption4: UIView!
     @IBOutlet weak var lblQuestionNumber: UILabel!
-
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var nextBtn: UIButton!
-    
     
     // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        //cornerRadius()
         tapOption()
         didTapChange()
         roundedprogress()
@@ -103,16 +102,10 @@ class AssistHomeViewController: UIViewController {
     }
     
     func fetchData(){
-        
         switch count {
-            
         case 0 :
             let vc = storyboard?.instantiateViewController(withIdentifier: "AssistResultViewController") as! AssistResultViewController
-            
-           self.navigationController?.pushViewController(vc, animated: true)
-            //self.present(vc,animated: true)
-            
-            
+            self.navigationController?.pushViewController(vc, animated: true)
         case 1 :
             count += 1
             getAnswer(for: 1)
@@ -174,7 +167,8 @@ class AssistHomeViewController: UIViewController {
         }
     }
     
-    static var countCorrectAnswers = 0
+    
+    
     // Next Button IBAction.
     @IBAction func nextBtnAction(_ sender: Any) {
         fetchData()
@@ -227,29 +221,7 @@ class AssistHomeViewController: UIViewController {
     }
     
     func checkIsItCorrect() {
-//        if dataOption1.text! == answer {
-//            dataOption1.backgroundColor = .systemGreen
-//        } else {
-//            dataOption2.backgroundColor = .systemRed
-//            dataOption3.backgroundColor = .systemRed
-//            dataOption4.backgroundColor = .systemRed
-//        }
-//        if dataOption2.text == answer {
-//            dataOption2.backgroundColor = .systemGreen
-//        } else {
-//            dataOption3.backgroundColor = .systemRed
-//            dataOption3.backgroundColor = .systemRed
-//            dataOption1.backgroundColor = .systemRed
-//        }
-//
-//
-//        if dataOption4.text == answer {
-//            dataOption4.backgroundColor = .systemGreen
-//        } else {
-//            dataOption1.backgroundColor = .systemRed
-//            dataOption2.backgroundColor = .systemRed
-//            dataOption3.backgroundColor = .systemRed
-//        }
+        
         for option in collectionForOptionLabels {
             if option.text == answer {
                 option.backgroundColor = .systemGreen
@@ -260,7 +232,7 @@ class AssistHomeViewController: UIViewController {
         }
     }
     
-    var selectedOption: Int? = nil
+    
     
     @objc func buttonTapped(sender: UITapGestureRecognizer) {
         selectedOption = Int(sender.name!)
@@ -268,13 +240,12 @@ class AssistHomeViewController: UIViewController {
         switch sender.name {
         case "1":
             print("option 1 tapped!")
-            timerLabel.isHidden = true
-            for view in view.subviews {
-                print("ye")
-            }
-            
+            //timerLabel.isHidden = true
             if dataOption1.text! == answer {
                 AssistHomeViewController.countCorrectAnswers += 1
+            }
+            nextQuestionTimer = Timer(timeInterval: 5, repeats: true) { [weak self] nextQuestionTimer in
+                print("I am Here!")
             }
         case "2":
             print("option 2 tapped!")
@@ -300,35 +271,29 @@ class AssistHomeViewController: UIViewController {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.toValue = 1
         animation.duration = 73
-        
         animation.fillMode = .forwards
         animation.isRemovedOnCompletion = false
         shape.add(animation, forKey: "animation")
     }
     
     func roundedprogress(){
-        
         let ciclePath = UIBezierPath(arcCenter:timerLabel.center,
                                      radius: 30,
                                      startAngle: -(.pi/2),
                                      endAngle: .pi * 2,
                                      clockwise: true)
-        
         let trackShape = CAShapeLayer()
         trackShape.path = ciclePath.cgPath
         trackShape.fillColor = UIColor.clear.cgColor
         trackShape.lineWidth = 5
         trackShape.strokeColor = UIColor.lightGray.cgColor
         view.layer.addSublayer(trackShape)
-        
         shape.path = ciclePath.cgPath
         shape.lineWidth = 5
         shape.strokeColor = UIColor.green.cgColor
         shape.fillColor = UIColor.clear.cgColor
         shape.strokeEnd = 0
-        
         view.layer.addSublayer(shape)
-        
     }
     
     

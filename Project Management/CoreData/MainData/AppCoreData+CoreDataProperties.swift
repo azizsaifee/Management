@@ -26,7 +26,6 @@ extension AppCoreData {
         return DataDictionary(id: id!.self, features: features!.self, documentation: documentation!.self, issues: issues!.self, credentials: credentials!.self)
     }
 }
-
 extension AppCoreData : Identifiable {
 
 }
