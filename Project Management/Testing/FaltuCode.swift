@@ -56,6 +56,31 @@ import Foundation
      return CGPoint(x: randomX, y: randomY)
  }
  
+ //        if dataOption1.text! == answer {
+ //            dataOption1.backgroundColor = .systemGreen
+ //        } else {
+ //            dataOption2.backgroundColor = .systemRed
+ //            dataOption3.backgroundColor = .systemRed
+ //            dataOption4.backgroundColor = .systemRed
+ //        }
+ //        if dataOption2.text == answer {
+ //            dataOption2.backgroundColor = .systemGreen
+ //        } else {
+ //            dataOption3.backgroundColor = .systemRed
+ //            dataOption3.backgroundColor = .systemRed
+ //            dataOption1.backgroundColor = .systemRed
+ //        }
+ //
+ //
+ //        if dataOption4.text == answer {
+ //            dataOption4.backgroundColor = .systemGreen
+ //        } else {
+ //            dataOption1.backgroundColor = .systemRed
+ //            dataOption2.backgroundColor = .systemRed
+ //            dataOption3.backgroundColor = .systemRed
+ //        }
  
  
 */
+
+

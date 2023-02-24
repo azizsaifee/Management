@@ -58,7 +58,7 @@ var dataOfEcoBank = DataDictionary (
     
     credentials: Credentials(topic: [
         "Login Details" :
-            ["Aziz Login" : "ID : Pass"]
+            ["Constants" : "1. SCR_TITLE_AIRTIME_OR_DATA : Airtime/Data \n 2. SCR_LBL_BUY_DATA : Buy Data \n 3. PICKER_TITLE_SELECT_PACKAGE_PLAN : Select Package/Plan \n 4. SCR_LBL_AMOUNT_TO_BE_DEDUCTED : Amount to be deducted"]
     ])
 )
 
