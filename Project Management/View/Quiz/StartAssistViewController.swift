@@ -106,7 +106,7 @@ class StartAssistViewController: UIViewController {
             print("nil found")
         }
     }
-        
+    
     func design() {
         for view in floatingViews {
             view.layer.shadowColor = UIColor.black.cgColor
