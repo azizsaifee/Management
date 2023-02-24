@@ -12,7 +12,7 @@ class AssistHomeViewController: UIViewController {
     var nextQuestionTimer: Timer?
     var timer: Timer?
     var remainingTime: TimeInterval = 0.0
-    var counter = 60 {
+    var counter = 20 {
         didSet {
             timerLabel.text = "\(counter)"
             if counter == 0 {
@@ -26,7 +26,7 @@ class AssistHomeViewController: UIViewController {
     static var countCorrectAnswers = 0
     // Can be used later.
     var selectedOption: Int? = nil
-    
+    var countForIdentifier = 1
     // MARK: - IBOutlets
     @IBOutlet weak var questionNumberView: UIView!
     @IBOutlet var collectionForOptionLabels: [UILabel]!
@@ -48,6 +48,7 @@ class AssistHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
+        tabBarController?.tabBar.isHidden = true
         tapOption()
         didTapChange()
         roundedprogress()
@@ -59,112 +60,42 @@ class AssistHomeViewController: UIViewController {
     
     // MARK: - Required Methods
     func loadData() {
-        if AssistHomeViewController.objRepositorys.get(byIdentifier: 1) == nil {
-            AssistHomeViewController.objRepositorys.create(data: question1)
-        } else {
-            if AssistHomeViewController.objRepositorys.get(byIdentifier: 1)! != question1 {
-                _ = AssistHomeViewController.objRepositorys.delete(byIdentifier: 1)
-                AssistHomeViewController.objRepositorys.create(data: question1)
+        
+        
+        for question in  questionArray{
+            countForIdentifier += 1
+            if AssistHomeViewController.objRepositorys.get(byIdentifier: Int16(countForIdentifier)) == nil {
+                AssistHomeViewController.objRepositorys.create(data: question)
+            } else {
+                if AssistHomeViewController.objRepositorys.get(byIdentifier: Int16(countForIdentifier))! != question {
+                    _ = AssistHomeViewController.objRepositorys.delete(byIdentifier: Int16(countForIdentifier))
+                    AssistHomeViewController.objRepositorys.create(data: question)
+                }
             }
         }
-        if AssistHomeViewController.objRepositorys.get(byIdentifier: 2) == nil {
-            AssistHomeViewController.objRepositorys.create(data: question2)
-        } else {
-            if AssistHomeViewController.objRepositorys.get(byIdentifier: 2)! != question2 {
-                _ = AssistHomeViewController.objRepositorys.delete(byIdentifier: 2)
-                AssistHomeViewController.objRepositorys.create(data: question2)
-            }
-        }
-        if AssistHomeViewController.objRepositorys.get(byIdentifier: 3) == nil {
-            AssistHomeViewController.objRepositorys.create(data: question3)
-        } else {
-            if AssistHomeViewController.objRepositorys.get(byIdentifier: 3)! != question3 {
-                _ = AssistHomeViewController.objRepositorys.delete(byIdentifier: 3)
-                AssistHomeViewController.objRepositorys.create(data: question3)
-            }
-        }
-        if AssistHomeViewController.objRepositorys.get(byIdentifier: 4) == nil {
-            AssistHomeViewController.objRepositorys.create(data: question4)
-        } else {
-            if AssistHomeViewController.objRepositorys.get(byIdentifier: 4)! != question4 {
-                _ = AssistHomeViewController.objRepositorys.delete(byIdentifier: 4)
-                AssistHomeViewController.objRepositorys.create(data: question4)
-            }
-        }
-        if AssistHomeViewController.objRepositorys.get(byIdentifier: 5) == nil {
-            AssistHomeViewController.objRepositorys.create(data: question5)
-        } else {
-            if AssistHomeViewController.objRepositorys.get(byIdentifier: 5)! != question5 {
-                _ = AssistHomeViewController.objRepositorys.delete(byIdentifier: 5)
-                AssistHomeViewController.objRepositorys.create(data: question5)
-            }
-        }
+        countForIdentifier = 1
     }
     
     func fetchData(){
-        switch count {
-        case 0 :
-            let vc = storyboard?.instantiateViewController(withIdentifier: "AssistResultViewController") as! AssistResultViewController
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 1 :
-            count += 1
-            getAnswer(for: 1)
-            let questionOne = AssistHomeViewController.objRepositorys.get(byIdentifier: 1)
-            lblQuestionNumber.text = "\(questionOne!.questionNo)"
-            question.text = questionOne!.question
-            print(questionOne!.answer)
-            dataOption1.text = questionOne!.option1
-            dataOption2.text = questionOne!.option2
-            dataOption3.text = questionOne!.option3
-            dataOption4.text = questionOne!.option4
-            
-        case 2:
-            getAnswer(for: 2)
-            count += 1
-            let questionTwo = AssistHomeViewController.objRepositorys.get(byIdentifier: 2)
-            lblQuestionNumber.text = "\(questionTwo!.questionNo)"
-            question.text = questionTwo!.question
-            dataOption1.text = questionTwo!.option1
-            dataOption2.text = questionTwo!.option2
-            dataOption3.text = questionTwo!.option3
-            dataOption4.text = questionTwo!.option4
-            
-        case 3:
-            getAnswer(for: 3)
-            count += 1
-            let questionThree = AssistHomeViewController.objRepositorys.get(byIdentifier: 3)
-            lblQuestionNumber.text = "\(questionThree!.questionNo)"
-            question.text = questionThree!.question
-            dataOption1.text = questionThree!.option1
-            dataOption2.text = questionThree!.option2
-            dataOption3.text = questionThree!.option3
-            dataOption4.text = questionThree!.option4
-            
-        case 4:
-            getAnswer(for: 4)
-            count += 1
-            let questionFour = AssistHomeViewController.objRepositorys.get(byIdentifier: 4)
-            lblQuestionNumber.text = "\(questionFour!.questionNo)"
-            question.text = questionFour!.question
-            dataOption1.text = questionFour!.option1
-            dataOption2.text = questionFour!.option2
-            dataOption3.text = questionFour!.option3
-            dataOption4.text = questionFour!.option4
-            
-        case 5:
-            getAnswer(for: 5)
-            count = 0
-            let questionFive = AssistHomeViewController.objRepositorys.get(byIdentifier: 5)
-            lblQuestionNumber.text = "\(questionFive!.questionNo)"
-            question.text = questionFive!.question
-            dataOption1.text = questionFive!.option1
-            dataOption2.text = questionFive!.option2
-            dataOption3.text = questionFive!.option3
-            dataOption4.text = questionFive!.option4
-            
-        default:
-            print("none")
+        if countForIdentifier <= questionArray.count{
+            getAnswer(for: Int16(countForIdentifier))
+            let questions = AssistHomeViewController.objRepositorys.get(byIdentifier: Int16(countForIdentifier))
+            lblQuestionNumber.text = "\(questions!.questionNo)"
+            question.text = questions!.question
+            dataOption1.text = questions!.option1
+            dataOption2.text = questions!.option2
+            dataOption3.text = questions!.option3
+            dataOption4.text = questions!.option4
+           
         }
+        countForIdentifier  += 1
+            if countForIdentifier > questionArray.count + 1{
+                
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssistResultViewController") as! AssistResultViewController
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.countForIdentifier = 1
+
+            }
     }
     
     
@@ -172,7 +103,7 @@ class AssistHomeViewController: UIViewController {
     // Next Button IBAction.
     @IBAction func nextBtnAction(_ sender: Any) {
         fetchData()
-        counter = 60
+        counter = 20
         didTapChange()
         original()
     }
@@ -270,7 +201,7 @@ class AssistHomeViewController: UIViewController {
     @objc func didTapChange(){
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.toValue = 1
-        animation.duration = 73
+        animation.duration = 23
         animation.fillMode = .forwards
         animation.isRemovedOnCompletion = false
         shape.add(animation, forKey: "animation")
@@ -286,11 +217,11 @@ class AssistHomeViewController: UIViewController {
         trackShape.path = ciclePath.cgPath
         trackShape.fillColor = UIColor.clear.cgColor
         trackShape.lineWidth = 5
-        trackShape.strokeColor = UIColor.lightGray.cgColor
+        trackShape.strokeColor = UIColor.green.cgColor
         view.layer.addSublayer(trackShape)
         shape.path = ciclePath.cgPath
         shape.lineWidth = 5
-        shape.strokeColor = UIColor.green.cgColor
+        shape.strokeColor = UIColor.lightGray.cgColor
         shape.fillColor = UIColor.clear.cgColor
         shape.strokeEnd = 0
         view.layer.addSublayer(shape)

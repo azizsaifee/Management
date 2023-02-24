@@ -185,7 +185,7 @@
                     <navigationItem key="navigationItem" id="We0-dY-KBv"/>
                     <connections>
                         <outlet property="lblAndroid" destination="yJ1-WC-jaA" id="9Cg-jz-fwi"/>
-                        <outlet property="lblApple" destination="V54-ye-gRN" id="XrC-nA-EDb"/>
+                        <outlet property="lblApple" destination="V54-ye-gRN" id="orE-nI-Q1g"/>
                         <outlet property="lblFlutter" destination="pJ5-kR-3Sa" id="vF8-yJ-ZEW"/>
                         <outlet property="lblSalesforce" destination="lt4-3U-1yo" id="2Gg-8c-16z"/>
                         <outlet property="lblWebapp" destination="WnU-HD-5iO" id="51L-s4-qKh"/>
@@ -406,7 +406,7 @@
                     <navigationItem key="navigationItem" id="kwS-Jk-reh"/>
                     <connections>
                         <outlet property="lblAndroid" destination="oj4-c2-2F2" id="r0H-mL-l2A"/>
-                        <outlet property="lblApple" destination="NF0-sl-vlC" id="VlF-qx-3v5"/>
+                        <outlet property="lblApple" destination="NF0-sl-vlC" id="v4n-DF-ybk"/>
                         <outlet property="lblFlutter" destination="qVf-XM-8LI" id="j0n-Q6-43z"/>
                         <outlet property="lblSalesforce" destination="N9C-n5-pKl" id="uUq-Yu-gHv"/>
                         <outlet property="lblWebapp" destination="K3P-bO-awa" id="Iq8-J4-CIj"/>
@@ -1053,8 +1053,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You did greate job,Learn more taking by another quiz." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3j-Sb-Yk5">
-                                <rect key="frame" x="20" y="553" width="353" height="52.666666666666629"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you! I'm glad I could help. Sure, feel free to take another quiz if you want to learn more" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3j-Sb-Yk5">
+                                <rect key="frame" x="20" y="553" width="353" height="79"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1081,7 +1081,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zhM-fo-9Nn">
-                                <rect key="frame" x="136.66666666666666" y="473" width="119.99999999999997" height="30"/>
+                                <rect key="frame" x="167" y="473" width="59" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enJ-2t-coK">
                                         <rect key="frame" x="0.0" y="0.0" width="59" height="30"/>
@@ -1089,16 +1089,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYE-IK-KRw">
-                                        <rect key="frame" x="61" y="0.0" width="59" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xI-Ro-hzL">
-                                <rect key="frame" x="133.33333333333334" y="655.66666666666663" width="126.66666666666666" height="34.333333333333371"/>
+                                <rect key="frame" x="133.33333333333334" y="682" width="126.66666666666666" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Back toHome" cornerStyle="large">
                                     <backgroundConfiguration key="background">
@@ -1425,7 +1419,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60 Seconds Each" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDd-41-2a1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 Seconds for each question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDd-41-2a1">
                                                 <rect key="frame" x="0.0" y="34" width="333" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -1457,7 +1451,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelForTotalQuestions" destination="9bJ-N2-r8T" id="dRM-Of-lCF"/>
                         <outlet property="main" destination="wHT-Yp-6vZ" id="h8F-JY-WwR"/>
+                        <outlet property="titleLabl" destination="vaZ-Do-XsM" id="HST-iG-WLQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b89-mo-7MG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

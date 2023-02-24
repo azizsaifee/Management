@@ -37,7 +37,7 @@ extension AssistHomeViewController{
             self?.counter -= 1
             if self!.counter == 0 {
                 self!.remainingTime = 0
-                self?.counter = 60
+                self?.counter = 20
                 //self?.timer?.invalidate()
                 // Do something when the timer reaches 20 seconds
                 print("Times Up!")

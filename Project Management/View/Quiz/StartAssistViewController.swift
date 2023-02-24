@@ -17,6 +17,8 @@ class StartAssistViewController: UIViewController {
     @IBOutlet weak var lblWebsite: UIView!
     @IBOutlet weak var lblWebapp: UIView!
     @IBOutlet weak var lblApple: UIView!
+    
+    
     @IBOutlet weak var lblSalesforce: UIView!
     @IBOutlet weak var lblAndroid: UIView!
     @IBOutlet weak var lblFlutter: UIView!
@@ -27,6 +29,7 @@ class StartAssistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
+        tabBarController?.tabBar.isHidden = false
         design()
         tapOnButton()
     }
@@ -68,20 +71,21 @@ class StartAssistViewController: UIViewController {
         switch sender.name {
         case "apple":
             let iOSVC = self.storyboard?.instantiateViewController(withIdentifier: "POpUpViewController") as! POpUpViewController
-//            let alert = UIAlertController(title: "IOS Quiz", message: "5 Question , 60 second each", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "Continue", style: .default,handler: {action in
-//                self.navigationController?.pushViewController(iOSVC, animated: true)
-//            }))
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .destructive))
-//            present(alert,animated: true)
+            iOSVC.passData = "IOS Quiz"
             self.addChild(iOSVC)
             self.view.addSubview(iOSVC.view)
             iOSVC.didMove(toParent: self)
          //   self.navigationController?.pushViewController(iOSVC, animated: true)
             //iOSVC.title = "IOS Apps"
         case "android":
-            let androidVC = self.storyboard?.instantiateViewController(withIdentifier: "AndroidVC") as! AndroidVC
-            self.navigationController?.pushViewController(androidVC, animated: true)
+            let androidVC = self.storyboard?.instantiateViewController(withIdentifier: "POpUpViewController") as! POpUpViewController
+           
+            androidVC.passData = "Android Quiz"
+            self.addChild(androidVC)
+            self.view.addSubview(androidVC.view)
+            androidVC.didMove(toParent: self)
+            
+            //self.navigationController?.pushViewController(androidVC, animated: true)
             //androidVC.title = "Android Apps"
         case "salesforce" :
             let salesforceVC = self.storyboard?.instantiateViewController(withIdentifier: "SalesforceVC") as! SalesforceVC
@@ -167,4 +171,6 @@ class StartAssistViewController: UIViewController {
             return CGPoint(x: 0, y: 0)
         }
     }
+    
+    
 }
