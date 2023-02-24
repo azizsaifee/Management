@@ -18,7 +18,10 @@ class AssistResultViewController: UIViewController {
     
 
     @IBAction func backBtn(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+       // self.navigationController?.popToRootViewController(animated: true)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "StartAssistViewController")
+        as! StartAssistViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 

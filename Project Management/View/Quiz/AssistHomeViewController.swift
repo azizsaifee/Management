@@ -42,20 +42,13 @@ class AssistHomeViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var nextBtn: UIButton!
-    @IBOutlet weak var option1WrongImage: UIImageView!
-    @IBOutlet weak var option1RightImage: UIImageView!
-    @IBOutlet weak var option2WrongImage: UIImageView!
-    @IBOutlet weak var option2RightImage: UIImageView!
-    @IBOutlet weak var option3WrongImage: UIImageView!
-    @IBOutlet weak var option3RightImage: UIImageView!
-    @IBOutlet weak var option4WrongImage: UIImageView!
-    @IBOutlet weak var option4RightImage: UIImageView!
+    
     
     // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        cornerRadius()
+        //cornerRadius()
         tapOption()
         didTapChange()
         roundedprogress()
@@ -116,7 +109,9 @@ class AssistHomeViewController: UIViewController {
         case 0 :
             let vc = storyboard?.instantiateViewController(withIdentifier: "AssistResultViewController") as! AssistResultViewController
             
-            self.navigationController?.pushViewController(vc, animated: true)
+           self.navigationController?.pushViewController(vc, animated: true)
+            //self.present(vc,animated: true)
+            
             
         case 1 :
             count += 1
@@ -336,43 +331,7 @@ class AssistHomeViewController: UIViewController {
         
     }
     
-    func cornerRadius(){
-        
-        option1RightImage.layer.masksToBounds = false
-        option1RightImage.clipsToBounds = true
-        option1RightImage.layer.cornerRadius = option1RightImage.frame.size.width/2
-        
-        option1WrongImage.layer.masksToBounds = false
-        option1WrongImage.clipsToBounds = true
-        option1WrongImage.layer.cornerRadius = option1WrongImage.frame.size.width/2
-        
-        option2RightImage.layer.masksToBounds = false
-        option2RightImage.clipsToBounds = true
-        option2RightImage.layer.cornerRadius = option2RightImage.frame.size.width/2
-        
-        option2WrongImage.layer.masksToBounds = false
-        option2WrongImage.clipsToBounds = true
-        option2WrongImage.layer.cornerRadius = option2WrongImage.frame.size.width/2
-        
-        option3RightImage.layer.masksToBounds = false
-        option3RightImage.clipsToBounds = true
-        option3RightImage.layer.cornerRadius = option3RightImage.frame.size.width/2
-        
-        option3WrongImage.layer.masksToBounds = false
-        option3WrongImage.clipsToBounds = true
-        option3WrongImage.layer.cornerRadius = option3WrongImage.frame.size.width/2
-        
-        option4RightImage.layer.masksToBounds = false
-        option4RightImage.clipsToBounds = true
-        option4RightImage.layer.cornerRadius
-        option4RightImage.frame.size.width/2
-        
-        option4WrongImage.layer.masksToBounds = false
-        option4WrongImage.clipsToBounds = true
-        option4WrongImage.layer.cornerRadius
-        option4WrongImage.frame.size.width/2
-        
-    }
+    
 }
     
 
