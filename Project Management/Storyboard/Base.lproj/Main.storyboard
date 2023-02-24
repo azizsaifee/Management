@@ -823,18 +823,31 @@
                                         <cells/>
                                     </collectionView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="helloooooooo" translatesAutoresizingMaskIntoConstraints="NO" id="JkI-4o-d6X">
-                                        <rect key="frame" x="20" y="300" width="353" height="300"/>
+                                        <rect key="frame" x="20" y="300" width="353" height="328"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="br5-la-dTd">
-                                        <rect key="frame" x="145.66666666666666" y="610" width="102" height="34.333333333333371"/>
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Show PDF"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="br5-la-dTd">
+                                        <rect key="frame" x="125.33333333333333" y="648" width="142.66666666666669" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="v0B-M0-Dkf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Verdana-BoldItalic" family="Verdana" pointSize="16"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Code Snippet">
+                                            <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="plain" title="Code Snippet" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="Verdana-BoldItalic" family="Verdana" pointSize="16"/>
+                                            <color key="baseForegroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="showPdfBtn:" destination="ufk-Uh-DdM" eventType="touchUpInside" id="oSf-1D-pFx"/>
                                         </connections>
@@ -845,12 +858,12 @@
                                     <constraint firstItem="JkI-4o-d6X" firstAttribute="leading" secondItem="kTa-co-fZ0" secondAttribute="leading" constant="20" id="2d4-nz-v3k"/>
                                     <constraint firstItem="JkI-4o-d6X" firstAttribute="top" secondItem="3sg-IL-GuV" secondAttribute="bottom" id="316-4P-E8d"/>
                                     <constraint firstItem="3sg-IL-GuV" firstAttribute="leading" secondItem="kTa-co-fZ0" secondAttribute="leading" id="3kk-rK-1Ej"/>
+                                    <constraint firstItem="br5-la-dTd" firstAttribute="centerX" secondItem="kTa-co-fZ0" secondAttribute="centerX" id="D6W-xz-Uos"/>
                                     <constraint firstAttribute="trailing" secondItem="3sg-IL-GuV" secondAttribute="trailing" id="GHZ-y8-BRl"/>
                                     <constraint firstItem="3sg-IL-GuV" firstAttribute="top" secondItem="kTa-co-fZ0" secondAttribute="top" id="Hng-65-4Pg"/>
+                                    <constraint firstAttribute="bottom" secondItem="br5-la-dTd" secondAttribute="bottom" constant="50" id="W4N-hH-ozr"/>
                                     <constraint firstItem="3sg-IL-GuV" firstAttribute="centerX" secondItem="JkI-4o-d6X" secondAttribute="centerX" id="mEG-qz-gwl"/>
-                                    <constraint firstItem="JkI-4o-d6X" firstAttribute="centerX" secondItem="br5-la-dTd" secondAttribute="centerX" id="rmL-Eu-Kww"/>
-                                    <constraint firstItem="br5-la-dTd" firstAttribute="top" secondItem="JkI-4o-d6X" secondAttribute="bottom" constant="10" id="sN3-xd-tU1"/>
-                                    <constraint firstAttribute="bottom" secondItem="br5-la-dTd" secondAttribute="bottom" constant="93.666666666666629" id="u9a-pS-lzb"/>
+                                    <constraint firstItem="br5-la-dTd" firstAttribute="top" secondItem="JkI-4o-d6X" secondAttribute="bottom" constant="20" id="pbM-WW-HXu"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1476,9 +1489,6 @@
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -1502,6 +1512,9 @@
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

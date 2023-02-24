@@ -19,7 +19,7 @@ class webViewVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: "https://drive.google.com/file/d/1wzL6WYiw6Pwyt5xE27gw9SIgM1DG7UXD/view?usp=sharing")!
+        let url = URL(string: "https://drive.google.com/file/d/1z04GMpx0UTxwqhjmiN9lKonV1mb9tNiJ/view?usp=sharing")!
         let request = URLRequest(url: url)
         webView.load(request)
     }
