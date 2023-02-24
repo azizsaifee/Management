@@ -42,7 +42,8 @@ extension AssistHomeViewController{
                 // Do something when the timer reaches 20 seconds
                 print("Times Up!")
                 self!.fetchData()
-                self!.didtapChange()
+                self!.didTapChange()
+                self?.original()
             }
         }
         timer?.fireDate = Date().addingTimeInterval(remainingTime)
