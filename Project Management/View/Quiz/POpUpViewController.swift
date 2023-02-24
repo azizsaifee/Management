@@ -14,10 +14,17 @@ class POpUpViewController: UIViewController {
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8 )
         self.addAnimation()
         
+        main.layer.masksToBounds = true
+        //option1RightImage.clipsToBounds = true
+        main.layer.cornerRadius = 10
+        
     }
     
 
     @IBAction func goToQuizBtn(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssistHomeViewController")as! AssistHomeViewController
+         //self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.present(vc, animated: true)
     }
     
 
