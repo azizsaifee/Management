@@ -30,6 +30,7 @@ class POpUpViewController: UIViewController {
 
     @IBAction func goToQuizBtn(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssistHomeViewController")as! AssistHomeViewController
+        vc.hidesBottomBarWhenPushed = true
        self.navigationController?.pushViewController(vc, animated: true)
        // self.navigationController?.present(vc, animated: true)
     }
