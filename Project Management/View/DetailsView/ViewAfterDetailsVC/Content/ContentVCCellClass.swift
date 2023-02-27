@@ -22,6 +22,7 @@ class ContentVCCellClass: UICollectionViewCell {
         let url = URL(string: "https://drive.google.com/file/d/1oeDWNOxspP8Cd2W_5X1uR0A093ORrkzH/view?usp=sharing")!
         let request = URLRequest(url: url)
         webView.load(request)
+        webView.backgroundColor = .clear
     }
     
     static func nib() -> UINib{
