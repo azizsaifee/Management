@@ -30,6 +30,9 @@ class HomeVC: UIViewController {
         tapOnButton()
     }
 
+    @IBAction func LogOutBtnAction(_ sender: UIButton) {
+        self.tabBarController?.dismiss(animated: true)
+    }
     // MARK: Required Methods
     func tapOnButton() {
         // for apple button.
