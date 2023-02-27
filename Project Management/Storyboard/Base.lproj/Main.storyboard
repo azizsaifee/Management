@@ -845,40 +845,25 @@
                                         </connections>
                                     </button>
                                     <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8F-4k-o1C">
-                                        <rect key="frame" x="5" y="275" width="383" height="363"/>
+                                        <rect key="frame" x="5" y="260" width="383" height="378"/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <wkWebViewConfiguration key="configuration">
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
                                     </wkWebView>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urP-GI-n92">
-                                        <rect key="frame" x="9.9999999999999964" y="250" width="49.666666666666657" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="cjx-NM-5N3"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.left.circle.fill" catalog="system"/>
-                                        <connections>
-                                            <action selector="goBack:" destination="ufk-Uh-DdM" eventType="touchUpInside" id="scR-HE-C99"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="3sg-IL-GuV" firstAttribute="leading" secondItem="kTa-co-fZ0" secondAttribute="leading" id="3kk-rK-1Ej"/>
                                     <constraint firstItem="P8F-4k-o1C" firstAttribute="leading" secondItem="kTa-co-fZ0" secondAttribute="leading" constant="5" id="5mH-TV-GzV"/>
-                                    <constraint firstItem="urP-GI-n92" firstAttribute="leading" secondItem="kTa-co-fZ0" secondAttribute="leading" constant="10" id="5xu-4w-S22"/>
                                     <constraint firstItem="br5-la-dTd" firstAttribute="top" secondItem="P8F-4k-o1C" secondAttribute="bottom" constant="10" id="8FQ-01-t2H"/>
-                                    <constraint firstItem="urP-GI-n92" firstAttribute="top" secondItem="3sg-IL-GuV" secondAttribute="bottom" id="8Wh-yM-IEf"/>
                                     <constraint firstItem="br5-la-dTd" firstAttribute="centerX" secondItem="kTa-co-fZ0" secondAttribute="centerX" id="D6W-xz-Uos"/>
-                                    <constraint firstItem="P8F-4k-o1C" firstAttribute="top" secondItem="urP-GI-n92" secondAttribute="bottom" constant="5" id="EFQ-2c-uDL"/>
                                     <constraint firstAttribute="trailing" secondItem="3sg-IL-GuV" secondAttribute="trailing" id="GHZ-y8-BRl"/>
                                     <constraint firstItem="3sg-IL-GuV" firstAttribute="top" secondItem="kTa-co-fZ0" secondAttribute="top" id="Hng-65-4Pg"/>
-                                    <constraint firstItem="P8F-4k-o1C" firstAttribute="top" secondItem="3sg-IL-GuV" secondAttribute="bottom" constant="25" id="QTW-EG-4kN"/>
+                                    <constraint firstItem="P8F-4k-o1C" firstAttribute="top" secondItem="3sg-IL-GuV" secondAttribute="bottom" constant="10" id="QTW-EG-4kN"/>
                                     <constraint firstAttribute="trailing" secondItem="P8F-4k-o1C" secondAttribute="trailing" constant="5" id="S1l-r4-Nkc"/>
                                     <constraint firstAttribute="bottom" secondItem="br5-la-dTd" secondAttribute="bottom" constant="50" id="W4N-hH-ozr"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="urP-GI-n92" secondAttribute="trailing" constant="20" symbolic="YES" id="hWN-jg-QPQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -897,7 +882,6 @@
                     </view>
                     <connections>
                         <outlet property="ShowPdfBtn" destination="br5-la-dTd" id="VA1-vN-Cv4"/>
-                        <outlet property="backButton" destination="urP-GI-n92" id="Z0D-3M-5M6"/>
                         <outlet property="collectionView" destination="3sg-IL-GuV" id="UvT-UP-HcV"/>
                         <outlet property="labelForTittle" destination="nSx-cB-I3h" id="wE3-An-ds7"/>
                         <outlet property="webViewForContent" destination="P8F-4k-o1C" id="EJq-UQ-hfg"/>
@@ -1505,7 +1489,6 @@
         <image name="android" width="512" height="512"/>
         <image name="apple" width="512" height="512"/>
         <image name="arrow.backward.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="arrowshape.turn.up.left.circle.fill" catalog="system" width="128" height="123"/>
         <image name="flutter" width="225" height="225"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="salesforce" width="512" height="512"/>
