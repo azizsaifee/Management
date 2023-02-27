@@ -110,15 +110,31 @@ class AssistHomeViewController: UIViewController {
     }
     
     @IBAction func EndBtnAction(_ sender: UIButton){
-        var alert = UIAlertController(title: "Alert", message: "Do you really want to quit?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "Do you really want to quit?", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .default){_ in
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssistResultViewController") as! AssistResultViewController
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "StartAssistViewController") as! StartAssistViewController
             self.navigationController?.pushViewController(vc, animated: true)
             self.countForIdentifier = 1
         }
+        ok.setValue(UIColor.green, forKey: "titleTextColor")
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        cancel.setValue(UIColor.red, forKey: "titleTextColor")
         alert.addAction(ok)
         alert.addAction(cancel)
+        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.black // set background color
+        let titleString = NSAttributedString(string: "", attributes: [
+            NSAttributedString.Key.foregroundColor: UIColor.yellow,
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)
+        ])
+        alert.setValue(titleString, forKey: "attributedTitle")
+
+        // create an attributed string for the message with green color
+        let messageString = NSAttributedString(string: "Do you really want to quit?", attributes: [
+            NSAttributedString.Key.foregroundColor: UIColor.yellow,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)
+        ])
+        alert.setValue(messageString, forKey: "attributedMessage")
+
         present(alert, animated: true)
     }
     
