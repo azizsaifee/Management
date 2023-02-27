@@ -1104,14 +1104,15 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xI-Ro-hzL">
-                                <rect key="frame" x="133.33333333333334" y="682" width="126.66666666666666" height="34.333333333333371"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Back toHome" cornerStyle="large">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemMintColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xI-Ro-hzL">
+                                <rect key="frame" x="169.33333333333334" y="682" width="54.666666666666657" height="34.333333333333371"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="homekit" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="homekit" catalog="system">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="backBtn:" destination="9uF-rn-rOj" eventType="touchUpInside" id="uus-dG-qRS"/>
@@ -1278,23 +1279,6 @@
                                     <constraint firstAttribute="height" constant="250" id="rLS-za-PxF"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtO-2H-qtL">
-                                <rect key="frame" x="146.66666666666666" y="563.66666666666663" width="100" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="WiB-ZW-rjc"/>
-                                    <constraint firstAttribute="height" constant="40" id="ihy-Cz-3KQ"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Next" cornerStyle="large">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="nextBtnAction:" destination="Mof-Fh-tvN" eventType="touchUpInside" id="31B-u5-U8h"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2O-qr-kVb">
                                 <rect key="frame" x="186.33333333333334" y="708" width="20.666666666666657" height="30"/>
                                 <constraints>
@@ -1326,6 +1310,40 @@
                                     <constraint firstAttribute="height" constant="70" id="pLC-Y9-oOf"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqF-wn-lrI">
+                                <rect key="frame" x="40" y="563.66666666666663" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Xki-Ro-6W1"/>
+                                    <constraint firstAttribute="height" constant="40" id="y2J-Aw-NC9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="End" cornerStyle="large">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="EndBtnAction:" destination="Mof-Fh-tvN" eventType="touchUpInside" id="vBq-Zx-yVJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtO-2H-qtL">
+                                <rect key="frame" x="253" y="563.66666666666663" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2I0-8h-Ilq"/>
+                                    <constraint firstAttribute="width" constant="100" id="3wB-FO-m34"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next" cornerStyle="large">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nextBtnAction:" destination="Mof-Fh-tvN" eventType="touchUpInside" id="31B-u5-U8h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fdS-Qy-f07"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1333,18 +1351,21 @@
                             <constraint firstItem="2Tf-Vd-4t7" firstAttribute="leading" secondItem="fdS-Qy-f07" secondAttribute="leading" constant="10" id="6MJ-bk-dTD"/>
                             <constraint firstItem="MA1-18-a6f" firstAttribute="top" secondItem="2Tf-Vd-4t7" secondAttribute="bottom" constant="50" id="B1Z-Wz-E7F"/>
                             <constraint firstItem="fdS-Qy-f07" firstAttribute="trailing" secondItem="MA1-18-a6f" secondAttribute="trailing" constant="30" id="BCm-Ii-3Iq"/>
-                            <constraint firstItem="XtO-2H-qtL" firstAttribute="top" secondItem="MA1-18-a6f" secondAttribute="bottom" constant="40" id="DMz-Cy-nAh"/>
                             <constraint firstItem="MA1-18-a6f" firstAttribute="leading" secondItem="fdS-Qy-f07" secondAttribute="leading" constant="30" id="GeH-hU-MJF"/>
                             <constraint firstItem="hXG-WE-IpA" firstAttribute="top" secondItem="fdS-Qy-f07" secondAttribute="top" constant="20" id="Hb9-jb-Hyw"/>
                             <constraint firstItem="hXG-WE-IpA" firstAttribute="centerX" secondItem="MQw-hC-gnb" secondAttribute="centerX" id="JSq-59-yCA"/>
+                            <constraint firstItem="XtO-2H-qtL" firstAttribute="top" secondItem="MA1-18-a6f" secondAttribute="bottom" constant="40" id="ShK-lO-296"/>
                             <constraint firstItem="2Tf-Vd-4t7" firstAttribute="top" secondItem="hXG-WE-IpA" secondAttribute="bottom" constant="50" id="ULD-do-KTi"/>
-                            <constraint firstItem="XtO-2H-qtL" firstAttribute="centerX" secondItem="MQw-hC-gnb" secondAttribute="centerX" id="bXW-eb-vDp"/>
+                            <constraint firstItem="fdS-Qy-f07" firstAttribute="trailing" secondItem="XtO-2H-qtL" secondAttribute="trailing" constant="40" id="Y8v-jK-YMz"/>
                             <constraint firstItem="fdS-Qy-f07" firstAttribute="trailing" secondItem="2Tf-Vd-4t7" secondAttribute="trailing" constant="10" id="ku2-sN-5tr"/>
+                            <constraint firstItem="dqF-wn-lrI" firstAttribute="top" secondItem="MA1-18-a6f" secondAttribute="bottom" constant="40" id="oGW-K0-RVV"/>
+                            <constraint firstItem="dqF-wn-lrI" firstAttribute="leading" secondItem="fdS-Qy-f07" secondAttribute="leading" constant="40" id="u0Q-AM-g6b"/>
                             <constraint firstItem="M2O-qr-kVb" firstAttribute="centerX" secondItem="MQw-hC-gnb" secondAttribute="centerX" id="xQO-Fp-E1E"/>
                             <constraint firstItem="fdS-Qy-f07" firstAttribute="bottom" secondItem="M2O-qr-kVb" secondAttribute="bottom" constant="80" id="yDg-gr-DkF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="EndBtn" destination="dqF-wn-lrI" id="IYX-Hh-fsE"/>
                         <outlet property="dataOption1" destination="EHa-ex-t4E" id="f4F-Oq-IUM"/>
                         <outlet property="dataOption2" destination="91G-t7-Ol6" id="r4o-k5-jw6"/>
                         <outlet property="dataOption3" destination="3q3-Jh-Hll" id="t9C-eJ-XJd"/>
@@ -1490,6 +1511,7 @@
         <image name="apple" width="512" height="512"/>
         <image name="arrow.backward.circle.fill" catalog="system" width="128" height="123"/>
         <image name="flutter" width="225" height="225"/>
+        <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="salesforce" width="512" height="512"/>
         <image name="square.grid.3x1.below.line.grid.1x2" catalog="system" width="128" height="114"/>
@@ -1507,9 +1529,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
