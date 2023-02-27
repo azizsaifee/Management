@@ -43,6 +43,7 @@ class AssistHomeViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var EndBtn: UIButton!
     
     // MARK: - View Methods
     override func viewDidLoad() {
@@ -106,6 +107,19 @@ class AssistHomeViewController: UIViewController {
         counter = 20
         didTapChange()
         original()
+    }
+    
+    @IBAction func EndBtnAction(_ sender: UIButton){
+        var alert = UIAlertController(title: "Alert", message: "Do you really want to quit?", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .default){_ in
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssistResultViewController") as! AssistResultViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.countForIdentifier = 1
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        present(alert, animated: true)
     }
     
     func tapOption() {
