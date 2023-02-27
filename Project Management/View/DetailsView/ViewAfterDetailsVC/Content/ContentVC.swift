@@ -11,7 +11,7 @@ import PDFKit
 import QuickLook
 import WebKit
 
-class ContentVC: UIViewController,QLPreviewControllerDataSource, WKNavigationDelegate {
+class ContentVC: UIViewController, WKNavigationDelegate {
     
     // MARK: - Variables
     static var stringForTitle: String?
@@ -31,34 +31,26 @@ class ContentVC: UIViewController,QLPreviewControllerDataSource, WKNavigationDel
     
     // MARK: IBOutlets
     @IBOutlet weak var ShowPdfBtn: UIButton!
-    //@IBOutlet weak var textViewForContent: UITextView!
     @IBOutlet weak var webViewForContent: WKWebView!
     @IBOutlet weak var labelForTittle: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBAction func goBack(_ sender: UIButton) {
-        if webViewForContent.canGoBack {
-            webViewForContent.goBack()
-        } else {
-            // If the WKWebView can't go back, reload the HTML string
-            if let htmlString = htmlString {
-                webViewForContent.loadHTMLString(htmlString, baseURL: nil)
-            }
-        }
-    }
     // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         labelForTittle.text = ContentVC.stringForTitle
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ContentVCCellClass.nib(), forCellWithReuseIdentifier: "ContentVCCellClass")
+        
         webViewForContent.backgroundColor = .clear
         webViewForContent.navigationDelegate = self
         webViewForContent.loadHTMLString(htmlString ?? "Data Coming Soon!", baseURL: nil)
+
     }
     
-    // Handle link clicks
+    // Handle link clicks.
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard let url = navigationAction.request.url else {
             decisionHandler(.cancel)
@@ -71,7 +63,6 @@ class ContentVC: UIViewController,QLPreviewControllerDataSource, WKNavigationDel
             decisionHandler(.cancel)
             return
         }
-        
         decisionHandler(.allow)
     }
     
@@ -91,47 +82,9 @@ class ContentVC: UIViewController,QLPreviewControllerDataSource, WKNavigationDel
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
         return 1
     }
-    
-    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-        let urlString = "https://drive.google.com/file/d/1wzL6WYiw6Pwyt5xE27gw9SIgM1DG7UXD/view?usp=sharing"
-        guard let url = URL(string: urlString) else {
-            fatalError("Invalid URL")
-        }
-        
-        // Create a temporary file URL to download the file
-        let temporaryDirectoryURL = FileManager.default.temporaryDirectory
-        let fileURL = temporaryDirectoryURL.appendingPathComponent(url.lastPathComponent)
-        
-        // Download the file asynchronously
-        let session = URLSession.shared
-        let task = session.downloadTask(with: url) { (location, response, error) in
-            if let error = error {
-                print("Error downloading file: \(error)")
-                return
-            }
-            guard let location = location else {
-                print("Invalid file location")
-                return
-            }
-            do {
-                try FileManager.default.moveItem(at: location, to: fileURL)
-                DispatchQueue.main.async {
-                    controller.reloadData()
-                }
-            } catch {
-                print("Error moving file: \(error)")
-            }
-        }
-        task.resume()
-        
-        return fileURL as QLPreviewItem
-    }
-    
+
     // MARK: - IBActions
     @IBAction func showPdfBtn(_ sender: Any) {
-        //        let previewController = QLPreviewController()
-        //        previewController.dataSource = self
-        //        present(previewController, animated: true, completion: nil)
         let webviewvc = (self.storyboard?.instantiateViewController(withIdentifier: "webViewVC") as? webViewVC)!
         self.navigationController?.pushViewController(webviewvc, animated: true)
     }

@@ -79,7 +79,39 @@ import Foundation
  //            dataOption2.backgroundColor = .systemRed
  //            dataOption3.backgroundColor = .systemRed
  //        }
- 
+ func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+     let urlString = "https://drive.google.com/file/d/1wzL6WYiw6Pwyt5xE27gw9SIgM1DG7UXD/view?usp=sharing"
+     guard let url = URL(string: urlString) else {
+         fatalError("Invalid URL")
+     }
+     
+     // Create a temporary file URL to download the file
+     let temporaryDirectoryURL = FileManager.default.temporaryDirectory
+     let fileURL = temporaryDirectoryURL.appendingPathComponent(url.lastPathComponent)
+     
+     // Download the file asynchronously
+     let session = URLSession.shared
+     let task = session.downloadTask(with: url) { (location, response, error) in
+         if let error = error {
+             print("Error downloading file: \(error)")
+             return
+         }
+         guard let location = location else {
+             print("Invalid file location")
+             return
+         }
+         do {
+             try FileManager.default.moveItem(at: location, to: fileURL)
+             DispatchQueue.main.async {
+                 controller.reloadData()
+             }
+         } catch {
+             print("Error moving file: \(error)")
+         }
+     }
+     task.resume()
+     return fileURL as QLPreviewItem
+ }
  
 */
 
