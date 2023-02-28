@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 extension QuizHomeVC{
-   
     
     // MARK: - View Methods
     override func viewWillAppear(_ animated: Bool) {
@@ -42,11 +41,10 @@ extension QuizHomeVC{
                 // Do something when the timer reaches 20 seconds
                 print("Times Up!")
                 self!.fetchData()
-                self!.didTapChange()
-                self?.original()
+                self!.startAnimationOnTimer()
+                self?.settingColoursOnOptionsToThePreviousState()
             }
         }
         timer?.fireDate = Date().addingTimeInterval(remainingTime)
     }
-    
 }

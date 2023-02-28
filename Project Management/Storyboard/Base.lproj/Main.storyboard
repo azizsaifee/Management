@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Zx-R2-bfc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uP2-kl-SYt">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -10,10 +10,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Start QuizVC-->
+
+        <!--StartQuizVC-->
         <scene sceneID="Oac-RJ-EoU">
             <objects>
-                <viewController storyboardIdentifier="StartAssistViewController" id="4t7-g3-Eon" customClass="StartQuizVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartQuizVC" title="StartQuizVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4t7-g3-Eon" customClass="StartQuizVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
+
                     <view key="view" contentMode="scaleToFill" id="cZq-LD-agE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1079,16 +1081,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naZ-Qp-ceY">
-                                <rect key="frame" x="0.0" y="64" width="393" height="40"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSx-cB-I3h">
-                                        <rect key="frame" x="70" y="5" width="303" height="30"/>
+                                        <rect key="frame" x="70" y="5" width="303" height="35"/>
                                         <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBU-U9-APw">
-                                        <rect key="frame" x="20" y="5" width="30" height="30"/>
+                                        <rect key="frame" x="20" y="5" width="30" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="7BI-Ap-JYg"/>
                                         </constraints>
@@ -1195,15 +1197,14 @@
                             <constraint firstItem="naZ-Qp-ceY" firstAttribute="leading" secondItem="kTa-co-fZ0" secondAttribute="leading" id="96b-r8-ECV"/>
                             <constraint firstItem="naZ-Qp-ceY" firstAttribute="leading" secondItem="uSw-ii-G7w" secondAttribute="leading" id="Hfm-KK-Xy0"/>
                             <constraint firstAttribute="bottomMargin" secondItem="kTa-co-fZ0" secondAttribute="bottom" constant="-34" id="jMN-wm-Te5"/>
-                            <constraint firstItem="naZ-Qp-ceY" firstAttribute="top" secondItem="uSw-ii-G7w" secondAttribute="top" constant="5" id="nae-41-794"/>
                             <constraint firstItem="naZ-Qp-ceY" firstAttribute="centerX" secondItem="ypq-kC-IwX" secondAttribute="centerX" id="sn3-GR-PMd"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ShowPdfBtn" destination="br5-la-dTd" id="VA1-vN-Cv4"/>
                         <outlet property="collectionView" destination="3sg-IL-GuV" id="UvT-UP-HcV"/>
                         <outlet property="headingLabel" destination="YVo-fF-U43" id="jxf-M4-ne1"/>
                         <outlet property="labelForTittle" destination="nSx-cB-I3h" id="wE3-An-ds7"/>
+                        <outlet property="showCodeSnippetButton" destination="br5-la-dTd" id="VA1-vN-Cv4"/>
                         <outlet property="viewForText" destination="0ud-2y-Ywa" id="fFp-uq-z0p"/>
                     </connections>
                 </viewController>
@@ -1378,10 +1379,12 @@
             </objects>
             <point key="canvasLocation" x="1914" y="2185"/>
         </scene>
-        <!--Quiz ResultVC-->
+
+        <!--QuizResultVC-->
         <scene sceneID="gY6-HU-xzb">
             <objects>
-                <viewController storyboardIdentifier="AssistResultViewController" id="9uF-rn-rOj" customClass="QuizResultVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuizResultVC" title="QuizResultVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9uF-rn-rOj" customClass="QuizResultVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
+
                     <view key="view" contentMode="scaleToFill" id="fCA-cP-VBS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1494,10 +1497,12 @@
             </objects>
             <point key="canvasLocation" x="-1004" y="796"/>
         </scene>
-        <!--Quiz HomeVC-->
+
+        <!--QuizHomeVC-->
         <scene sceneID="mvg-qW-LJC">
             <objects>
-                <viewController storyboardIdentifier="AssistHomeViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mof-Fh-tvN" customClass="QuizHomeVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuizHomeVC" title="QuizHomeVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mof-Fh-tvN" customClass="QuizHomeVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
+
                     <view key="view" contentMode="scaleToFill" id="MQw-hC-gnb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1666,12 +1671,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="EndBtn" destination="dqF-wn-lrI" id="IYX-Hh-fsE"/>
                         <outlet property="dataOption1" destination="EHa-ex-t4E" id="f4F-Oq-IUM"/>
                         <outlet property="dataOption2" destination="91G-t7-Ol6" id="r4o-k5-jw6"/>
                         <outlet property="dataOption3" destination="3q3-Jh-Hll" id="t9C-eJ-XJd"/>
                         <outlet property="dataOption4" destination="dcY-FY-nRx" id="Aqj-7d-7sV"/>
+                        <outlet property="endButton" destination="dqF-wn-lrI" id="IYX-Hh-fsE"/>
                         <outlet property="lblQuestionNumber" destination="L5x-GW-XvW" id="8ae-gG-5q5"/>
+
                         <outlet property="question" destination="2Tf-Vd-4t7" id="hVy-Ug-7tq"/>
                         <outlet property="questionNumberView" destination="hXG-WE-IpA" id="fbd-G8-db2"/>
                         <outlet property="timerLabel" destination="M2O-qr-kVb" id="QTQ-iW-Eup"/>
@@ -1679,24 +1685,26 @@
                         <outlet property="viewOfOption2" destination="GJg-Pj-ywV" id="5iP-bD-a2R"/>
                         <outlet property="viewOfOption3" destination="H2r-lE-lO7" id="993-yE-r49"/>
                         <outlet property="viewOfOption4" destination="iN7-MI-Qy5" id="dLE-kZ-8PM"/>
-                        <outletCollection property="collectionForOptionLabels" destination="EHa-ex-t4E" collectionClass="NSMutableArray" id="nii-Tw-1AM"/>
-                        <outletCollection property="collectionForOptionLabels" destination="91G-t7-Ol6" collectionClass="NSMutableArray" id="Wjh-9b-fp4"/>
-                        <outletCollection property="collectionForOptionLabels" destination="3q3-Jh-Hll" collectionClass="NSMutableArray" id="wQH-Nd-KC0"/>
-                        <outletCollection property="collectionForOptionLabels" destination="dcY-FY-nRx" collectionClass="NSMutableArray" id="wli-0L-ViT"/>
-                        <outletCollection property="collectionOptionView" destination="tS4-aR-TpX" collectionClass="NSMutableArray" id="kHY-Bm-M7B"/>
-                        <outletCollection property="collectionOptionView" destination="GJg-Pj-ywV" collectionClass="NSMutableArray" id="mJd-As-RqA"/>
-                        <outletCollection property="collectionOptionView" destination="H2r-lE-lO7" collectionClass="NSMutableArray" id="sKT-ka-Ruz"/>
-                        <outletCollection property="collectionOptionView" destination="iN7-MI-Qy5" collectionClass="NSMutableArray" id="aLJ-ah-euf"/>
+                        <outletCollection property="collectionOfOptionLabels" destination="EHa-ex-t4E" collectionClass="NSMutableArray" id="nii-Tw-1AM"/>
+                        <outletCollection property="collectionOfOptionLabels" destination="91G-t7-Ol6" collectionClass="NSMutableArray" id="Wjh-9b-fp4"/>
+                        <outletCollection property="collectionOfOptionLabels" destination="3q3-Jh-Hll" collectionClass="NSMutableArray" id="wQH-Nd-KC0"/>
+                        <outletCollection property="collectionOfOptionLabels" destination="dcY-FY-nRx" collectionClass="NSMutableArray" id="wli-0L-ViT"/>
+                        <outletCollection property="collectionOfOptionView" destination="tS4-aR-TpX" collectionClass="NSMutableArray" id="kHY-Bm-M7B"/>
+                        <outletCollection property="collectionOfOptionView" destination="GJg-Pj-ywV" collectionClass="NSMutableArray" id="mJd-As-RqA"/>
+                        <outletCollection property="collectionOfOptionView" destination="H2r-lE-lO7" collectionClass="NSMutableArray" id="sKT-ka-Ruz"/>
+                        <outletCollection property="collectionOfOptionView" destination="iN7-MI-Qy5" collectionClass="NSMutableArray" id="aLJ-ah-euf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xae-EM-wPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-753" y="2954"/>
         </scene>
-        <!--Pop UpVC-->
+
+        <!--PopUpVC-->
         <scene sceneID="UR3-M3-IRa">
             <objects>
-                <viewController storyboardIdentifier="POpUpViewController" id="uP2-kl-SYt" customClass="PopUpVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PopUpVC" title="PopUpVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uP2-kl-SYt" customClass="PopUpVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
+
                     <view key="view" contentMode="scaleToFill" id="Wq4-DH-ej3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1797,12 +1805,12 @@
                     <connections>
                         <outlet property="labelForTotalQuestions" destination="9bJ-N2-r8T" id="dRM-Of-lCF"/>
                         <outlet property="main" destination="wHT-Yp-6vZ" id="h8F-JY-WwR"/>
-                        <outlet property="titleLabl" destination="vaZ-Do-XsM" id="HST-iG-WLQ"/>
+                        <outlet property="titleLabel" destination="vaZ-Do-XsM" id="HST-iG-WLQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b89-mo-7MG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-753" y="2213"/>
+            <point key="canvasLocation" x="-1005" y="2185"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JgO-xE-apH">

@@ -36,7 +36,6 @@ class iOSVC: UIViewController {
     private var collectionView: UICollectionView! = nil
     
     // MARK: IBOutlets
-    //@IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var labelForTitle: UILabel!
     
     // MARK: View Methods

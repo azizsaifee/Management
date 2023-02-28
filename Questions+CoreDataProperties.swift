@@ -11,7 +11,6 @@ import CoreData
 
 
 extension Questions {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Questions> {
         return NSFetchRequest<Questions>(entityName: "Questions")
     }
@@ -27,9 +26,6 @@ extension Questions {
     func convert() -> Document{
         return Document(questionNo: Int16(questionNo.self), question: question!.self, option1: option1!.self, option2: option2!.self, option3: option3!.self, option4: option4!.self, answer: (answer ?? "not found").self)
     }
-
 }
-
 extension Questions : Identifiable {
-
 }

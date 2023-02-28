@@ -8,6 +8,7 @@
 import UIKit
 
 class QuizResultVC: UIViewController {
+
     @IBOutlet weak var correctAnswerLabel: UILabel!
     
     override func viewDidLoad() {
@@ -16,15 +17,11 @@ class QuizResultVC: UIViewController {
         correctAnswerLabel.text = "\(QuizHomeVC.countCorrectAnswers) / \(questionArray.count)"
     }
     
-
     @IBAction func backBtn(_ sender: Any) {
-       // self.navigationController?.popToRootViewController(animated: true)
-        let vc = storyboard?.instantiateViewController(withIdentifier: "StartAssistViewController")
+        let vc = storyboard?.instantiateViewController(withIdentifier: "StartQuizVC")
         as! StartQuizVC
         vc.tabBarController?.tabBar.isHidden = false
         self.navigationController?.pushViewController(vc, animated: true)
         QuizHomeVC.countCorrectAnswers = 0
     }
-    
-
 }

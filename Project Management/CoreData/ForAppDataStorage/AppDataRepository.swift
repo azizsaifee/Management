@@ -18,8 +18,6 @@ protocol DataRepository {
 
 
 struct AppDataRepository: DataRepository {
-    
-    
     func create(data: DataDictionary) {
         let entity = AppCoreData(context: PersistentStorage.shared.context)
         entity.id = data.id
@@ -33,17 +31,13 @@ struct AppDataRepository: DataRepository {
     
     func get(byIdentifier id: String) -> DataDictionary? {
         let data = getData(byIdentifier: id)
-        
         guard data != nil else {return nil}
-        
         return data?.convert()
     }
     
     func getData(byIdentifier id: String) -> AppCoreData?
     {
         let fetchRequest = NSFetchRequest<AppCoreData>(entityName: "AppCoreData")
-       
-        
         let predicate = NSPredicate(format: "id==%@", id)
         
         fetchRequest.predicate = predicate
@@ -68,14 +62,12 @@ struct AppDataRepository: DataRepository {
             array.append(AppBasedData.convert())
         })
         return array
-        
     }
     
     func delete(byIdentifier id: String) -> Bool {
         let data = getData(byIdentifier: id)
-        
         guard data != nil else {return false}
-        
+    
         PersistentStorage.shared.context.delete(data!)
         PersistentStorage.shared.saveContext()
         

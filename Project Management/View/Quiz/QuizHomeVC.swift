@@ -19,58 +19,71 @@ class QuizHomeVC: UIViewController {
             }
         }
     }
-    static var objRepositorys = AppDataRepositorys()
-    var count = 1
+
+
+    static var objQuizDataRepository = QuizDataRepository()
     let shape = CAShapeLayer()
-    var labelView = UILabel()
     static var countCorrectAnswers = 0
-    // Can be used later.
-    var selectedOption: Int? = nil
+    // used in fetching data.
     var countForIdentifier = 1
+    var answer = ""
+    
     // MARK: - IBOutlets
+    // For question number shown above.
+    @IBOutlet weak var lblQuestionNumber: UILabel!
     @IBOutlet weak var questionNumberView: UIView!
-    @IBOutlet var collectionForOptionLabels: [UILabel]!
+    // For question shown.
+    @IBOutlet weak var question: UILabel!
+    // For options shown.
+    @IBOutlet var collectionOfOptionLabels: [UILabel]!
+
     @IBOutlet weak var dataOption1: UILabel!
     @IBOutlet weak var dataOption2: UILabel!
     @IBOutlet weak var dataOption3: UILabel!
     @IBOutlet weak var dataOption4: UILabel!
-    @IBOutlet var collectionOptionView: [UIView]!
+
+    @IBOutlet var collectionOfOptionView: [UIView]!
+
     @IBOutlet weak var viewOfOption1: UIView!
     @IBOutlet weak var viewOfOption2: UIView!
     @IBOutlet weak var viewOfOption3: UIView!
     @IBOutlet weak var viewOfOption4: UIView!
-    @IBOutlet weak var lblQuestionNumber: UILabel!
+
+    // For the timer running below.
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var question: UILabel!
-    @IBOutlet weak var nextBtn: UIButton!
-    @IBOutlet weak var EndBtn: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var endButton: UIButton!
+
     
     // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // hiding navigation bar and tab bar.
         navigationController?.navigationBar.isHidden = true
         tabBarController?.tabBar.isHidden = true
+        // tap on option.
         tapOption()
-        didTapChange()
-        roundedprogress()
+        startAnimationOnTimer()
+        roundedProgressOnTimer()
         loadData()
         fetchData()
-        original()
-        design()
+        settingColoursOnOptionsToThePreviousState()
+        uiChanges()
     }
     
     // MARK: - Required Methods
     func loadData() {
-        
-        
+
         for question in  questionArray{
             countForIdentifier += 1
-            if QuizHomeVC.objRepositorys.get(byIdentifier: Int16(countForIdentifier)) == nil {
-                QuizHomeVC.objRepositorys.create(data: question)
+            if QuizHomeVC.objQuizDataRepository.get(byIdentifier: Int16(countForIdentifier)) == nil {
+                QuizHomeVC.objQuizDataRepository.create(data: question)
             } else {
-                if QuizHomeVC.objRepositorys.get(byIdentifier: Int16(countForIdentifier))! != question {
-                    _ = QuizHomeVC.objRepositorys.delete(byIdentifier: Int16(countForIdentifier))
-                    QuizHomeVC.objRepositorys.create(data: question)
+                if QuizHomeVC.objQuizDataRepository.get(byIdentifier: Int16(countForIdentifier))! != question {
+                    _ = QuizHomeVC.objQuizDataRepository.delete(byIdentifier: Int16(countForIdentifier))
+                    QuizHomeVC.objQuizDataRepository.create(data: question)
+
                 }
             }
         }
@@ -80,57 +93,23 @@ class QuizHomeVC: UIViewController {
     func fetchData(){
         if countForIdentifier <= questionArray.count{
             getAnswer(for: Int16(countForIdentifier))
-            let questions = QuizHomeVC.objRepositorys.get(byIdentifier: Int16(countForIdentifier))
+
+            let questions = QuizHomeVC.objQuizDataRepository.get(byIdentifier: Int16(countForIdentifier))
+
             lblQuestionNumber.text = "\(questions!.questionNo)"
             question.text = questions!.question
             dataOption1.text = questions!.option1
             dataOption2.text = questions!.option2
             dataOption3.text = questions!.option3
             dataOption4.text = questions!.option4
-           
+
         }
         countForIdentifier  += 1
-            if countForIdentifier > questionArray.count + 1{
-                
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssistResultViewController") as! QuizResultVC
-                    self.navigationController?.pushViewController(vc, animated: true)
-                    self.countForIdentifier = 1
-
-            }
-    }
-    
-    
-    
-    // Next Button IBAction.
-   
-    
-    @IBAction func EndBtnAction(_ sender: UIButton){
-        let alert = UIAlertController(title: "", message: "Do you really want to quit?", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Ok", style: .default){_ in
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "StartAssistViewController") as! StartQuizVC
+        if countForIdentifier > questionArray.count + 1{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "QuizResultVC") as! QuizResultVC
             self.navigationController?.pushViewController(vc, animated: true)
             self.countForIdentifier = 1
         }
-        ok.setValue(UIColor.green, forKey: "titleTextColor")
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        cancel.setValue(UIColor.red, forKey: "titleTextColor")
-        alert.addAction(ok)
-        alert.addAction(cancel)
-        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.black // set background color
-        let titleString = NSAttributedString(string: "", attributes: [
-            NSAttributedString.Key.foregroundColor: UIColor.yellow,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)
-        ])
-        alert.setValue(titleString, forKey: "attributedTitle")
-
-        // create an attributed string for the message with green color
-        let messageString = NSAttributedString(string: "Do you really want to quit?", attributes: [
-            NSAttributedString.Key.foregroundColor: UIColor.yellow,
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)
-        ])
-        alert.setValue(messageString, forKey: "attributedMessage")
-
-        present(alert, animated: true)
     }
     
     func tapOption() {
@@ -151,21 +130,21 @@ class QuizHomeVC: UIViewController {
         viewOfOption4.addGestureRecognizer(option4)
     }
     
-    var answer = ""
-    
+
     func getAnswer(for questionNumber: Int16) {
-        answer = QuizHomeVC.objRepositorys.get(byIdentifier: questionNumber)!.answer
+        answer = QuizHomeVC.objQuizDataRepository.get(byIdentifier: questionNumber)!.answer
     }
     
-    func original() {
+    func settingColoursOnOptionsToThePreviousState() {
         dataOption1.backgroundColor = .systemPurple
         dataOption2.backgroundColor = .systemYellow
         dataOption3.backgroundColor = .systemMint
         dataOption4.backgroundColor = .systemBrown
     }
     
-    func design() {
-        for option in collectionOptionView {
+
+    func uiChanges() {
+        for option in collectionOfOptionView {
             option.layer.cornerRadius = 20
             option.clipsToBounds = true
         }
@@ -173,12 +152,11 @@ class QuizHomeVC: UIViewController {
         questionNumberView.layer.cornerRadius = questionNumberView.bounds.height / 2
         questionNumberView.clipsToBounds = true
         questionNumberView.backgroundColor = .systemIndigo
-        
+
     }
     
     func checkIsItCorrect() {
-        
-        for option in collectionForOptionLabels {
+        for option in collectionOfOptionLabels {
             if option.text == answer {
                 option.backgroundColor = .systemGreen
             } else {
@@ -201,6 +179,7 @@ class QuizHomeVC: UIViewController {
                 self.didTapChange()
                 self.original()
             }
+
             print("option 1 tapped!")
             //timerLabel.isHidden = true
             if dataOption1.text! == answer {
@@ -216,6 +195,7 @@ class QuizHomeVC: UIViewController {
                 self.didTapChange()
                 self.original()
             }
+
             print("option 2 tapped!")
             if dataOption2.text == answer {
                 QuizHomeVC.countCorrectAnswers += 1
@@ -227,6 +207,7 @@ class QuizHomeVC: UIViewController {
                 self.didTapChange()
                 self.original()
             }
+
             print("option 3 tapped!")
             if dataOption3.text == answer {
                 QuizHomeVC.countCorrectAnswers += 1
@@ -247,7 +228,8 @@ class QuizHomeVC: UIViewController {
         }
     }
     
-    @objc func didTapChange(){
+
+    @objc func startAnimationOnTimer(){
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.toValue = 1
         animation.duration = 23
@@ -256,7 +238,8 @@ class QuizHomeVC: UIViewController {
         shape.add(animation, forKey: "animation")
     }
     
-    func roundedprogress(){
+
+    func roundedProgressOnTimer(){
         let ciclePath = UIBezierPath(arcCenter:timerLabel.center,
                                      radius: 30,
                                      startAngle: -(.pi/2),
@@ -276,7 +259,38 @@ class QuizHomeVC: UIViewController {
         view.layer.addSublayer(shape)
     }
     
+
     
+    @IBAction func EndBtnAction(_ sender: UIButton){
+        let alert = UIAlertController(title: "", message: "Do you really want to quit?", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .default){_ in
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "StartQuizVC") as! StartQuizVC
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.countForIdentifier = 1
+        }
+        
+        ok.setValue(UIColor.green, forKey: "titleTextColor")
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        cancel.setValue(UIColor.red, forKey: "titleTextColor")
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.black // set background color
+        let titleString = NSAttributedString(string: "", attributes: [
+            NSAttributedString.Key.foregroundColor: UIColor.yellow,
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)
+        ])
+        alert.setValue(titleString, forKey: "attributedTitle")
+        
+        // create an attributed string for the message with green color
+        let messageString = NSAttributedString(string: "Do you really want to quit?", attributes: [
+            NSAttributedString.Key.foregroundColor: UIColor.yellow,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)
+        ])
+        alert.setValue(messageString, forKey: "attributedMessage")
+        
+        present(alert, animated: true)
+    }
+
 }
     
 

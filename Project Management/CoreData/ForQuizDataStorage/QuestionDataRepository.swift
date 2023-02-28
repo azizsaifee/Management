@@ -8,14 +8,14 @@
 import Foundation
 import CoreData
 
-protocol DataRepositorys {
+protocol QuizRepository {
     func create(data: Document)
     func get(byIdentifier questionNo: Int16) -> Document?
-//    func getAll() -> [Document]?
+//  func getAll() -> [Document]?
     func delete(byIdentifier questionNo: Int16) -> Bool
 }
 
-struct AppDataRepositorys: DataRepositorys {
+struct QuizDataRepository: QuizRepository {
 
     func create(data: Document) {
         let entity = Questions(context: PersistentStorage.shared.context)
