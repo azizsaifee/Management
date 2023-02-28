@@ -15,7 +15,7 @@ enum Section: Int, CaseIterable {
 struct Item: Hashable {
     var title: String?
     var subtitle: String?
-    var isChild: Bool
+    var hasSubtitle: Bool
 }
 
 class ViewAfterDetailsVC: UIViewController, UICollectionViewDelegate {
@@ -23,7 +23,7 @@ class ViewAfterDetailsVC: UIViewController, UICollectionViewDelegate {
     // MARK: - Variables
     static var stringForTitle: String?
     var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
-    static var myOptionalDictionary: [String : [String : String]]? = nil
+    static var myOptionalDictionary: [String : Any]? = nil
     
     // MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -62,8 +62,12 @@ class ViewAfterDetailsVC: UIViewController, UICollectionViewDelegate {
             configuration.text = item.title
             configuration.textProperties.font = .preferredFont(forTextStyle: .title3)
             cell.contentConfiguration = configuration
-            let headerDisclosureOption = UICellAccessory.OutlineDisclosureOptions(style: .header)
-            cell.accessories = [.outlineDisclosure(options:headerDisclosureOption)]
+            if item.subtitle == "" {
+                //There is no subtitle present.
+            } else {
+                let headerDisclosureOption = UICellAccessory.OutlineDisclosureOptions(style: .header)
+                cell.accessories = [.outlineDisclosure(options:headerDisclosureOption)]
+            }
         }
         
         let categorySubCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Item> { cell, _, item in
@@ -79,7 +83,9 @@ class ViewAfterDetailsVC: UIViewController, UICollectionViewDelegate {
                 
                 switch section {
                 case .outline:
-                    if (item.isChild) {
+                    if (item.hasSubtitle) {
+                        return collectionView.dequeueConfiguredReusableCell(using: categoryCellRegistration, for: indexPath, item: item)
+                    } else if item.subtitle == "" {
                         return collectionView.dequeueConfiguredReusableCell(using: categoryCellRegistration, for: indexPath, item: item)
                     } else {
                         return collectionView.dequeueConfiguredReusableCell(using: categorySubCellRegistration, for: indexPath, item: item)
@@ -96,16 +102,22 @@ class ViewAfterDetailsVC: UIViewController, UICollectionViewDelegate {
         ViewAfterDetailsVC.myOptionalDictionary = getData()
         if let dictionary = ViewAfterDetailsVC.myOptionalDictionary {
             for (key, value) in dictionary {
-                let outlineItem = Item(title: key, isChild: true)
-                outlineSnapshot.append([outlineItem])
-                let subItem = value.keys.map{ Item(subtitle: $0, isChild: false) }
-                outlineSnapshot.append(subItem, to: outlineItem)
+                if let subDictionary = value as? [String: Any] {
+                    let outlineItem = Item(title: key, hasSubtitle: true)
+                    outlineSnapshot.append([outlineItem])
+                    let subItem = subDictionary.keys.map{ Item(subtitle: $0, hasSubtitle: false) }
+                    outlineSnapshot.append(subItem, to: outlineItem)
+                } else {
+                    // We have given subtitle an Empty String to apply some checks when adding data into collectionView.
+                    let outlineItem = Item(title: "\(key)", subtitle: "", hasSubtitle: false)
+                    outlineSnapshot.append([outlineItem])
+                }
             }
             dataSource.apply(outlineSnapshot, to: .outline, animatingDifferences: false)
         }
     }
     
-    func getData() -> [String : [String : String]]? {
+    func getData() -> [String : Any]? {
         switch ViewAfterDetailsVC.stringForTitle {
         case "Credentials" :
             return DetailsVC.objRepository.get(byIdentifier: "EcoBank")?.credentials.topic
@@ -131,14 +143,29 @@ extension ViewAfterDetailsVC{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let contentVC = self.storyboard?.instantiateViewController(withIdentifier: "ContentVC") as! ContentVC
         var title: String?
-        if let selectedItem = dataSource.itemIdentifier(for: indexPath)?.subtitle
-        {
-            title = selectedItem
-            print("Selected cell title: \(title!)")
+        if dataSource.itemIdentifier(for: indexPath)?.subtitle == "" {
+            if let selectedItem = dataSource.itemIdentifier(for: indexPath)?.title {
+                title = selectedItem
+                print("Selected cell title: \(title!)")
+            }
+        } else {
+            if let selectedItem = dataSource.itemIdentifier(for: indexPath)?.subtitle
+            {
+                title = selectedItem
+                print("Selected cell title: \(title!)")
+            }
         }
-        else if let selectedItem = dataSource.itemIdentifier(for: indexPath)?.title {
-            title = selectedItem
-        }
+        
+//        if let selectedItem = dataSource.itemIdentifier(for: indexPath)?.subtitle
+//        {
+//            title = selectedItem
+//            print("Selected cell title: \(title!)")
+//        }
+//        else if let selectedItem = dataSource.itemIdentifier(for: indexPath)?.title {
+//            title = selectedItem
+//            print("Selected cell title: \(title!)")
+//        }
+        
         self.navigationController?.pushViewController(contentVC, animated: true)
         ContentVC.stringForTitle = title
     }

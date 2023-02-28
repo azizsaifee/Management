@@ -6,12 +6,11 @@
 //
 
 import UIKit
-import AVKit
 import WebKit
 
-class ContentVCCellClass: UICollectionViewCell {
+class ContentVCCellClass: UICollectionViewCell, WKNavigationDelegate {
 
-    var player: AVPlayer?
+    let activityIndicator = UIActivityIndicatorView(style: .large)
     
     @IBOutlet weak var viewForCollectionView: UIView!
     @IBOutlet weak var webView: WKWebView!
@@ -23,6 +22,14 @@ class ContentVCCellClass: UICollectionViewCell {
         let request = URLRequest(url: url)
         webView.load(request)
         webView.backgroundColor = .clear
+        activityIndicator.center = webView.center
+        webView.addSubview(activityIndicator)
+        webView.navigationDelegate = self
+        activityIndicator.startAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
     }
     
     static func nib() -> UINib{
@@ -32,18 +39,4 @@ class ContentVCCellClass: UICollectionViewCell {
     func configure(with index: Int) {
         //addPlayerToView(viewForCollectionView)
     }
-    
-//    func addPlayerToView(_ view: UIView) {
-//        let videoURL = URL(filePath: "/Users/apple/Desktop/Onboarding.mp4")
-//        let playerItem = AVPlayerItem(url: videoURL)
-//        player = AVPlayer(playerItem: playerItem)
-//        let playerLayer = AVPlayerLayer(player: player)
-//        playerLayer.frame = CGRect(x: 40, y: 40, width: viewForCollectionView.bounds.width, height: viewForCollectionView.bounds.height)
-//        viewForCollectionView.center = playerLayer.bounds.origin
-//        playerLayer.bounds.origin = viewForCollectionView.center
-//        playerLayer.videoGravity = .resizeAspect
-//        viewForCollectionView.layer.addSublayer(playerLayer)
-//        player?.appliesMediaSelectionCriteriaAutomatically = true
-//        player?.play()
-//    }
 }

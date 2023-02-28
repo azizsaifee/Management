@@ -113,6 +113,22 @@ import Foundation
      return fileURL as QLPreviewItem
  }
  
+ // Handle link clicks.
+ //    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+ //        guard let url = navigationAction.request.url else {
+ //            decisionHandler(.cancel)
+ //            return
+ //        }
+ //
+ //        // Open links in the default browser
+ //        if navigationAction.targetFrame == nil {
+ //            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+ //            decisionHandler(.cancel)
+ //            return
+ //        }
+ //        decisionHandler(.allow)
+ //    }
+ 
 */
 
 

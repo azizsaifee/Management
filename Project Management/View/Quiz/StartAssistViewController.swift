@@ -17,8 +17,6 @@ class StartAssistViewController: UIViewController {
     @IBOutlet weak var lblWebsite: UIView!
     @IBOutlet weak var lblWebapp: UIView!
     @IBOutlet weak var lblApple: UIView!
-    
-    
     @IBOutlet weak var lblSalesforce: UIView!
     @IBOutlet weak var lblAndroid: UIView!
     @IBOutlet weak var lblFlutter: UIView!
@@ -138,34 +136,34 @@ class StartAssistViewController: UIViewController {
         switch count {
         case 1:
             // Quadrant 1
-            let randomX = CGFloat.random(in: 35...(viewWidth/2 - 35))
-            let randomY = CGFloat.random(in: 35...(viewHeight/3 - 35))
+            let randomX = CGFloat.random(in: 40...(viewWidth/2 - 40))
+            let randomY = CGFloat.random(in: 40...(viewHeight/3 - 40))
             return CGPoint(x: randomX, y: randomY)
         case 2:
             // Quadrant 2
-            let randomX = CGFloat.random(in: 35...(viewWidth/2 - 35))
-            let randomY = CGFloat.random(in: (viewHeight/3 + 35)...(viewHeight * (2/3) - 35))
+            let randomX = CGFloat.random(in: 40...(viewWidth/2 - 40))
+            let randomY = CGFloat.random(in: (viewHeight/3 + 40)...(viewHeight * (2/3) - 40))
             return CGPoint(x: randomX, y: randomY)
         case 3:
             // Quadrant 3
-            let randomX = CGFloat.random(in: 35...(viewWidth/2))
-            let randomY = CGFloat.random(in: (viewHeight * (2/3) + 35)...viewHeight - 35)
+            let randomX = CGFloat.random(in: 40...(viewWidth/2))
+            let randomY = CGFloat.random(in: (viewHeight * (2/3) + 40)...viewHeight - 40)
             return CGPoint(x: randomX, y: randomY)
         case 4:
             // Quadrant 4
-            let randomX = CGFloat.random(in: (viewWidth/2 + 35)...viewWidth - 35)
-            let randomY = CGFloat.random(in: 35...(viewHeight/3) - 35)
+            let randomX = CGFloat.random(in: (viewWidth/2 + 40)...viewWidth - 40)
+            let randomY = CGFloat.random(in: 40...(viewHeight/3) - 40)
             return CGPoint(x: randomX, y: randomY)
         case 5:
             // Quadrant 5
-            let randomX = CGFloat.random(in: (viewWidth/2 + 35)...viewWidth - 35)
-            let randomY = CGFloat.random(in: (viewHeight/3 + 35)...(viewHeight * (2/3) - 35))
+            let randomX = CGFloat.random(in: (viewWidth/2 + 40)...viewWidth - 40)
+            let randomY = CGFloat.random(in: (viewHeight/3 + 40)...(viewHeight * (2/3) - 40))
             return CGPoint(x: randomX, y: randomY)
         case 6:
             count = 0
             // Quadrant 6
-            let randomX = CGFloat.random(in: (viewWidth/2 + 35)...(viewWidth - 35))
-            let randomY = CGFloat.random(in: (viewHeight * (2/3) + 35)...(viewHeight - 35))
+            let randomX = CGFloat.random(in: (viewWidth/2 + 40)...(viewWidth - 40))
+            let randomY = CGFloat.random(in: (viewHeight * (2/3) + 40)...(viewHeight - 40))
             return CGPoint(x: randomX, y: randomY)
         default:
             return CGPoint(x: 0, y: 0)

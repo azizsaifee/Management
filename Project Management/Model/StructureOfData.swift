@@ -9,9 +9,9 @@ import Foundation
 
 @objcMembers
 public class Documentation: NSObject, NSCoding {
-    var topic: [String : [String : String]] = [:]
+    var topic: [String : Any ] = [:]
     
-    init(topic: [String : [String : String]]) {
+    init(topic: [String : Any]) {
         self.topic = topic
     }
     
@@ -20,15 +20,15 @@ public class Documentation: NSObject, NSCoding {
     }
     
     public required init?(coder: NSCoder) {
-        topic = coder.decodeObject(forKey: "topic") as? [String : [String : String]] ?? [:]
+        topic = coder.decodeObject(forKey: "topic") as? [String : Any] ?? [:]
     }
 }
 
 @objcMembers
 public class Features: NSObject, NSCoding {
-    var topic: [String : [String : String]] = [:]
+    var topic: [String : Any] = [:]
     
-    init(topic: [String : [String : String]]) {
+    init(topic: [String : Any]) {
         self.topic = topic
     }
     
@@ -37,15 +37,15 @@ public class Features: NSObject, NSCoding {
     }
     
     public required init?(coder: NSCoder) {
-        topic = coder.decodeObject(forKey: "topic") as? [String : [String : String]] ?? [:]
+        topic = coder.decodeObject(forKey: "topic") as? [String : Any] ?? [:]
     }
 }
 
 @objcMembers
 public class Credentials: NSObject, NSCoding {
-    var topic: [String: [String : String]] = [:]
+    var topic: [String: Any] = [:]
     
-    init(topic: [String: [String : String]]) {
+    init(topic: [String: Any]) {
         self.topic = topic
     }
     
@@ -54,15 +54,15 @@ public class Credentials: NSObject, NSCoding {
     }
     
     public required init?(coder: NSCoder) {
-        topic = coder.decodeObject(forKey: "topic") as? [String: [String : String]] ?? [:]
+        topic = coder.decodeObject(forKey: "topic") as? [String: Any] ?? [:]
     }
 }
 
 @objcMembers
 public class Issues: NSObject, NSCoding {
-    var topic: [String : [String : String]] = [:]
+    var topic: [String : Any] = [:]
     
-    init(topic: [String : [String : String]]) {
+    init(topic: [String : Any]) {
         self.topic = topic
     }
     
@@ -71,7 +71,7 @@ public class Issues: NSObject, NSCoding {
     }
     
     public required init?(coder: NSCoder) {
-        topic = coder.decodeObject(forKey: "topic") as? [String : [String : String]] ?? [:]
+        topic = coder.decodeObject(forKey: "topic") as? [String : Any] ?? [:]
     }
 }
 
