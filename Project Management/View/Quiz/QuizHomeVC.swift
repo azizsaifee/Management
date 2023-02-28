@@ -169,15 +169,14 @@ class QuizHomeVC: UIViewController {
     
     
     @objc func buttonTapped(sender: UITapGestureRecognizer) {
-        selectedOption = Int(sender.name!)
         checkIsItCorrect()
         switch sender.name {
         case "1":
             DispatchQueue.main.asyncAfter(deadline: .now() + 2){
                 self.fetchData()
                 self.counter = 20
-                self.didTapChange()
-                self.original()
+                self.startAnimationOnTimer()
+                self.settingColoursOnOptionsToThePreviousState()
             }
 
             print("option 1 tapped!")
@@ -192,8 +191,8 @@ class QuizHomeVC: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2){
                 self.fetchData()
                 self.counter = 20
-                self.didTapChange()
-                self.original()
+                self.startAnimationOnTimer()
+                self.settingColoursOnOptionsToThePreviousState()
             }
 
             print("option 2 tapped!")
@@ -204,8 +203,8 @@ class QuizHomeVC: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2){
                 self.fetchData()
                 self.counter = 20
-                self.didTapChange()
-                self.original()
+                self.startAnimationOnTimer()
+                self.settingColoursOnOptionsToThePreviousState()
             }
 
             print("option 3 tapped!")
@@ -216,8 +215,8 @@ class QuizHomeVC: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2){
                 self.fetchData()
                 self.counter = 20
-                self.didTapChange()
-                self.original()
+                self.startAnimationOnTimer()
+                self.settingColoursOnOptionsToThePreviousState()
             }
             print("option 4 tapped!")
             if dataOption4.text == answer {

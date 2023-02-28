@@ -10,6 +10,7 @@ import CoreData
 
 class SignUpViewController: UIViewController {
    
+    
         @IBOutlet weak var nameTextField: UITextField!
         @IBOutlet weak var emailTextField: UITextField!
         @IBOutlet weak var passwordTextField: UITextField!
@@ -29,7 +30,7 @@ class SignUpViewController: UIViewController {
     func validateFields() -> Bool {
         let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let nameRegex = "[A-Za-z]+"
-        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
+        let passwordRegex = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[@$!%*?&])[a-zA-Z\\d@$!%*?&]{8,}$"
         let deptRegex = "[A-Za-z]+"
         
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
@@ -102,7 +103,7 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)!
+        let entity = NSEntityDescription.entity(forEntityName: "UserDetail", in: context)!
         let user = UserDetail(entity: entity, insertInto: context)
         user.name = name
         user.email = email
@@ -110,6 +111,27 @@ class SignUpViewController: UIViewController {
         user.department = department
         do {
             try context.save()
+            let alert = UIAlertController(title: "", message: "Registered Succesfully.", preferredStyle: .alert)
+            
+            let Ok = UIAlertAction(title: "Ok", style: .cancel){_ in
+                self.navigationController?.popViewController(animated: true)
+            }
+            Ok.setValue(UIColor.red, forKey: "titleTextColor")
+            alert.addAction(Ok)
+            
+            alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.black
+            let titleString = NSAttributedString(string: "", attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor.yellow,
+                NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)
+            ])
+            alert.setValue(titleString, forKey: "attributedTitle")
+            let messageString = NSAttributedString(string: "Registered Succesfully.", attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor.yellow,
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)
+            ])
+            alert.setValue(messageString, forKey: "attributedMessage")
+            
+            present(alert, animated: true)
         } catch let error as NSError {
             print("Could not save user. \(error), \(error.userInfo)")
         }

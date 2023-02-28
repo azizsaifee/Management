@@ -47,10 +47,8 @@
 		ED89BBEA29A37DDD00761289 /* QuizHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBE929A37DDD00761289 /* QuizHomeVC.swift */; };
 		ED89BBEC29A3814700761289 /* QuizResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBEB29A3814700761289 /* QuizResultVC.swift */; };
 		ED89BBEE29A383E900761289 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBED29A383E900761289 /* Timer.swift */; };
-
 		ED89BBF029A384D100761289 /* StructureOfDataForQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBEF29A384D100761289 /* StructureOfDataForQuestions.swift */; };
 		ED89BBF229A3852200761289 /* DataOfQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBF129A3852200761289 /* DataOfQuestions.swift */; };
-
 		ED89BBF829A38DE600761289 /* StartQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBF729A38DE600761289 /* StartQuizVC.swift */; };
 		ED89BC0429A3983D00761289 /* QuestionDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BC0329A3983D00761289 /* QuestionDataRepository.swift */; };
 		ED89BC0B29A39AED00761289 /* AppCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BC0729A39AED00761289 /* AppCoreData+CoreDataClass.swift */; };
@@ -122,10 +120,8 @@
 		ED89BBE929A37DDD00761289 /* QuizHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHomeVC.swift; sourceTree = "<group>"; };
 		ED89BBEB29A3814700761289 /* QuizResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultVC.swift; sourceTree = "<group>"; };
 		ED89BBED29A383E900761289 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-
 		ED89BBEF29A384D100761289 /* StructureOfDataForQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructureOfDataForQuestions.swift; sourceTree = "<group>"; };
 		ED89BBF129A3852200761289 /* DataOfQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataOfQuestions.swift; sourceTree = "<group>"; };
-
 		ED89BBF729A38DE600761289 /* StartQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizVC.swift; sourceTree = "<group>"; };
 		ED89BC0329A3983D00761289 /* QuestionDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataRepository.swift; sourceTree = "<group>"; };
 		ED89BC0729A39AED00761289 /* AppCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -192,37 +188,6 @@
 				181F127129A4D52F00ACAA9D /* iOSViewModelClass.swift */,
 			);
 			path = iOS;
-			sourceTree = "<group>";
-		};
-		1826762729AE017C00A2C6FE /* DTB */ = {
-			isa = PBXGroup;
-			children = (
-				1826762A29AE022200A2C6FE /* DTB-UZ */,
-				1826762929AE021700A2C6FE /* DTB-TZ */,
-				1826762829AE020B00A2C6FE /* DTB-KE */,
-			);
-			path = DTB;
-			sourceTree = "<group>";
-		};
-		1826762829AE020B00A2C6FE /* DTB-KE */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "DTB-KE";
-			sourceTree = "<group>";
-		};
-		1826762929AE021700A2C6FE /* DTB-TZ */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "DTB-TZ";
-			sourceTree = "<group>";
-		};
-		1826762A29AE022200A2C6FE /* DTB-UZ */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "DTB-UZ";
 			sourceTree = "<group>";
 		};
 		1844535529937F2C00600603 /* Android */ = {
@@ -296,7 +261,6 @@
 		184453742993C62600600603 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				1826762729AE017C00A2C6FE /* DTB */,
 				184453752993C63000600603 /* EcoBank */,
 			);
 			path = iOS;
@@ -460,10 +424,8 @@
 			isa = PBXGroup;
 			children = (
 				ED89BBF729A38DE600761289 /* StartQuizVC.swift */,
-
 				ED4864C329A7809600E93188 /* PopUpVC.swift */,
 				ED89BBE929A37DDD00761289 /* QuizHomeVC.swift */,
-
 				ED89BBEB29A3814700761289 /* QuizResultVC.swift */,
 				ED89BBED29A383E900761289 /* Timer.swift */,
 			);

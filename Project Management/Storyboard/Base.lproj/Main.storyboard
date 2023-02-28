@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uP2-kl-SYt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Zx-R2-bfc">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -10,12 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-
         <!--StartQuizVC-->
         <scene sceneID="Oac-RJ-EoU">
             <objects>
                 <viewController storyboardIdentifier="StartQuizVC" title="StartQuizVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4t7-g3-Eon" customClass="StartQuizVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
-
                     <view key="view" contentMode="scaleToFill" id="cZq-LD-agE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1379,12 +1377,10 @@
             </objects>
             <point key="canvasLocation" x="1914" y="2185"/>
         </scene>
-
         <!--QuizResultVC-->
         <scene sceneID="gY6-HU-xzb">
             <objects>
                 <viewController storyboardIdentifier="QuizResultVC" title="QuizResultVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9uF-rn-rOj" customClass="QuizResultVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
-
                     <view key="view" contentMode="scaleToFill" id="fCA-cP-VBS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1497,12 +1493,10 @@
             </objects>
             <point key="canvasLocation" x="-1004" y="796"/>
         </scene>
-
         <!--QuizHomeVC-->
         <scene sceneID="mvg-qW-LJC">
             <objects>
                 <viewController storyboardIdentifier="QuizHomeVC" title="QuizHomeVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mof-Fh-tvN" customClass="QuizHomeVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
-
                     <view key="view" contentMode="scaleToFill" id="MQw-hC-gnb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1677,7 +1671,6 @@
                         <outlet property="dataOption4" destination="dcY-FY-nRx" id="Aqj-7d-7sV"/>
                         <outlet property="endButton" destination="dqF-wn-lrI" id="IYX-Hh-fsE"/>
                         <outlet property="lblQuestionNumber" destination="L5x-GW-XvW" id="8ae-gG-5q5"/>
-
                         <outlet property="question" destination="2Tf-Vd-4t7" id="hVy-Ug-7tq"/>
                         <outlet property="questionNumberView" destination="hXG-WE-IpA" id="fbd-G8-db2"/>
                         <outlet property="timerLabel" destination="M2O-qr-kVb" id="QTQ-iW-Eup"/>
@@ -1699,12 +1692,10 @@
             </objects>
             <point key="canvasLocation" x="-753" y="2954"/>
         </scene>
-
         <!--PopUpVC-->
         <scene sceneID="UR3-M3-IRa">
             <objects>
                 <viewController storyboardIdentifier="PopUpVC" title="PopUpVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uP2-kl-SYt" customClass="PopUpVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
-
                     <view key="view" contentMode="scaleToFill" id="Wq4-DH-ej3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1725,7 +1716,7 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="goToQuizBtn:" destination="uP2-kl-SYt" eventType="touchUpInside" id="hbg-pX-KD0"/>
+                                                    <action selector="continueButton:" destination="uP2-kl-SYt" eventType="touchUpInside" id="Bm5-Vb-Oww"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0W-3g-U7R">
@@ -1738,7 +1729,7 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="closePopupBtn:" destination="uP2-kl-SYt" eventType="touchUpInside" id="EaO-3T-Y9b"/>
+                                                    <action selector="cancelButton:" destination="uP2-kl-SYt" eventType="touchUpInside" id="MDy-D2-pPD"/>
                                                 </connections>
                                             </button>
                                         </subviews>
