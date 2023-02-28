@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Start Assist View Controller-->
+        <!--Start QuizVC-->
         <scene sceneID="Oac-RJ-EoU">
             <objects>
-                <viewController storyboardIdentifier="StartAssistViewController" id="4t7-g3-Eon" customClass="StartAssistViewController" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartAssistViewController" id="4t7-g3-Eon" customClass="StartQuizVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZq-LD-agE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1378,10 +1378,10 @@
             </objects>
             <point key="canvasLocation" x="1914" y="2185"/>
         </scene>
-        <!--Assist Result View Controller-->
+        <!--Quiz ResultVC-->
         <scene sceneID="gY6-HU-xzb">
             <objects>
-                <viewController storyboardIdentifier="AssistResultViewController" id="9uF-rn-rOj" customClass="AssistResultViewController" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AssistResultViewController" id="9uF-rn-rOj" customClass="QuizResultVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fCA-cP-VBS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1494,10 +1494,10 @@
             </objects>
             <point key="canvasLocation" x="-1004" y="796"/>
         </scene>
-        <!--Assist Home View Controller-->
+        <!--Quiz HomeVC-->
         <scene sceneID="mvg-qW-LJC">
             <objects>
-                <viewController storyboardIdentifier="AssistHomeViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mof-Fh-tvN" customClass="AssistHomeViewController" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AssistHomeViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mof-Fh-tvN" customClass="QuizHomeVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MQw-hC-gnb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1693,10 +1693,10 @@
             </objects>
             <point key="canvasLocation" x="-753" y="2954"/>
         </scene>
-        <!--Op Up View Controller-->
+        <!--Pop UpVC-->
         <scene sceneID="UR3-M3-IRa">
             <objects>
-                <viewController storyboardIdentifier="POpUpViewController" id="uP2-kl-SYt" customClass="POpUpViewController" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="POpUpViewController" id="uP2-kl-SYt" customClass="PopUpVC" customModule="Project_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wq4-DH-ej3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

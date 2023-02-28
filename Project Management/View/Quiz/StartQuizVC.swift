@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StartAssistViewController: UIViewController {
+class StartQuizVC: UIViewController {
     
     // Add comments here.
     // MARK: - Variables
@@ -68,7 +68,7 @@ class StartAssistViewController: UIViewController {
     @objc func buttonTapped(sender: UITapGestureRecognizer) {
         switch sender.name {
         case "apple":
-            let iOSVC = self.storyboard?.instantiateViewController(withIdentifier: "POpUpViewController") as! POpUpViewController
+            let iOSVC = self.storyboard?.instantiateViewController(withIdentifier: "POpUpViewController") as! PopUpVC
             iOSVC.passData = "IOS Quiz"
             self.addChild(iOSVC)
             self.view.addSubview(iOSVC.view)
@@ -76,7 +76,7 @@ class StartAssistViewController: UIViewController {
          //   self.navigationController?.pushViewController(iOSVC, animated: true)
             //iOSVC.title = "IOS Apps"
         case "android":
-            let androidVC = self.storyboard?.instantiateViewController(withIdentifier: "POpUpViewController") as! POpUpViewController
+            let androidVC = self.storyboard?.instantiateViewController(withIdentifier: "POpUpViewController") as! PopUpVC
            
             androidVC.passData = "Android Quiz"
             self.addChild(androidVC)

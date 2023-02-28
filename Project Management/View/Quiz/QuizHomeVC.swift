@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class AssistHomeViewController: UIViewController {
+class QuizHomeVC: UIViewController {
     
     // MARK: - Variables
     var nextQuestionTimer: Timer?
@@ -65,12 +65,12 @@ class AssistHomeViewController: UIViewController {
         
         for question in  questionArray{
             countForIdentifier += 1
-            if AssistHomeViewController.objRepositorys.get(byIdentifier: Int16(countForIdentifier)) == nil {
-                AssistHomeViewController.objRepositorys.create(data: question)
+            if QuizHomeVC.objRepositorys.get(byIdentifier: Int16(countForIdentifier)) == nil {
+                QuizHomeVC.objRepositorys.create(data: question)
             } else {
-                if AssistHomeViewController.objRepositorys.get(byIdentifier: Int16(countForIdentifier))! != question {
-                    _ = AssistHomeViewController.objRepositorys.delete(byIdentifier: Int16(countForIdentifier))
-                    AssistHomeViewController.objRepositorys.create(data: question)
+                if QuizHomeVC.objRepositorys.get(byIdentifier: Int16(countForIdentifier))! != question {
+                    _ = QuizHomeVC.objRepositorys.delete(byIdentifier: Int16(countForIdentifier))
+                    QuizHomeVC.objRepositorys.create(data: question)
                 }
             }
         }
@@ -80,7 +80,7 @@ class AssistHomeViewController: UIViewController {
     func fetchData(){
         if countForIdentifier <= questionArray.count{
             getAnswer(for: Int16(countForIdentifier))
-            let questions = AssistHomeViewController.objRepositorys.get(byIdentifier: Int16(countForIdentifier))
+            let questions = QuizHomeVC.objRepositorys.get(byIdentifier: Int16(countForIdentifier))
             lblQuestionNumber.text = "\(questions!.questionNo)"
             question.text = questions!.question
             dataOption1.text = questions!.option1
@@ -92,7 +92,7 @@ class AssistHomeViewController: UIViewController {
         countForIdentifier  += 1
             if countForIdentifier > questionArray.count + 1{
                 
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssistResultViewController") as! AssistResultViewController
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssistResultViewController") as! QuizResultVC
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.countForIdentifier = 1
 
@@ -107,7 +107,7 @@ class AssistHomeViewController: UIViewController {
     @IBAction func EndBtnAction(_ sender: UIButton){
         let alert = UIAlertController(title: "", message: "Do you really want to quit?", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .default){_ in
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "StartAssistViewController") as! StartAssistViewController
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "StartAssistViewController") as! StartQuizVC
             self.navigationController?.pushViewController(vc, animated: true)
             self.countForIdentifier = 1
         }
@@ -154,7 +154,7 @@ class AssistHomeViewController: UIViewController {
     var answer = ""
     
     func getAnswer(for questionNumber: Int16) {
-        answer = AssistHomeViewController.objRepositorys.get(byIdentifier: questionNumber)!.answer
+        answer = QuizHomeVC.objRepositorys.get(byIdentifier: questionNumber)!.answer
     }
     
     func original() {
@@ -204,7 +204,7 @@ class AssistHomeViewController: UIViewController {
             print("option 1 tapped!")
             //timerLabel.isHidden = true
             if dataOption1.text! == answer {
-                AssistHomeViewController.countCorrectAnswers += 1
+                QuizHomeVC.countCorrectAnswers += 1
             }
             nextQuestionTimer = Timer(timeInterval: 5, repeats: true) { [weak self] nextQuestionTimer in
                 print("I am Here!")
@@ -218,7 +218,7 @@ class AssistHomeViewController: UIViewController {
             }
             print("option 2 tapped!")
             if dataOption2.text == answer {
-                AssistHomeViewController.countCorrectAnswers += 1
+                QuizHomeVC.countCorrectAnswers += 1
             }
         case "3":
             DispatchQueue.main.asyncAfter(deadline: .now() + 2){
@@ -229,7 +229,7 @@ class AssistHomeViewController: UIViewController {
             }
             print("option 3 tapped!")
             if dataOption3.text == answer {
-                AssistHomeViewController.countCorrectAnswers += 1
+                QuizHomeVC.countCorrectAnswers += 1
             }
         case "4":
             DispatchQueue.main.asyncAfter(deadline: .now() + 2){
@@ -240,7 +240,7 @@ class AssistHomeViewController: UIViewController {
             }
             print("option 4 tapped!")
             if dataOption4.text == answer {
-                AssistHomeViewController.countCorrectAnswers += 1
+                QuizHomeVC.countCorrectAnswers += 1
             }
         default :
             print("Nil Found!")

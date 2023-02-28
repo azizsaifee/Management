@@ -7,23 +7,23 @@
 
 import UIKit
 
-class AssistResultViewController: UIViewController {
+class QuizResultVC: UIViewController {
     @IBOutlet weak var correctAnswerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        correctAnswerLabel.text = "\(AssistHomeViewController.countCorrectAnswers) / \(questionArray.count)"
+        correctAnswerLabel.text = "\(QuizHomeVC.countCorrectAnswers) / \(questionArray.count)"
     }
     
 
     @IBAction func backBtn(_ sender: Any) {
        // self.navigationController?.popToRootViewController(animated: true)
         let vc = storyboard?.instantiateViewController(withIdentifier: "StartAssistViewController")
-        as! StartAssistViewController
+        as! StartQuizVC
         vc.tabBarController?.tabBar.isHidden = false
         self.navigationController?.pushViewController(vc, animated: true)
-        AssistHomeViewController.countCorrectAnswers = 0
+        QuizHomeVC.countCorrectAnswers = 0
     }
     
 

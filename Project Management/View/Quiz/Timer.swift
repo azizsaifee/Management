@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension AssistHomeViewController{
+extension QuizHomeVC{
    
     
     // MARK: - View Methods

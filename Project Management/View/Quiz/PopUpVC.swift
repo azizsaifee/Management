@@ -7,7 +7,7 @@
 
 import UIKit
 
-class POpUpViewController: UIViewController {
+class PopUpVC: UIViewController {
     
     var passData = ""
     
@@ -41,7 +41,7 @@ class POpUpViewController: UIViewController {
         
         switch passData{
         case "IOS Quiz":
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssistHomeViewController")as! AssistHomeViewController
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssistHomeViewController")as! QuizHomeVC
             self.navigationController?.pushViewController(vc, animated: true)
             
         case "Android Quiz":
