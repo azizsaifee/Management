@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5FFF25B1-7505-4850-98E8-2ED2E3DF4440"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project Management/View/iOS/iOSVC.swift"
@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "30B01E4B-F45F-4C7F-8A49-D9DDA93CBB7D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project Management/View/iOS/iOSVC.swift"
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6F9DFAAA-60B4-46EC-A8DB-CB96594CCD5E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project Management/View/iOS/iOSVC.swift"
@@ -56,7 +56,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "32CB54A0-CED9-4EA5-803B-C725FCB6B0AA"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project Management/View/Quiz/AssistHomeViewController.swift"
@@ -71,24 +71,56 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "73320310-EE9A-47BD-8468-DD2DA692BBD8"
-            shouldBeEnabled = "Yes"
+            uuid = "E8205E58-BF9A-4755-8151-57ED20FB376A"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project Management/View/Login/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "ValidationCode()"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "btnLoginClicked(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E8205E58-BF9A-4755-8151-57ED20FB376A - c51ff43e3cf8a1de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project_Management.LoginViewController.btnLoginClicked(__C.UIButton) -&gt; ()"
+                  moduleName = "Project Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/moinuddinisraruddin/Documents/Management/Project%20Management/View/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "217">
+               </Location>
+               <Location
+                  uuid = "E8205E58-BF9A-4755-8151-57ED20FB376A - c51ff43e3cf8a1de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project_Management.LoginViewController.btnLoginClicked(__C.UIButton) -&gt; ()"
+                  moduleName = "Project Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/moinuddinisraruddin/Documents/Management/Project%20Management/View/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "430">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E8205E58-BF9A-4755-8151-57ED20FB376A"
-            shouldBeEnabled = "Yes"
+            uuid = "C149BAA7-3827-4F56-8E4B-C1A79C478227"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project Management/View/Login/LoginViewController.swift"
@@ -96,6 +128,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
+            landmarkName = "btnLoginClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9839F63B-5839-4EE2-B3BA-FC997CFD5167"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Project Management/View/Login/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "btnLoginClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
