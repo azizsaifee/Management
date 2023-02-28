@@ -332,8 +332,8 @@
 			isa = PBXGroup;
 			children = (
 				18720CEF2999F98000517C68 /* StructureOfData.swift */,
-				ED89BBF929A393E200761289 /* QuestionModel */,
 				184453742993C62600600603 /* iOS */,
+				ED89BBF929A393E200761289 /* QuestionModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";

@@ -12,7 +12,7 @@ class HomeVC: UIViewController {
     // Add comments here.
     // MARK: - Variables
     var count: Int = 0
-    
+    let contentController = ContentVC()
     // MARK: IBOutlets
     @IBOutlet weak var lblWebsite: UIView!
     @IBOutlet weak var lblWebapp: UIView!
