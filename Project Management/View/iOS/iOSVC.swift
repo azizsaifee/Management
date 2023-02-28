@@ -42,6 +42,7 @@ class iOSVC: UIViewController {
     // MARK: View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.tabBar.isHidden = false
         configureCollectionView()
         labelForTitle.text = "iOS Apps"
     }
