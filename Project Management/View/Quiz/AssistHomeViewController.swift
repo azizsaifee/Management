@@ -102,12 +102,7 @@ class AssistHomeViewController: UIViewController {
     
     
     // Next Button IBAction.
-    @IBAction func nextBtnAction(_ sender: Any) {
-        fetchData()
-        counter = 20
-        didTapChange()
-        original()
-    }
+   
     
     @IBAction func EndBtnAction(_ sender: UIButton){
         let alert = UIAlertController(title: "", message: "Do you really want to quit?", preferredStyle: .alert)
@@ -200,6 +195,12 @@ class AssistHomeViewController: UIViewController {
         checkIsItCorrect()
         switch sender.name {
         case "1":
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                self.fetchData()
+                self.counter = 20
+                self.didTapChange()
+                self.original()
+            }
             print("option 1 tapped!")
             //timerLabel.isHidden = true
             if dataOption1.text! == answer {
@@ -209,16 +210,34 @@ class AssistHomeViewController: UIViewController {
                 print("I am Here!")
             }
         case "2":
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                self.fetchData()
+                self.counter = 20
+                self.didTapChange()
+                self.original()
+            }
             print("option 2 tapped!")
             if dataOption2.text == answer {
                 AssistHomeViewController.countCorrectAnswers += 1
             }
         case "3":
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                self.fetchData()
+                self.counter = 20
+                self.didTapChange()
+                self.original()
+            }
             print("option 3 tapped!")
             if dataOption3.text == answer {
                 AssistHomeViewController.countCorrectAnswers += 1
             }
         case "4":
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                self.fetchData()
+                self.counter = 20
+                self.didTapChange()
+                self.original()
+            }
             print("option 4 tapped!")
             if dataOption4.text == answer {
                 AssistHomeViewController.countCorrectAnswers += 1
