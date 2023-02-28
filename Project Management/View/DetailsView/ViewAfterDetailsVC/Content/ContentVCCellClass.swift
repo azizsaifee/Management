@@ -10,11 +10,14 @@ import WebKit
 
 class ContentVCCellClass: UICollectionViewCell, WKNavigationDelegate {
 
+    // MARK: - Variables
     let activityIndicator = UIActivityIndicatorView(style: .large)
     
+    // MARK: IBOutlets
     @IBOutlet weak var viewForCollectionView: UIView!
     @IBOutlet weak var webView: WKWebView!
     
+    // MARK: View Methods
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,6 +31,7 @@ class ContentVCCellClass: UICollectionViewCell, WKNavigationDelegate {
         activityIndicator.startAnimating()
     }
     
+    // MARK: - Required Methods
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.stopAnimating()
     }

@@ -120,13 +120,13 @@ class ViewAfterDetailsVC: UIViewController, UICollectionViewDelegate {
     func getData() -> [String : Any]? {
         switch ViewAfterDetailsVC.stringForTitle {
         case "Credentials" :
-            return DetailsVC.objRepository.get(byIdentifier: "EcoBank")?.credentials.topic
+            return DetailsVC.objForAppDataRepository.get(byIdentifier: "EcoBank")?.credentials.topic
         case "Features" :
-            return DetailsVC.objRepository.get(byIdentifier: "EcoBank")?.features.topic
+            return DetailsVC.objForAppDataRepository.get(byIdentifier: "EcoBank")?.features.topic
         case "Issues" :
-            return DetailsVC.objRepository.get(byIdentifier: "EcoBank")?.issues.topic
+            return DetailsVC.objForAppDataRepository.get(byIdentifier: "EcoBank")?.issues.topic
         case "Documentation" :
-            return DetailsVC.objRepository.get(byIdentifier: "EcoBank")?.documentation.topic
+            return DetailsVC.objForAppDataRepository.get(byIdentifier: "EcoBank")?.documentation.topic
         default :
             return nil
         }
@@ -155,16 +155,6 @@ extension ViewAfterDetailsVC{
                 print("Selected cell title: \(title!)")
             }
         }
-        
-//        if let selectedItem = dataSource.itemIdentifier(for: indexPath)?.subtitle
-//        {
-//            title = selectedItem
-//            print("Selected cell title: \(title!)")
-//        }
-//        else if let selectedItem = dataSource.itemIdentifier(for: indexPath)?.title {
-//            title = selectedItem
-//            print("Selected cell title: \(title!)")
-//        }
         
         self.navigationController?.pushViewController(contentVC, animated: true)
         ContentVC.stringForTitle = title

@@ -11,5 +11,4 @@ import CoreData
 
 @objc(AppCoreData)
 public class AppCoreData: NSManagedObject {
-
 }
