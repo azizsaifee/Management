@@ -15,15 +15,10 @@ class ContentVC: UIViewController {
     
     // MARK: - Variables
     static var stringForTitle: String?
-    var pdfViewObject: PDFView = PDFView()
-    var pdfDocumentationObject: PDFDocument = PDFDocument()
-    var totalPages = 0
     
     // MARK: IBOutlets
-    
     @IBOutlet weak var headingLabel: UILabel!
-    @IBOutlet weak var ShowPdfBtn: UIButton!
-    //@IBOutlet weak var webViewForContent: WKWebView!
+    @IBOutlet weak var showCodeSnippetButton: UIButton!
     @IBOutlet weak var labelForTittle: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewForText: UITextView!
@@ -38,7 +33,8 @@ class ContentVC: UIViewController {
         collectionView.register(ContentVCCellClass.nib(), forCellWithReuseIdentifier: "ContentVCCellClass")
         headingLabel.text = ContentVC.stringForTitle
     }
-    // ViewAfterDetailsVC.myOptionalDictionary
+    
+    // MARK: Required Methods
     func addContent() {
         if let dictionary = ViewAfterDetailsVC.myOptionalDictionary {
             for (key, value) in dictionary {
@@ -56,9 +52,9 @@ class ContentVC: UIViewController {
             }
         }
     }
-
+    
     // MARK: - IBActions
-    @IBAction func showPdfBtn(_ sender: Any) {
+    @IBAction func showCodeSnippet(_ sender: Any) {
         let webviewvc = (self.storyboard?.instantiateViewController(withIdentifier: "webViewVC") as? webViewVC)!
         self.navigationController?.pushViewController(webviewvc, animated: true)
     }

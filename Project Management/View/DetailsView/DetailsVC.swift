@@ -8,10 +8,13 @@
 import UIKit
 
 class DetailsVC: UIViewController {
-    //demo
-    static var objRepository = AppDataRepository()
+
+    // MARK :- Variables
+    static var objForAppDataRepository = AppDataRepository()
     static var stringForTitle: String?
+    var count = 0
     
+    // MARK: - IBOutlets
     @IBOutlet weak var viewBelowFloatingViews: UIView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var labelForTittle: UILabel!
@@ -23,11 +26,7 @@ class DetailsVC: UIViewController {
     
     @IBOutlet var floatingViews: [UIView]!
     
-    @IBAction func backButtonAction(_ sender: UIButton) {
-        sender.setTitle("<iosApps", for: .normal)
-        self.navigationController?.popViewController(animated: true)
-    }
-    
+    // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         labelForTittle.text = DetailsVC.stringForTitle
@@ -37,14 +36,15 @@ class DetailsVC: UIViewController {
         loadData()
     }
     
+    // MARK: Required Methods
     func loadData() {
-        if DetailsVC.objRepository.get(byIdentifier: "EcoBank") == nil {
-            DetailsVC.objRepository.create(data: dataOfEcoBank)
+        if DetailsVC.objForAppDataRepository.get(byIdentifier: "EcoBank") == nil {
+            DetailsVC.objForAppDataRepository.create(data: dataOfEcoBank)
         } else {
-            if DetailsVC.objRepository.get(byIdentifier: "EcoBank")! != dataOfEcoBank {
-                let deleteSuccessOrNot = DetailsVC.objRepository.delete(byIdentifier: "EcoBank")
+            if DetailsVC.objForAppDataRepository.get(byIdentifier: "EcoBank")! != dataOfEcoBank {
+                let deleteSuccessOrNot = DetailsVC.objForAppDataRepository.delete(byIdentifier: "EcoBank")
                 print(deleteSuccessOrNot)
-                DetailsVC.objRepository.create(data: dataOfEcoBank)
+                DetailsVC.objForAppDataRepository.create(data: dataOfEcoBank)
             }
         }
     }
@@ -60,7 +60,6 @@ class DetailsVC: UIViewController {
         headerView.addSubview(headerLabel)
         tableView.tableHeaderView = headerView
     }
-    
     
     func design() {
         for view in floatingViews {
@@ -85,7 +84,6 @@ class DetailsVC: UIViewController {
         }
     }
 
-    var count = 0
     func getRandomPoint(of view: UIView) -> CGPoint {
         let viewWidth = view.bounds.width
         let viewHeight = view.bounds.height
@@ -157,5 +155,11 @@ class DetailsVC: UIViewController {
         default:
             print("None was found!")
         }
+    }
+    
+    // MARK: - IBActions
+    @IBAction func backButtonAction(_ sender: UIButton) {
+        sender.setTitle("<iosApps", for: .normal)
+        self.navigationController?.popViewController(animated: true)
     }
 }

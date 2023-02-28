@@ -8,8 +8,7 @@
 import Foundation
 import UIKit
 
-extension AssistHomeViewController{
-   
+extension QuizHomeVC{
     
     // MARK: - View Methods
     override func viewWillAppear(_ animated: Bool) {
@@ -42,11 +41,10 @@ extension AssistHomeViewController{
                 // Do something when the timer reaches 20 seconds
                 print("Times Up!")
                 self!.fetchData()
-                self!.didTapChange()
-                self?.original()
+                self!.startAnimationOnTimer()
+                self?.settingColoursOnOptionsToThePreviousState()
             }
         }
         timer?.fireDate = Date().addingTimeInterval(remainingTime)
     }
-    
 }

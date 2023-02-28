@@ -27,5 +27,4 @@ extension AppCoreData {
     }
 }
 extension AppCoreData : Identifiable {
-
 }

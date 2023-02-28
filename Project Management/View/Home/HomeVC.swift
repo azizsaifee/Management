@@ -12,7 +12,7 @@ class HomeVC: UIViewController {
     // Add comments here.
     // MARK: - Variables
     var count: Int = 0
-    let contentController = ContentVC()
+    
     // MARK: IBOutlets
     @IBOutlet weak var lblWebsite: UIView!
     @IBOutlet weak var lblWebapp: UIView!
@@ -104,7 +104,6 @@ class HomeVC: UIViewController {
             view.layer.shadowOffset = CGSize(width: 5, height: 5)
             view.layer.shadowRadius = 5
             view.layer.cornerRadius = 40
-            //view.center = CGPoint(x: viewBelowFloatingViews.bounds.height / 2, y: 0 )
             self.animate(with: view)
         }
     }

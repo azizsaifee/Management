@@ -7,9 +7,8 @@
 
 import UIKit
 
-class StartAssistViewController: UIViewController {
-    
-    // Add comments here.
+class StartQuizVC: UIViewController {
+
     // MARK: - Variables
     var count: Int = 0
     
@@ -68,44 +67,38 @@ class StartAssistViewController: UIViewController {
     @objc func buttonTapped(sender: UITapGestureRecognizer) {
         switch sender.name {
         case "apple":
-            let iOSVC = self.storyboard?.instantiateViewController(withIdentifier: "POpUpViewController") as! POpUpViewController
+
+            let iOSVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpVC") as! PopUpVC
             iOSVC.passData = "IOS Quiz"
             self.addChild(iOSVC)
             self.view.addSubview(iOSVC.view)
             iOSVC.didMove(toParent: self)
-         //   self.navigationController?.pushViewController(iOSVC, animated: true)
-            //iOSVC.title = "IOS Apps"
+
         case "android":
-            let androidVC = self.storyboard?.instantiateViewController(withIdentifier: "POpUpViewController") as! POpUpViewController
-           
+            let androidVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpVC") as! PopUpVC
             androidVC.passData = "Android Quiz"
             self.addChild(androidVC)
             self.view.addSubview(androidVC.view)
             androidVC.didMove(toParent: self)
-            
-            //self.navigationController?.pushViewController(androidVC, animated: true)
-            //androidVC.title = "Android Apps"
         case "salesforce" :
             let salesforceVC = self.storyboard?.instantiateViewController(withIdentifier: "SalesforceVC") as! SalesforceVC
             self.navigationController?.pushViewController(salesforceVC, animated: true)
-            //salesforceVC.title = "Salesforce"
         case "flutter":
             let flutterVC = self.storyboard?.instantiateViewController(withIdentifier: "FlutterVC") as! FlutterVC
             self.navigationController?.pushViewController(flutterVC, animated: true)
-            //flutterVC.title = "Flutter Apps"
         case "website" :
             let websiteVC = self.storyboard?.instantiateViewController(withIdentifier: "WebsiteVC") as! WebsiteVC
             self.navigationController?.pushViewController(websiteVC, animated: true)
-            //websiteVC.title = "Websites"
         case "webapp":
             let webappVC = self.storyboard?.instantiateViewController(withIdentifier: "WebappVC") as! WebappVC
             self.navigationController?.pushViewController(webappVC, animated: true)
-            //webappVC.title = "WebApps"
         default :
             print("nil found")
         }
     }
     
+
+    // This function is used to give basic design to the floating Views.
     func design() {
         for view in floatingViews {
             view.layer.shadowColor = UIColor.black.cgColor
@@ -117,6 +110,8 @@ class StartAssistViewController: UIViewController {
         }
     }
     
+
+    // This function is used to provide animation to the floating views.
     func animate(with floatingViews: UIView) {
         let animator = UIViewPropertyAnimator(duration: 4.0, curve: .linear) {
             floatingViews.center = self.getRandomPoint(of: self.viewBelowFloatingViews)
@@ -129,6 +124,8 @@ class StartAssistViewController: UIViewController {
         }
     }
 
+
+    // This functions gives floating views random points to float into.
     func getRandomPoint(of view: UIView) -> CGPoint {
         let viewWidth = view.bounds.width
         let viewHeight = view.bounds.height
