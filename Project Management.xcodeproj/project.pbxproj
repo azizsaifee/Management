@@ -38,16 +38,19 @@
 		18A8E41B299CB0E500D70967 /* DemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8E41A299CB0E500D70967 /* DemoVC.swift */; };
 		18C293F229927C8F00C7861D /* iOSVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C293F129927C8F00C7861D /* iOSVC.swift */; };
 		690E983A29ACAC2A0009BC5E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E983929ACAC2A0009BC5E /* LoginViewController.swift */; };
-		690E983D29ACBDF30009BC5E /* String + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E983C29ACBDF30009BC5E /* String + extension.swift */; };
-		690E984029ACBE430009BC5E /* UIAlertController + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E983F29ACBE430009BC5E /* UIAlertController + extension.swift */; };
+		6920C63029ADD0F600ACE51A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920C62F29ADD0F600ACE51A /* SignUpViewController.swift */; };
+		6920C63729ADD3FA00ACE51A /* UserDetail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920C63529ADD3FA00ACE51A /* UserDetail+CoreDataClass.swift */; };
+		6920C63829ADD3FA00ACE51A /* UserDetail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920C63629ADD3FA00ACE51A /* UserDetail+CoreDataProperties.swift */; };
 		699CAEDD2994DD1D0050AEC2 /* dataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699CAEDC2994DD1D0050AEC2 /* dataFile.swift */; };
 		ED4864C429A7809600E93188 /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4864C329A7809600E93188 /* PopUpVC.swift */; };
 		ED61E4CA299B6DDB00C965DF /* FaltuCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED61E4C9299B6DDB00C965DF /* FaltuCode.swift */; };
 		ED89BBEA29A37DDD00761289 /* QuizHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBE929A37DDD00761289 /* QuizHomeVC.swift */; };
 		ED89BBEC29A3814700761289 /* QuizResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBEB29A3814700761289 /* QuizResultVC.swift */; };
 		ED89BBEE29A383E900761289 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBED29A383E900761289 /* Timer.swift */; };
+
 		ED89BBF029A384D100761289 /* StructureOfDataForQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBEF29A384D100761289 /* StructureOfDataForQuestions.swift */; };
 		ED89BBF229A3852200761289 /* DataOfQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBF129A3852200761289 /* DataOfQuestions.swift */; };
+
 		ED89BBF829A38DE600761289 /* StartQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BBF729A38DE600761289 /* StartQuizVC.swift */; };
 		ED89BC0429A3983D00761289 /* QuestionDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BC0329A3983D00761289 /* QuestionDataRepository.swift */; };
 		ED89BC0B29A39AED00761289 /* AppCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89BC0729A39AED00761289 /* AppCoreData+CoreDataClass.swift */; };
@@ -110,16 +113,19 @@
 		18A8E41A299CB0E500D70967 /* DemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoVC.swift; sourceTree = "<group>"; };
 		18C293F129927C8F00C7861D /* iOSVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSVC.swift; sourceTree = "<group>"; };
 		690E983929ACAC2A0009BC5E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		690E983C29ACBDF30009BC5E /* String + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extension.swift"; sourceTree = "<group>"; };
-		690E983F29ACBE430009BC5E /* UIAlertController + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController + extension.swift"; sourceTree = "<group>"; };
+		6920C62F29ADD0F600ACE51A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		6920C63529ADD3FA00ACE51A /* UserDetail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDetail+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6920C63629ADD3FA00ACE51A /* UserDetail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDetail+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		699CAEDC2994DD1D0050AEC2 /* dataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataFile.swift; sourceTree = "<group>"; };
 		ED4864C329A7809600E93188 /* PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVC.swift; sourceTree = "<group>"; };
 		ED61E4C9299B6DDB00C965DF /* FaltuCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaltuCode.swift; sourceTree = "<group>"; };
 		ED89BBE929A37DDD00761289 /* QuizHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHomeVC.swift; sourceTree = "<group>"; };
 		ED89BBEB29A3814700761289 /* QuizResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultVC.swift; sourceTree = "<group>"; };
 		ED89BBED29A383E900761289 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+
 		ED89BBEF29A384D100761289 /* StructureOfDataForQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructureOfDataForQuestions.swift; sourceTree = "<group>"; };
 		ED89BBF129A3852200761289 /* DataOfQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataOfQuestions.swift; sourceTree = "<group>"; };
+
 		ED89BBF729A38DE600761289 /* StartQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizVC.swift; sourceTree = "<group>"; };
 		ED89BC0329A3983D00761289 /* QuestionDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataRepository.swift; sourceTree = "<group>"; };
 		ED89BC0729A39AED00761289 /* AppCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -307,6 +313,8 @@
 		184D1356298CEF16000FF810 = {
 			isa = PBXGroup;
 			children = (
+				6920C63529ADD3FA00ACE51A /* UserDetail+CoreDataClass.swift */,
+				6920C63629ADD3FA00ACE51A /* UserDetail+CoreDataProperties.swift */,
 				184D1361298CEF17000FF810 /* Project Management */,
 				184D137B298CEF19000FF810 /* Project ManagementTests */,
 				184D1385298CEF19000FF810 /* Project ManagementUITests */,
@@ -372,6 +380,7 @@
 		184D1396298CF0B0000FF810 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6920C62E29ADD0DA00ACE51A /* SignUp */,
 				690E983B29ACAC3B0009BC5E /* Login */,
 				ED89BBE829A37D9500761289 /* Quiz */,
 				184D1398298CF107000FF810 /* Home */,
@@ -435,18 +444,26 @@
 			isa = PBXGroup;
 			children = (
 				690E983929ACAC2A0009BC5E /* LoginViewController.swift */,
-				690E983C29ACBDF30009BC5E /* String + extension.swift */,
-				690E983F29ACBE430009BC5E /* UIAlertController + extension.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		6920C62E29ADD0DA00ACE51A /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				6920C62F29ADD0F600ACE51A /* SignUpViewController.swift */,
+			);
+			name = SignUp;
 			sourceTree = "<group>";
 		};
 		ED89BBE829A37D9500761289 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
 				ED89BBF729A38DE600761289 /* StartQuizVC.swift */,
+
 				ED4864C329A7809600E93188 /* PopUpVC.swift */,
 				ED89BBE929A37DDD00761289 /* QuizHomeVC.swift */,
+
 				ED89BBEB29A3814700761289 /* QuizResultVC.swift */,
 				ED89BBED29A383E900761289 /* Timer.swift */,
 			);
@@ -626,11 +643,9 @@
 				ED89BBF829A38DE600761289 /* StartQuizVC.swift in Sources */,
 				1844536929938C5F00600603 /* WebsiteVC.swift in Sources */,
 				189C154E299E6D01009EDD14 /* ContentVCCellClass.swift in Sources */,
-				690E983D29ACBDF30009BC5E /* String + extension.swift in Sources */,
 				ED9D366529A4E5FB00E898BF /* Questions+CoreDataProperties.swift in Sources */,
 				ED89BBF029A384D100761289 /* StructureOfDataForQuestions.swift in Sources */,
 				1830F5FE29A8D3410053AF95 /* webViewVC.swift in Sources */,
-				690E984029ACBE430009BC5E /* UIAlertController + extension.swift in Sources */,
 				1844535B2993807100600603 /* AndroidTableViewCell.swift in Sources */,
 				1844536F2993BCFD00600603 /* ViewAfterDetailsVC.swift in Sources */,
 				18720CF52999FA0C00517C68 /* AppDataRepository.swift in Sources */,
@@ -648,13 +663,16 @@
 				1844536329938AC200600603 /* FlutterVC.swift in Sources */,
 				ED9D366429A4E5FB00E898BF /* Questions+CoreDataClass.swift in Sources */,
 				184453772993C64E00600603 /* DataForEcoBank.swift in Sources */,
+				6920C63729ADD3FA00ACE51A /* UserDetail+CoreDataClass.swift in Sources */,
 				184D1365298CEF17000FF810 /* SceneDelegate.swift in Sources */,
 				1844535729937F7600600603 /* AndroidVC.swift in Sources */,
+				6920C63029ADD0F600ACE51A /* SignUpViewController.swift in Sources */,
 				1844536C2993A68C00600603 /* DetailsVC.swift in Sources */,
 				ED89BBF229A3852200761289 /* DataOfQuestions.swift in Sources */,
 				18720CF32999FA0000517C68 /* PersistentStorage.swift in Sources */,
 				18A8E41B299CB0E500D70967 /* DemoVC.swift in Sources */,
 				18C293F229927C8F00C7861D /* iOSVC.swift in Sources */,
+				6920C63829ADD3FA00ACE51A /* UserDetail+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

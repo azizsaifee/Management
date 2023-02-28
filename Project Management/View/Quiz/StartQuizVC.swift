@@ -67,11 +67,13 @@ class StartQuizVC: UIViewController {
     @objc func buttonTapped(sender: UITapGestureRecognizer) {
         switch sender.name {
         case "apple":
+
             let iOSVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpVC") as! PopUpVC
             iOSVC.passData = "IOS Quiz"
             self.addChild(iOSVC)
             self.view.addSubview(iOSVC.view)
             iOSVC.didMove(toParent: self)
+
         case "android":
             let androidVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpVC") as! PopUpVC
             androidVC.passData = "Android Quiz"
@@ -95,6 +97,7 @@ class StartQuizVC: UIViewController {
         }
     }
     
+
     // This function is used to give basic design to the floating Views.
     func design() {
         for view in floatingViews {
@@ -107,6 +110,7 @@ class StartQuizVC: UIViewController {
         }
     }
     
+
     // This function is used to provide animation to the floating views.
     func animate(with floatingViews: UIView) {
         let animator = UIViewPropertyAnimator(duration: 4.0, curve: .linear) {
@@ -119,6 +123,7 @@ class StartQuizVC: UIViewController {
             }
         }
     }
+
 
     // This functions gives floating views random points to float into.
     func getRandomPoint(of view: UIView) -> CGPoint {

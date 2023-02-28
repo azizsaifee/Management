@@ -11,6 +11,7 @@ class PopUpVC: UIViewController {
     
     var passData = ""
     
+
     //  MARK:- @IBOutlet.
     // Outlet for view where popup is been shown.
     @IBOutlet weak var main: UIView!
@@ -39,9 +40,11 @@ class PopUpVC: UIViewController {
         main.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         main.layer.shadowRadius = 6.0
         main.layer.masksToBounds = false
+
     }
     
     // MARK:- func AddAnimation and RemoveAnimation
+
     func addAnimation(){
         self.main.transform = CGAffineTransform(translationX:0,y:250)
         UIView.animate(withDuration: 0.5, animations: {

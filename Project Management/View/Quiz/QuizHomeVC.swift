@@ -19,6 +19,8 @@ class QuizHomeVC: UIViewController {
             }
         }
     }
+
+
     static var objQuizDataRepository = QuizDataRepository()
     let shape = CAShapeLayer()
     static var countCorrectAnswers = 0
@@ -34,23 +36,29 @@ class QuizHomeVC: UIViewController {
     @IBOutlet weak var question: UILabel!
     // For options shown.
     @IBOutlet var collectionOfOptionLabels: [UILabel]!
+
     @IBOutlet weak var dataOption1: UILabel!
     @IBOutlet weak var dataOption2: UILabel!
     @IBOutlet weak var dataOption3: UILabel!
     @IBOutlet weak var dataOption4: UILabel!
+
     @IBOutlet var collectionOfOptionView: [UIView]!
+
     @IBOutlet weak var viewOfOption1: UIView!
     @IBOutlet weak var viewOfOption2: UIView!
     @IBOutlet weak var viewOfOption3: UIView!
     @IBOutlet weak var viewOfOption4: UIView!
+
     // For the timer running below.
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var endButton: UIButton!
+
     
     // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // hiding navigation bar and tab bar.
         navigationController?.navigationBar.isHidden = true
         tabBarController?.tabBar.isHidden = true
@@ -66,6 +74,7 @@ class QuizHomeVC: UIViewController {
     
     // MARK: - Required Methods
     func loadData() {
+
         for question in  questionArray{
             countForIdentifier += 1
             if QuizHomeVC.objQuizDataRepository.get(byIdentifier: Int16(countForIdentifier)) == nil {
@@ -74,6 +83,7 @@ class QuizHomeVC: UIViewController {
                 if QuizHomeVC.objQuizDataRepository.get(byIdentifier: Int16(countForIdentifier))! != question {
                     _ = QuizHomeVC.objQuizDataRepository.delete(byIdentifier: Int16(countForIdentifier))
                     QuizHomeVC.objQuizDataRepository.create(data: question)
+
                 }
             }
         }
@@ -83,13 +93,16 @@ class QuizHomeVC: UIViewController {
     func fetchData(){
         if countForIdentifier <= questionArray.count{
             getAnswer(for: Int16(countForIdentifier))
+
             let questions = QuizHomeVC.objQuizDataRepository.get(byIdentifier: Int16(countForIdentifier))
+
             lblQuestionNumber.text = "\(questions!.questionNo)"
             question.text = questions!.question
             dataOption1.text = questions!.option1
             dataOption2.text = questions!.option2
             dataOption3.text = questions!.option3
             dataOption4.text = questions!.option4
+
         }
         countForIdentifier  += 1
         if countForIdentifier > questionArray.count + 1{
@@ -117,6 +130,7 @@ class QuizHomeVC: UIViewController {
         viewOfOption4.addGestureRecognizer(option4)
     }
     
+
     func getAnswer(for questionNumber: Int16) {
         answer = QuizHomeVC.objQuizDataRepository.get(byIdentifier: questionNumber)!.answer
     }
@@ -128,6 +142,7 @@ class QuizHomeVC: UIViewController {
         dataOption4.backgroundColor = .systemBrown
     }
     
+
     func uiChanges() {
         for option in collectionOfOptionView {
             option.layer.cornerRadius = 20
@@ -137,6 +152,7 @@ class QuizHomeVC: UIViewController {
         questionNumberView.layer.cornerRadius = questionNumberView.bounds.height / 2
         questionNumberView.clipsToBounds = true
         questionNumberView.backgroundColor = .systemIndigo
+
     }
     
     func checkIsItCorrect() {
@@ -150,29 +166,59 @@ class QuizHomeVC: UIViewController {
         }
     }
     
+    
+    
     @objc func buttonTapped(sender: UITapGestureRecognizer) {
+        selectedOption = Int(sender.name!)
         checkIsItCorrect()
         switch sender.name {
         case "1":
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                self.fetchData()
+                self.counter = 20
+                self.didTapChange()
+                self.original()
+            }
+
             print("option 1 tapped!")
             //timerLabel.isHidden = true
             if dataOption1.text! == answer {
                 QuizHomeVC.countCorrectAnswers += 1
             }
-//            nextQuestionTimer = Timer(timeInterval: 5, repeats: true) { [weak self] nextQuestionTimer in
-//                print("I am Here!")
-//            }
+            nextQuestionTimer = Timer(timeInterval: 5, repeats: true) { [weak self] nextQuestionTimer in
+                print("I am Here!")
+            }
         case "2":
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                self.fetchData()
+                self.counter = 20
+                self.didTapChange()
+                self.original()
+            }
+
             print("option 2 tapped!")
             if dataOption2.text == answer {
                 QuizHomeVC.countCorrectAnswers += 1
             }
         case "3":
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                self.fetchData()
+                self.counter = 20
+                self.didTapChange()
+                self.original()
+            }
+
             print("option 3 tapped!")
             if dataOption3.text == answer {
                 QuizHomeVC.countCorrectAnswers += 1
             }
         case "4":
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                self.fetchData()
+                self.counter = 20
+                self.didTapChange()
+                self.original()
+            }
             print("option 4 tapped!")
             if dataOption4.text == answer {
                 QuizHomeVC.countCorrectAnswers += 1
@@ -182,6 +228,7 @@ class QuizHomeVC: UIViewController {
         }
     }
     
+
     @objc func startAnimationOnTimer(){
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.toValue = 1
@@ -191,6 +238,7 @@ class QuizHomeVC: UIViewController {
         shape.add(animation, forKey: "animation")
     }
     
+
     func roundedProgressOnTimer(){
         let ciclePath = UIBezierPath(arcCenter:timerLabel.center,
                                      radius: 30,
@@ -211,13 +259,7 @@ class QuizHomeVC: UIViewController {
         view.layer.addSublayer(shape)
     }
     
-    // IBActions.
-    @IBAction func nextBtnAction(_ sender: Any) {
-        fetchData()
-        counter = 20
-        startAnimationOnTimer()
-        settingColoursOnOptionsToThePreviousState()
-    }
+
     
     @IBAction func EndBtnAction(_ sender: UIButton){
         let alert = UIAlertController(title: "", message: "Do you really want to quit?", preferredStyle: .alert)
@@ -248,6 +290,7 @@ class QuizHomeVC: UIViewController {
         
         present(alert, animated: true)
     }
+
 }
     
 

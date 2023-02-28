@@ -8,11 +8,12 @@
 import UIKit
 
 class QuizResultVC: UIViewController {
-    
+
     @IBOutlet weak var correctAnswerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         correctAnswerLabel.text = "\(QuizHomeVC.countCorrectAnswers) / \(questionArray.count)"
     }
     
