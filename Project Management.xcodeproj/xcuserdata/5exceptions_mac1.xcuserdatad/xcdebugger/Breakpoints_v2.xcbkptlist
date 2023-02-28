@@ -16,7 +16,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
             endingLineNumber = "211"
-            landmarkName = "design()"
+            landmarkName = "buttonTapped(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -32,7 +32,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "180"
             endingLineNumber = "180"
-            landmarkName = "tapOption()"
+            landmarkName = "design()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -50,38 +50,6 @@
             endingLineNumber = "69"
             landmarkName = "buttonTapped(sender:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E81A804A-4B9D-4A1B-ADF5-E932AD1F9C02 - a4f061c8d6b00da8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Project_Management.HomeVC.buttonTapped(sender: __C.UITapGestureRecognizer) -&gt; ()"
-                  moduleName = "Project Management"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/5exceptions_mac1/Documents/Management%202/Project%20Management/View/Home/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "903">
-               </Location>
-               <Location
-                  uuid = "E81A804A-4B9D-4A1B-ADF5-E932AD1F9C02 - a4f061c8d6b00da8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Project_Management.HomeVC.buttonTapped(sender: __C.UITapGestureRecognizer) -&gt; ()"
-                  moduleName = "Project Management"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/5exceptions_mac1/Documents/Management%202/Project%20Management/View/Home/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "1008">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
