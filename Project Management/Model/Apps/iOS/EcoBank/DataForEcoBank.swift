@@ -11,7 +11,7 @@ var dataOfEcoBank = DataDictionary (
     id: "EcoBank",
     
     features: Features(topic: [
-        
+        "newbie" : "gyyyy", 
         "Table View Features" :
             ["About Table View" : ["Links" : "", "Description" : "A table view displays a single column of vertically scrolling content, divided into rows and sections. Each row of a table displays a single piece of information related to your app. Sections let you group related rows together. For example, the Contacts app uses a table to display the names of the user’s contacts."]],
         

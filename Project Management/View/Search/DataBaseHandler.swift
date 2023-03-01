@@ -11,40 +11,24 @@ import UIKit
 
 class DataBaseHandler {
     
-
-    func fetchSearchedData(questionNo:String) -> [Questions]
+    static var sdata = [Questions]()
+    static var adata = [AppCoreData]()
+    static func fetchSearchedData(questionNo: String) -> [Any]?
     {
-
-        var sdata = [Questions]()
-let predicate = NSPredicate(format: "questionNo CONTAINS[cd] %@ OR question CONTAINS[cd] %@ OR option1 CONTAINS[cd] %@ OR option2 CONTAINS[cd] %@ OR option3 CONTAINS[cd] %@ OR option4 CONTAINS[cd] %@" , questionNo,questionNo,questionNo,questionNo,questionNo,questionNo)
+        let predicate = NSPredicate(format: "questionNo CONTAINS[cd] %@ OR question CONTAINS[cd] %@ OR option1 CONTAINS[cd] %@ OR option2 CONTAINS[cd] %@ OR option3 CONTAINS[cd] %@ OR option4 CONTAINS[cd] %@" , questionNo,questionNo,questionNo,questionNo,questionNo,questionNo)
+        let predicate2 = NSPredicate(format: "id CONTAINS[cd] %@", questionNo , questionNo)
         let context = PersistentStorage.shared.context
         let request:NSFetchRequest = Questions.fetchRequest()
+        let request2:NSFetchRequest = AppCoreData.fetchRequest()
         request.predicate = predicate
-        do{
-            sdata = try(context.fetch(request))
+        request2.predicate = predicate2
+        do {
+            sdata = try context.fetch(request)
+            adata = try context.fetch(request2)
+            return sdata + adata
+        } catch {
+            print("Error fetching data: \(error)")
+            return nil
         }
-        catch{
-            print("error")
-        }
-        return sdata
     }
-    
-//    func fetchSearchedData(searchText: String) -> [Questions] {
-//        var sdata = [Questions]()
-//        let context = PersistentStorage.shared.context
-//        let request: NSFetchRequest<Questions> = Questions.fetchRequest()
-//        let predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [
-//            NSPredicate(format: "questionNo CONTAINS[c] %@", searchText),
-//            NSPredicate(format: "AppCoreData CONTAINS[c] %@", searchText),
-//            //NSPredicate(format: "UserDetail.property CONTAINS[c] %@", searchText)
-//        ])
-//        request.predicate = predicate
-//        do {
-//            sdata = try context.fetch(request)
-//        } catch {
-//            print("Error fetching searched data: \(error.localizedDescription)")
-//        }
-//        return sdata
-//    }
-
 }

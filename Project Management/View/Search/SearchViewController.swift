@@ -14,12 +14,12 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     
     
-    var sdata = [Questions]()
+    var newData: [Any]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
        navigationController?.navigationBar.isHidden = true
-        let dh = DataBaseHandler()
+        //let dh = DataBaseHandler()
         tableview.delegate = self
         tableview.dataSource = self
         
@@ -29,17 +29,27 @@ class SearchViewController: UIViewController {
 }
 extension SearchViewController :UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sdata.count
+        return newData?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
-        cell.questionlabel.text = sdata[indexPath.row].question
-        cell.option1label.text = sdata[indexPath.row].option1
-        cell.option2label.text = sdata[indexPath.row].option2
-        cell.option3label.text = sdata[indexPath.row].option3
-        cell.option4label.text = sdata[indexPath.row].option4
-     
+        if let data = newData![indexPath.row] as? Questions {
+            cell.questionlabel.text = data.question
+            cell.option1label.text = data.option1
+            cell.option2label.text = data.option2
+            cell.option3label.text = data.option3
+            cell.option4label.text = data.option4
+        }
+        if let data = newData![indexPath.row] as? AppCoreData {
+            cell.questionlabel.text = data.id
+            cell.option1label.text = ""
+            cell.option2label.text = ""
+            cell.option3label.text = ""
+            cell.option4label.text = ""
+        }
+        
+        
         return cell
     }
 }
@@ -47,14 +57,16 @@ extension SearchViewController :UITableViewDelegate,UITableViewDataSource{
 extension SearchViewController :UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
-        let dh = DataBaseHandler()
+        //let dh = DataBaseHandler()
         if searchText != ""{
-          sdata = dh.fetchSearchedData(questionNo: searchText)
+            newData = DataBaseHandler.fetchSearchedData(questionNo: searchText)
          //  sdata =  dh.fetchSearchedData(searchText: searchText)
             tableview.reloadData()
         }
         else{
-            sdata = []
+//            DataBaseHandler.adata = []
+//            DataBaseHandler.sdata = []
+            newData = []
             tableview.reloadData()
         }
         

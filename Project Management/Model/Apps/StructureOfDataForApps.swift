@@ -32,6 +32,10 @@ public class Features: NSObject, NSCoding {
         self.topic = topic
     }
     
+    public var topicValues: String? {
+        return topic.keys.first!
+    }
+    
     public func encode(with coder: NSCoder) {
         coder.encode(topic, forKey: "topic")
     }
