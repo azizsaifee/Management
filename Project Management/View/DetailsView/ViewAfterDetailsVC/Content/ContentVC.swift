@@ -41,12 +41,24 @@ class ContentVC: UIViewController {
                 if let subDictionary = value as? [String: Any] {
                     for key in subDictionary.keys {
                         if ContentVC.stringForTitle == key {
-                            viewForText.text = subDictionary[key] as? String
+                            if let subDictionary2 = subDictionary[key] as? [String: Any] {
+                                for key2 in subDictionary2.keys {
+                                    if key2 == "Description" {
+                                        viewForText.text = subDictionary2[key2] as? String
+                                    }
+                                }
+                            }
                         }
                     }
                 } else {
                     if ContentVC.stringForTitle == "\(key)" {
-                        viewForText.text = "\(value)"
+                        if let subDictionary = value as? [String: Any] {
+                            for key in subDictionary.keys {
+                                if key == "Description" {
+                                    viewForText.text = subDictionary[key] as? String
+                                }
+                            }
+                        }
                     }
                 }
             }
