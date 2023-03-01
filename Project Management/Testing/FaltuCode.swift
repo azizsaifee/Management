@@ -131,4 +131,54 @@ import Foundation
  
 */
 
-
+// for sending mail for reset password
+//func sendPasswordResetEmail(email: String) {
+//        // Check if user with email exists
+//        let context = PersistentStorage.shared.context
+//        let fetchRequest: NSFetchRequest<UserDetail> = UserDetail.fetchRequest()
+//        fetchRequest.predicate = NSPredicate(format: "email == %@", email)
+//        do {
+//            let results = try context.fetch(fetchRequest)
+//            guard let user = results.first else {
+//                // User not found
+//                // Handle this case as appropriate (e.g. show an error message)
+//                return
+//            }
+//
+//            // Generate reset token and expiration date
+//            let resetToken = UUID().uuidString
+//            let expirationDate = Date().addingTimeInterval(3600) // 1 hour from now
+//
+//            // Update user with reset token and expiration date
+//            //user.resetToken = resetToken
+//          //  user.resetExpirationDate = expirationDate
+//            try context.save()
+//
+//            // Send email with reset link
+//            let resetLink = "https://example.com/reset?email=\(email)&token=\(resetToken)"
+//            let message = "Click the following link to reset your password: \(resetLink)"
+//            // TODO: Send email with message
+//            let mail = Mail(
+//                   from: "noreply@example.com",
+//                   to: email,
+//                   subject: "Password Reset Request",
+//                   text: message
+//               )
+//               let smtp = SMTP(
+//                   hostname: "smtp.example.com",
+//                   username: "username",
+//                   password: "password"
+//               )
+//
+//               // Send email
+//               do {
+//                   try mail.send(smtp: smtp)
+//               } catch {
+//                   print("Error sending email: \(error.localizedDescription)")
+//                   // Handle error as appropriate
+//               }
+//        } catch let error as NSError {
+//            print("Could not fetch user. \(error), \(error.userInfo)")
+//            // Handle error as appropriate
+//        }
+//    }

@@ -8,8 +8,7 @@
 import UIKit
 import CoreData
 
-
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController{
     
     
     @IBOutlet weak var txtEmail: UITextField!
@@ -117,7 +116,7 @@ class LoginViewController: UIViewController {
                 // Handle this case as appropriate (e.g. show an error message)
                 return
             }
-            
+
             // Prompt user to enter new password
             let alertController = UIAlertController(title: "Reset Password", message: "Enter a new password", preferredStyle: .alert)
             alertController.addTextField { (textField) in
@@ -164,13 +163,14 @@ class LoginViewController: UIViewController {
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)
             ])
             alertController.setValue(messageString, forKey: "attributedMessage")
-            
+
             present(alertController, animated: true, completion: nil)
         } catch let error as NSError {
             print("Could not fetch user. \(error), \(error.userInfo)")
             // Handle error as appropriate
         }
     }
+//    
 
 }
 
