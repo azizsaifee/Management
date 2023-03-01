@@ -41,8 +41,8 @@
 		6920C63029ADD0F600ACE51A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920C62F29ADD0F600ACE51A /* SignUpViewController.swift */; };
 		6920C63729ADD3FA00ACE51A /* UserDetail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920C63529ADD3FA00ACE51A /* UserDetail+CoreDataClass.swift */; };
 		6920C63829ADD3FA00ACE51A /* UserDetail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920C63629ADD3FA00ACE51A /* UserDetail+CoreDataProperties.swift */; };
+		699609FA29AF3C55005C0EEC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699609F929AF3C54005C0EEC /* SearchViewController.swift */; };
 		699CAEDD2994DD1D0050AEC2 /* dataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699CAEDC2994DD1D0050AEC2 /* dataFile.swift */; };
-		ED3ADF1029AF385B002F996E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3ADF0D29AF385A002F996E /* SearchViewController.swift */; };
 		ED3ADF1129AF385B002F996E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3ADF0E29AF385A002F996E /* SearchTableViewCell.swift */; };
 		ED3ADF1229AF385B002F996E /* DataBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3ADF0F29AF385A002F996E /* DataBaseHandler.swift */; };
 		ED4864C429A7809600E93188 /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4864C329A7809600E93188 /* PopUpVC.swift */; };
@@ -117,8 +117,8 @@
 		6920C62F29ADD0F600ACE51A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6920C63529ADD3FA00ACE51A /* UserDetail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDetail+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6920C63629ADD3FA00ACE51A /* UserDetail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDetail+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		699609F929AF3C54005C0EEC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		699CAEDC2994DD1D0050AEC2 /* dataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataFile.swift; sourceTree = "<group>"; };
-		ED3ADF0D29AF385A002F996E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = "../../../../../Management/Project Management/View/SearchBar/SearchViewController.swift"; sourceTree = "<group>"; };
 		ED3ADF0E29AF385A002F996E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		ED3ADF0F29AF385A002F996E /* DataBaseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseHandler.swift; sourceTree = "<group>"; };
 		ED4864C329A7809600E93188 /* PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVC.swift; sourceTree = "<group>"; };
@@ -430,9 +430,9 @@
 		ED3ADF0A29AF362F002F996E /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				699609F929AF3C54005C0EEC /* SearchViewController.swift */,
 				ED3ADF0F29AF385A002F996E /* DataBaseHandler.swift */,
 				ED3ADF0E29AF385A002F996E /* SearchTableViewCell.swift */,
-				ED3ADF0D29AF385A002F996E /* SearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -645,11 +645,11 @@
 				6920C63729ADD3FA00ACE51A /* UserDetail+CoreDataClass.swift in Sources */,
 				ED3ADF1129AF385B002F996E /* SearchTableViewCell.swift in Sources */,
 				184D1365298CEF17000FF810 /* SceneDelegate.swift in Sources */,
+				699609FA29AF3C55005C0EEC /* SearchViewController.swift in Sources */,
 				1844535729937F7600600603 /* AndroidVC.swift in Sources */,
 				ED3ADF1229AF385B002F996E /* DataBaseHandler.swift in Sources */,
 				6920C63029ADD0F600ACE51A /* SignUpViewController.swift in Sources */,
 				1844536C2993A68C00600603 /* DetailsVC.swift in Sources */,
-				ED3ADF1029AF385B002F996E /* SearchViewController.swift in Sources */,
 				ED89BBF229A3852200761289 /* DataOfQuestions.swift in Sources */,
 				18720CF32999FA0000517C68 /* PersistentStorage.swift in Sources */,
 				18A8E41B299CB0E500D70967 /* DemoVC.swift in Sources */,
