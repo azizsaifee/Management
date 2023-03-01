@@ -53,6 +53,10 @@ extension SearchViewController :UISearchBarDelegate {
          //  sdata =  dh.fetchSearchedData(searchText: searchText)
             tableview.reloadData()
         }
+        else{
+            sdata = []
+            tableview.reloadData()
+        }
         
     }
 }
