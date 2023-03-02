@@ -8,16 +8,30 @@
 import UIKit
 import CoreData
 
-class LoginViewController: UIViewController{
+class LoginViewController: UIViewController,UITextFieldDelegate{
     
     
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    
+    @IBOutlet weak var securityBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtEmail.becomeFirstResponder()
+        if txtPassword.isFirstResponder == false {
+            securityBtn.isHidden = true
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidBeginEditing(_:)), name: UITextField.textDidBeginEditingNotification, object: txtPassword)
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidEndEditing(_:)), name: UITextField.textDidEndEditingNotification, object: txtPassword)
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        securityBtn.isHidden = false
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if txtPassword.text == ""{
+            securityBtn.isHidden = true
+        }
+    }
     @IBAction func btnLoginClicked(_ sender: UIButton) {
         let email = txtEmail.text ?? ""
         let password = txtPassword.text ?? ""
@@ -32,24 +46,36 @@ class LoginViewController: UIViewController{
         }
             else {
                 // Handle failed login
-                let alert = UIAlertController(title: "", message: "Wrong Credentials", preferredStyle: .alert)
-               
-                let Ok = UIAlertAction(title: "Ok", style: .cancel)
-                Ok.setValue(UIColor.red, forKey: "titleTextColor")
-                alert.addAction(Ok)
-                alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.black
-                let titleString = NSAttributedString(string: "", attributes: [
-                    NSAttributedString.Key.foregroundColor: UIColor.yellow,
-                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)
-                ])
-                alert.setValue(titleString, forKey: "attributedTitle")
-                let messageString = NSAttributedString(string: "Wrong Credentials", attributes: [
-                    NSAttributedString.Key.foregroundColor: UIColor.yellow,
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)
-                ])
-                alert.setValue(messageString, forKey: "attributedMessage")
-
-                present(alert, animated: true)
+//                 let alert = UIAlertController(title: "", message: "Wrong Credentials", preferredStyle: .alert)
+//
+//                let Ok = UIAlertAction(title: "Ok", style: .cancel)
+//                Ok.setValue(UIColor.red, forKey: "titleTextColor")
+//                alert.addAction(Ok)
+//                alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.black
+//                let titleString = NSAttributedString(string: "", attributes: [
+//                    NSAttributedString.Key.foregroundColor: UIColor.yellow,
+//                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)
+//                ])
+//                alert.setValue(titleString, forKey: "attributedTitle")
+//                let messageString = NSAttributedString(string: "Wrong Credentials", attributes: [
+//                    NSAttributedString.Key.foregroundColor: UIColor.yellow,
+//                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)
+//                ])
+//                alert.setValue(messageString, forKey: "attributedMessage")
+//
+//                present(alert, animated: true)
+                if  txtEmail.text == "" {
+                    if self.txtEmail.text == ""{
+                        showAlert(title: "", message: "Please Enter Email.")
+                    }
+                } else if txtPassword.text == "" {
+                    if self.txtPassword.text == ""{
+                        showAlert(title: "", message: "Please Enter Password.")
+                    }
+                }
+                    else{
+                        showAlert(title: "", message: "Wrong Credentials.")
+                    }
                 
             }
         }
@@ -172,6 +198,24 @@ class LoginViewController: UIViewController{
     }
 //    
 
+    @IBAction func HideBtnClickedForPassword(_ sender: Any) {
+        if txtPassword.isSecureTextEntry == true {
+            txtPassword.isSecureTextEntry = false
+            securityBtn.setImage(UIImage(named: "Show"), for: .normal)
+            securityBtn.tintColor = .black
+        }
+        else{
+            txtPassword.isSecureTextEntry = true
+            securityBtn.setImage(UIImage(named: "hide"), for: .normal)
+            securityBtn.tintColor = .black
+
+        }
+    }
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 

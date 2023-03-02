@@ -28,9 +28,9 @@ class SignUpViewController: UIViewController {
             }
         }
     func validateFields() -> Bool {
-        let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailRegex = "^.{1,40}$|^.{1,30}@.{1,15}\\..{2,5}$"
         let nameRegex = "[A-Za-z]+"
-        let passwordRegex = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[@$!%*?&])[a-zA-Z\\d@$!%*?&]{8,}$"
+        let passwordRegex = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[@$!%*?&])[a-zA-Z\\d@$!%*?&]{8,12}$"
         let deptRegex = "[A-Za-z]+"
         
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
@@ -39,22 +39,42 @@ class SignUpViewController: UIViewController {
         let deptPredicate = NSPredicate(format: "SELF MATCHES %@", deptRegex)
         
         guard let name = nameTextField.text, namePredicate.evaluate(with: name) else {
-            showAlert(title: "Invalid Name", message: "Please enter a valid name (letters only).")
+            if self.nameTextField.text == ""{
+                showAlert(title: "", message: "Please Enter A Name(letters only).")
+            }
+            else{
+                showAlert(title: "Invalid Name", message: "Please enter a valid name (letters only).")
+            }
             return false
         }
         
         guard let email = emailTextField.text, emailPredicate.evaluate(with: email) else {
-            showAlert(title: "Invalid Email", message: "Please enter a valid email address.")
+            if emailTextField.text == ""{
+                showAlert(title: "", message: "Please Enter Email.")
+            }
+            else{
+                showAlert(title: "Invalid Email", message: "Please enter a valid email address.")
+            }
             return false
         }
     
         guard let password = passwordTextField.text, passwordPredicate.evaluate(with: password) else {
-            showAlert(title: "Invalid Password", message: "Please enter a valid password (minimum 8 characters, at least one letter and one number).")
+            if passwordTextField.text == "" {
+                showAlert(title: "", message: "Please Enter A Passord.")
+            }
+            else{
+                showAlert(title: "Invalid Password", message: "Please enter a valid password (minimum 8 characters and maximum 12, at least one letter and one number and one symbol).")
+            }
             return false
         }
         
         guard let department = departmentTextField.text, deptPredicate.evaluate(with: department) else {
-            showAlert(title: "Invalid Department", message: "Please enter a valid department (letters only).")
+            if departmentTextField.text == "" {
+                showAlert(title: "", message: "Please Select A Department.")
+            }else
+            {
+                showAlert(title: "Invalid Department", message: "Please enter a valid department (letters only).")
+            }
             return false
         }
         
