@@ -18,6 +18,10 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var option3label: UILabel!
     
     @IBOutlet weak var option4label: UILabel!
+    
+    
+    @IBOutlet weak var searchLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

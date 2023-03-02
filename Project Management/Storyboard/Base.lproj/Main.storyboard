@@ -1819,15 +1819,15 @@
                                     <outlet property="delegate" destination="DK0-3m-K5B" id="mIn-nG-k1w"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gcw-Fg-9i8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gcw-Fg-9i8">
                                 <rect key="frame" x="0.0" y="169" width="393" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchTableViewCell" id="EwH-ZW-o9u" customClass="SearchTableViewCell" customModule="Project_Management" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="200"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EwH-ZW-o9u" id="36e-HN-TLe">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMU-eE-9xy">
@@ -1860,11 +1860,19 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvp-9a-fm6">
+                                                    <rect key="frame" x="20" y="164.33333333333334" width="353" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="103-gi-K2F" firstAttribute="leading" secondItem="zMU-eE-9xy" secondAttribute="leading" id="BHI-RW-e7b"/>
                                                 <constraint firstItem="zMU-eE-9xy" firstAttribute="top" secondItem="36e-HN-TLe" secondAttribute="top" constant="10" id="D31-9X-Gcx"/>
                                                 <constraint firstItem="zMU-eE-9xy" firstAttribute="leading" secondItem="36e-HN-TLe" secondAttribute="leading" constant="20" id="FHp-0R-Ylb"/>
+                                                <constraint firstItem="Mvp-9a-fm6" firstAttribute="leading" secondItem="a3a-CX-fWz" secondAttribute="leading" id="HYV-5X-Af0"/>
+                                                <constraint firstItem="Mvp-9a-fm6" firstAttribute="trailing" secondItem="a3a-CX-fWz" secondAttribute="trailing" id="Ilr-a7-abO"/>
                                                 <constraint firstItem="IHH-Cj-T9X" firstAttribute="trailing" secondItem="zMU-eE-9xy" secondAttribute="trailing" id="KNy-zk-hEG"/>
                                                 <constraint firstAttribute="trailing" secondItem="zMU-eE-9xy" secondAttribute="trailing" constant="20" id="Kgs-41-vfc"/>
                                                 <constraint firstItem="103-gi-K2F" firstAttribute="top" secondItem="JVc-wN-O1g" secondAttribute="bottom" constant="10" id="Lo0-Jw-cOq"/>
@@ -1875,6 +1883,7 @@
                                                 <constraint firstItem="IHH-Cj-T9X" firstAttribute="top" secondItem="zMU-eE-9xy" secondAttribute="bottom" constant="10" id="hTt-yg-4SN"/>
                                                 <constraint firstItem="JVc-wN-O1g" firstAttribute="trailing" secondItem="zMU-eE-9xy" secondAttribute="trailing" id="lg2-u7-60d"/>
                                                 <constraint firstItem="IHH-Cj-T9X" firstAttribute="leading" secondItem="zMU-eE-9xy" secondAttribute="leading" id="rbX-WU-sbu"/>
+                                                <constraint firstItem="Mvp-9a-fm6" firstAttribute="top" secondItem="a3a-CX-fWz" secondAttribute="bottom" constant="10" id="xKu-rS-Jrk"/>
                                                 <constraint firstItem="103-gi-K2F" firstAttribute="trailing" secondItem="zMU-eE-9xy" secondAttribute="trailing" id="xND-x2-mhf"/>
                                                 <constraint firstItem="a3a-CX-fWz" firstAttribute="top" secondItem="103-gi-K2F" secondAttribute="bottom" constant="10" id="z2L-YD-AfU"/>
                                             </constraints>
@@ -1885,6 +1894,7 @@
                                             <outlet property="option3label" destination="IHH-Cj-T9X" id="DkH-D7-UTC"/>
                                             <outlet property="option4label" destination="103-gi-K2F" id="uk3-qE-cXj"/>
                                             <outlet property="questionlabel" destination="zMU-eE-9xy" id="Hcy-2P-IfS"/>
+                                            <outlet property="searchLabel" destination="Mvp-9a-fm6" id="WTG-O7-PWc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
